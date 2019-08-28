@@ -1,0 +1,393 @@
+@import "navigatie.css";
+@import "general.css";
+#filter{
+	width: 100%;
+	height: 60px;
+	background-color:#FF7B00;
+	display: flex;
+	border-bottom: 2px solid white;
+}
+.filter-container{
+	width: 100%;
+	margin: auto;
+	text-align: center;	
+}
+/**************************
+*    Style voor selects   *
+**************************/
+select{
+    padding: 5px;
+    font-size: 12px; 
+    height: 34px;
+	border-radius: 0;
+	border:3px double #FF7B00;
+	width: 280px;
+	margin: 0px 10px;
+	background-color: #fff;
+	background-image: url('../images/downArrow.svg');
+	background-size: 29px;
+	background-repeat: no-repeat;
+	background-position: 100.3%;
+	cursor: pointer;
+	transition: 0.2s;
+    overflow: auto;
+}
+select:hover{
+	background-color: #F1F1F1;
+	transition: 0.2s;
+}
+
+/************************************
+*	   Default style van selects    *
+*	verwijderen voor verschillende  *
+*			  browsers              *
+************************************/
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+option:hover{
+    background: #ff7b00;   
+}
+/***********************
+* Confirm button style *
+***********************/
+#filterBevestiging{ 
+	background-color: white;
+	border: 3px double #FF7B00;
+	padding: 6px 5px;
+	width: 280px;
+	transition: 0.2s;
+}
+#filterBevestiging:hover{ 
+	background-color:#ffe5cc;
+	cursor: pointer;
+	transition: 0.2s;    
+}
+#filterBevestiging:hover span{ 
+	padding-left: 50px;
+	transition: 0.2s;
+}
+
+#filterBevestiging:active{ 
+	background-color:#FF7B00;
+	cursor: pointer;
+	transition: 0.2s;
+}
+#filterBevestiging span{
+	padding-left: 30px;
+	vertical-align: 1px;
+	transition: 0.2s;
+}
+/****************************
+*  Mobiele navigatie style  *
+****************************/
+.sticky{
+	position: fixed;
+	top: 0;
+	transition: 0.3s;
+}
+#mobileFilter{
+	display: none;
+}
+/*******************************
+* Intro banner met tekst style *
+*******************************/
+#orgs_banner{
+	width: 100%;
+	grid-column: col 1/span 12;
+	height: 480px;
+	background: url("../images/org_banner.jpg");
+	background-position: center ;
+	background-size: cover;
+	background-repeat: no-repeat; 
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	margin-top: 50px;
+}
+.orgs_banner_tekst{
+	background-color: rgba(255,255,255,0.80);
+	width: 100%;
+}
+.orgs_banner_tekst h2{
+	margin: auto;
+	width: 100%;
+	padding: 25px 0px;
+	font-size: 2rem;
+	font-weight: 400;
+	text-align: center;
+}
+.orgs_banner_tekst p{
+	width: 50%;
+	margin: auto;
+	font-size: 14px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.org_titel{
+	grid-column: col 2 /span 10;
+    font-weight: 700;
+	margin-top: 60px;
+}
+/************************************
+* Style voor lijst van organisaties *
+************************************/
+#orgs_lijst {
+	grid-column: col 2/ span 10;
+}
+/*logos*/
+.organisatie figure{
+    width: 200px;
+	height: 200px;
+    max-height: 100%;
+    padding:0;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+main{
+    margin-bottom: 4%;
+}
+#st-ger{
+    background-image: url("../individuele_organisaties/logos_organisaties/Logo_SG_def_bsl_felrood%20(1).jpg");
+}
+#heder{
+    background-image: url("../individuele_organisaties/logos_organisaties/logo-heder.svg");
+}
+#kids{
+    background-image: url("../individuele_organisaties/logos_organisaties/KIDS+logo%20(1).jpg");
+}
+#st-gre{
+    background-image: url("../individuele_organisaties/logos_organisaties/Logo_250px_ZORG.jpg");
+}
+#oc{
+    background-image: url("../individuele_organisaties/logos_organisaties/logo-de_beweging.jpg");
+}
+#sperm{
+    background-image:url("../individuele_organisaties/logos_organisaties/Spermalie_Logo.jpg"); 
+}
+#gans{
+    background-image:url("../individuele_organisaties/logos_organisaties/logo%20ganspoel.svg"); 
+}
+.organisatie figure img{
+    width: inherit;
+}
+.organisatie{
+	display: inline-flex;
+	width: 77%;
+	padding: 25px 0;
+}
+.orRight{
+	float: right;
+	background-color: green;
+}
+.orLeft{
+	background-color: red;
+}
+.organisatie:nth-child(1){
+	padding-top: 60px;
+}
+.organisatie .org_buttons{
+	display: block;
+}
+.org_buttons{
+	vertical-align: top;
+	width: 100%;
+	cursor: pointer;
+}
+.org_buttons a{
+	text-decoration: none;
+	color: white;
+	background-color: #FF7B00;
+	border: 0;
+	font-size: 16px;
+	margin-right: 30px;
+	padding: 3px 10px;
+	transition: 0.2s;
+	
+}
+.org_buttons a:hover{
+	background-color: #FFC181;
+	transition: 0.2s;
+	cursor: pointer;
+}
+.org_buttons span{
+	padding-left: 10px;
+	vertical-align: 1px;
+	transition: 0.2s
+}
+.org_buttons a:hover span{
+	padding-left: 30px;
+	transition: 0.2s
+}
+.org_tekst{
+	margin-left: 40px;
+	vertical-align: middle;
+}
+/******************************
+*	Geen criteria stijl 	  *
+******************************/
+#geenCriteria{
+	display: none;
+	grid-column: col 1 /span 12;
+	text-align: center;
+}
+/******************************
+*		Media queries 		  *
+******************************/
+@media only screen and (max-width:1150px){
+	#orgs_banner{
+		margin-top: 0px;
+	}
+	#orgs_lijst {
+		grid-column: col 2/ span 10;
+	}
+	.organisatie{
+		margin-bottom: 50px;
+		width: 100%;	
+	}
+	.organisatie:nth-child(2n+0){
+		float: left;
+	}
+}
+@media only screen and (max-width:880px){
+	#orgs_lijst {
+		grid-column: col 1/ span 12;
+	}
+}
+@media only screen and (max-width:892px){
+	#filter{	
+		height: auto;	
+	}
+	.select-style{
+		margin-top: 10px;
+	}
+	#filterBevestiging{
+		margin:10px;
+	}
+}
+@media only screen and (max-width:1193px){
+/****************************
+*  Mobiele navigatie style  *
+****************************/
+	.mobileFilterToggle{
+		width: 100%;
+		display: block;
+	}
+	#mobileFilter{
+		display: inline-block;
+		width: 100%;
+	}
+	.filter-container{
+		display: none;
+	}
+	.arrowBtn{
+		text-align: center;
+		vertical-align: middle
+	}
+	#filter{
+		display: block;
+		height: auto;
+	}
+	#filterBevestiging{
+		margin-top: 10px;
+	}
+	/**************************
+	* Filter pijl en animatie *
+	**************************/
+	.arrowBtn img{
+		display: block;
+		height: 30px;
+		width: auto;
+		margin: 5px auto 15px;
+		transition: 0.4s;
+	}
+	.arrowBtn p{
+		margin: 10px 0 0;
+		color: white;
+		font-weight: 600;
+		transition: 0.4s;
+	}
+	.arrowAnimation{
+		transform: rotate(180deg) scale(1.5);
+		transform-origin: center;
+		transition: 0.4s;
+	}
+	.filterTextAnimation{
+		opacity: 0;
+		transition: 0.4s;
+	}
+}
+@media only screen and (max-width:1080px){
+	.orgs_banner_tekst p{
+		width: 70%;	
+	}
+	.organisatie{
+		float: left;
+	}
+}
+@media only screen and (max-width:731px){
+	.org_titel{
+		text-align: left;
+        margin-bottom: 10%;
+        font-weight: 700;
+        padding-left: 4%;
+        grid-column: col 1/ span 12;
+	} 
+	.organisatie{
+		display: block;
+	}
+    .organisatie figure{
+        width: 50%;
+        height: 40%;
+        margin: auto;
+    }
+	.organisatie figure img{
+		width: 100%;
+	}
+	.org_tekst{
+		display: block;
+		width: 92%;
+		margin-left: 0;
+		margin:auto;
+	}
+	.organisatie .org_buttons{
+		float: both;
+		width: 100%;
+		display: inline-flex;		
+	}
+	.org_buttons a{
+		margin: 10px 10px;
+		width: 50%;
+		height: 50px;
+		line-height: 50px;
+		vertical-align: middle;
+		text-align: center;
+	}
+	.org_buttons a span{
+		display: none;
+	}
+}
+@media only screen and (max-width:680px){
+	.orgs_banner_tekst h2{
+		padding: 25px 0px;
+		font-size: 1.4rem;
+	}
+	.orgs_banner_tekst p{
+		width: 90%;
+	}
+}
+@media only screen and (max-width:444px){
+	.select-style{
+		width: 98%;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}

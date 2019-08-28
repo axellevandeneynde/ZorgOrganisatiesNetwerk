@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Erasmus Hogeschool Brussel- Zoë Martens - Seppe Clottemans - Julien Menten - Axelle Vanden Eynde">
+    <title>ZON - Heder</title>
+    <link rel="stylesheet" type="text/css" href="../css/detail-organisatie.css">
+</head>
+
+<body>
+    <header>
+      <!-- Navigatie-->
+			<nav>	
+				<!-- Logo en naam -->
+				<div id="logoNav">
+					<div id="logoTableFix">
+						<a href="../index.html" onClick="setAll()">
+							<img src="../images/logo.svg" alt="logo van ZorgOrganisatie Netwerk">
+							<h1>ZorgOrganisaties Netwerk</h1>
+						</a>
+					</div>
+				</div>
+				<div id="paginas">		
+					<ul id="mobileNav">
+						<!-- Links naar pagina's-->
+						<li><a href="../centra.html" onClick="resetCookie()">onze organisaties</a></li>
+						<li><a href="../wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>
+						<li><a href="../FAQ.html" onClick="resetCookie()">FAQ</a></li>
+					</ul>	
+					<!-- Hoogcontrastknop -->
+					<div class="hoogContrastKnop"><img src="../images/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
+					<!-- Mobile navigatie icoon -->
+					<div id="mobileMenuIcon" >
+						<div class="mobileIconLijn1"></div>
+						<div class="mobileIconLijn2"></div>
+						<div class="mobileIconLijn3"></div>
+					</div>
+				</div>
+			</nav>
+    </header>
+    <main class="grid">
+        <figure id="logo"><img src="logos_organisaties/logo-heder.svg" alt="logo heder" width=100%></figure>
+        <style>#logo{margin-left: auto;}</style>
+        <div id="slideshow">
+            <img src="fotos_heder/4-2.jpg" alt="kind aan het spelen-heder" width=100% class="slide">
+            <img src="fotos_heder/_MG_9718%20(1).jpg" alt="begeleider met kind-heder" width=100% class="slide">
+            <img src="fotos_heder/I5%20(1).jpg" alt="mensen in rolstoel aan het spelen met gekleurede ballen -heder" width=100% class="slide">
+            <img src="fotos_heder/IMG_0038-2.jpg" alt="kiné met klant-heder" width=100% class="slide">
+            <img src="fotos_heder/kon-tiki-2.jpg" alt="kon-tiki veel mensen op grosplein-heder" width=100% class="slide">
+            <img src="fotos_heder/Riet+259-2.jpg" alt="vrouw speelt gitaar en hand kind op de snaren-heder" width=100% class="slide">
+            <script>
+                var slideIndex = 0;
+                carousel();
+
+                function carousel() { /*based on W3Schools: https://www.w3schools.com/w3css/w3css_slideshow.asp*/
+                    var i;
+                    var x = document.getElementsByClassName("slide");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > x.length) {
+                        slideIndex = 1
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                    setTimeout(carousel, 5000); // Change image every 5 seconds
+                }
+            </script>
+        </div>
+        <div id="info">
+            <h6>Heder
+            </h6>
+            <table>
+                <tr>
+                    <td>begeleiding voor:</td>
+                    <td>(neuro-)motorische beperkingen</td>
+                </tr>
+                <tr>
+                    <td>leeftijd:</td>
+                    <td>kinderen,jongeren en volwassenen</td>
+                </tr>
+                <tr>
+                    <td>website:</td>
+                    <td><a href="https://heder.be/" target="_blank">www.heder.be</a></td>
+                </tr>
+                <tr>
+                    <td>e-mail:</td>
+                    <td><a href="mailto:clientonthaal@heder.be">clientonthaal@heder.be</a></td>
+                </tr>
+                <tr>
+                    <td>tel.:</td>
+                    <td><a href="tel:035402950">035/40.19.50</a></td>
+                </tr>
+                <tr>
+                    <td>adres:</td>
+                    <td>Galjoenstraat 2,<br>2030 Antwerpen</td>
+                </tr>
+            </table>
+        </div>
+        <div class="mapouter" id="map-desktop">
+            <div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=galjoenstraat%202%2C%202030%20Antwerpen&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div>
+        </div>
+        <div class="mapouter" id="map-tablet">
+            <div class="gmap_canvas"><iframe width="1000" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=galjoenstraat%202%2C%202030%20Antwerpen&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div>
+        </div>
+        <div class="mapouter" id="map-mobile">
+            <div class="gmap_canvas"><iframe width="670" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=galjoenstraat%202%2C%202030%20Antwerpen&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div>
+        </div>
+    </main>
+		<footer scrol="no">
+			<img class="schoollogo" src="../images/ehb-logo.png" alt="">
+			<p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+		</footer>
+	<!-- Inladen van jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- jQuery code voor responsieve navigatie -->
+	<script type="text/javascript" src="../js/mobileNav.js"></script>
+</body>
+</html>

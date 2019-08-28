@@ -1,0 +1,164 @@
+body{
+	/*Zorgt ervoor dat er geen witte randen zitten aan de kant van de website*/
+	margin: 0;
+}
+nav{
+	overflow: hidden;
+	border-bottom: 0.5px solid #FF7B00;
+	width: 100%;
+	margin: auto;
+	max-height: 60px;
+	font-family: 'Open sans';
+}
+#logoNav{
+	margin-left: 5%;
+	margin-top: 5px;
+}
+/***********************************
+* Logo en naam naast elkaar zetten *
+***********************************/
+#logoTableFix{
+	/*max-height: 60px;*/
+}
+#logoNav img,
+#logoNav h1{
+	display: table-cell;	
+}
+/***********************************
+*			 Logo style 		   *
+***********************************/
+#logoNav img{
+	height: 50px;	
+	margin: 0;
+}
+/***********************************
+*			 naam style 		   *
+***********************************/
+#logoNav h1{
+	padding: 0 0 0 20px;
+	vertical-align: middle;
+	font-weight: 100;
+}
+#logoNav a{
+	text-decoration: none;
+	color: black;
+	display: table;
+}
+/********************************************
+* Logo/naam en pagina's naast elkaar zetten *
+********************************************/
+#paginas,
+#logoNav{
+	display: inline-block;
+}
+#paginas {
+	float: right;
+	margin-right: 5%;
+	max-height: 60px;
+	display: flex;
+}
+#paginas ul{
+	list-style-type: none;
+	padding: 0;
+	max-height: 60px;
+	margin-top: 20px;
+}
+#paginas li{
+	display: inline-block;
+	vertical-align: middle;
+}
+#paginas li a{
+	text-decoration: none;
+	color: black;
+	padding: 0px 20px;
+	
+}
+.huidigePagina a{
+	font-weight: 700;
+}
+#paginas li a:after {
+  display:block;
+  content: '';
+  border-bottom: solid 1px #FF7B00;  
+  transform: scaleX(0);  
+  transition: transform 300ms ease-in-out;
+}
+#paginas li a:hover:after { transform: scaleX(1); }
+/*.hoogContrastKnop{
+	margin-top: 15px;
+	width: 30px;
+	margin-left: 40px;
+}*/
+#mobileMenuIcon{
+	display: none;
+}
+/******************************
+* Mobile menu icon naar kruis *
+******************************/
+.knopAnimatie1{
+	transform: rotate(-45deg) translate(-9px, 6px);
+	transition: 0.5s;
+}
+.knopAnimatie2{
+	opacity: 0;
+}
+.knopAnimatie3{
+	transform: rotate(45deg) translate(-8px, -8px);
+	transition: 0.5s;
+}
+/******************************
+*		Media queries 		  *
+******************************/
+@media only screen and (max-width:890px){
+	#paginas ul{
+		display: none;
+		max-height: none;
+		margin-top: 15px;
+	}
+	#mobileMenuIcon{
+		display: block;
+		margin: 10px  0px 0px 30px;
+	}
+	#mobileMenuIcon div{
+		height: 3px;
+		width: 40px;
+		background-color: black;
+		margin: 8px 0;
+		border-radius: 50px;
+		transition: 0.3s;
+	}
+	#mobileNav{
+		position: absolute;
+		background-color: rgba(255, 123, 0, 1);
+		width: 100%;
+		top: 45px;
+		left: 0;
+		overflow: hidden;
+	}
+	#mobileNav li{
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	#paginas ul li a{
+		padding: 20px 0px;
+		display: block;
+		border-bottom: 2px solid white;
+		color: white;
+	}
+	#paginas li a:after {
+	  display:none;
+	}
+	.hoogContrastKnop{
+		margin-left: 10px;
+	}
+	.huidigePagina{
+		background-color: rgba(255, 229, 204, 0.6);	
+	}
+}
+@media only screen and (max-width:680px){
+	#logoNav h1{
+		font-size: 0.8em;
+		padding: 0 0 0 10px;
+	}
+}

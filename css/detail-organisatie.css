@@ -1,0 +1,195 @@
+@import url(general.css);
+
+main {
+    margin: 7% 0% 0% 0%;
+}
+
+/***************
+info
+*****************/
+h6 {
+    text-decoration: underline;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    width: 50%;
+    padding: 2% 0% 2% 0%;
+}
+
+tabel {
+    width: 100%;
+}
+
+/*****************
+logo
+******************/
+#logo {
+    padding: 0;
+	margin-left: auto;
+}
+
+/*****************
+map 
+based on https://www.embedgooglemap.net/ 
+9/01/2019
+******************/
+
+.mapouter {
+    text-align: right;
+    
+	
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    
+    margin: 0em 0em 0em 0em;
+
+}
+
+#map-tablet {
+    display: none;
+}
+
+#map-mobile {
+    display: none;
+}
+
+/*******************
+slideshow
+*******************/
+
+#slideshow {
+    width: 100%;
+    margin: 0;
+}
+
+/******************
+place on grid
+******************/
+/*default*/
+.grid {
+    grid-template-rows: repeat(2, [row] auto);
+}
+
+#info {
+    grid-column: col 7/ span 4;
+    grid-row: row;
+}
+
+#logo {
+    grid-column: col 3/ span 3;
+    grid-row: row;
+}
+
+.mapouter {
+    grid-column: col 7/ span 4;
+    grid-row: row 2/ span 4;
+}
+
+#slideshow {
+    grid-column: col 3/ span 3;
+    grid-row: row 2;
+
+}
+
+/*medium-screen*/
+@media only screen and (min-width: 681px) and (max-width:1080px) {
+	.gmap_canvas {
+		width: 100%;
+	}
+    .grid {
+        grid-template-rows: repeat(3, [row] auto);
+    }
+
+    #info {
+        grid-column: col 6/ span 7;
+        grid-row: row;
+
+    }
+
+    td {
+        width: 60%;
+    }
+
+    #logo {
+        grid-column: col / span 4;
+        grid-row: row;
+    }
+
+    .mapouter {
+        grid-column: col 2/ span 10;
+        grid-row: row 2;
+        margin-top: 3%;
+    }
+
+    #slideshow {
+        grid-column: col 2 / span 10;
+        grid-row: row 3;
+        margin-top: 5%;
+    }
+
+    #map-desktop {
+        display: none;
+    }
+
+    #map-tablet {
+        display: inline-block;
+    }
+}
+
+/*small-screen*/
+@media only screen and (max-width:680px) {
+    main {
+        margin: 3% 0% 0% 0%;
+    }
+
+    .grid {
+        grid-template-rows: repeat(4, [row] auto);
+    }
+
+    #info {
+        grid-column: col / span 12;
+        grid-row: row 2;
+        padding: 2% 10px 0px;
+
+    }
+
+    td {
+        width: 100%;
+    }
+
+    #logo {
+        grid-column: col / span 12;
+        grid-row: row;
+		margin: 5% auto;
+		width: 50%;
+		
+    }
+
+    .mapouter {
+        grid-column: col / span 12;
+        grid-row: row 3;
+        margin-top: 3%;
+		width: 100%;
+    }
+
+    #slideshow {
+        grid-column: col / span 12;
+        grid-row: row 4;
+        margin-top: -5%;
+    }
+
+    #map-desktop {
+        display: none;
+    }
+
+    #map-mobile {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<!-- Meta tags  -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta author="Erasmus Hogeschool Brussel- Zoë Martens - Seppe Clottemans - Julien Menten - Axelle Vanden Eynde">
+		<!-- titel + favicon -->
+		<title>ZON - alle organisaties</title>	
+		
+		<!--Stylesheet(s) -->
+		<link rel="stylesheet" href="css/alleOrgs.css">
+		
+		<!-- Scripts -->
+	</head>
+	<body>
+		<header>
+			<!-- Navigatie-->
+			<nav>	
+				<!-- Logo en naam -->
+				<div id="logoNav">
+					<div id="logoTableFix">
+						<a href="index.html" onClick="resetCookie()">
+							<img src="images/logo.svg" alt="logo van ZorgOrganisatie Netwerk">
+							<h1>ZorgOrganisaties Netwerk</h1>
+						</a>
+					</div>
+				</div>
+				<div id="paginas">		
+					<ul id="mobileNav">
+						<!-- Links naar pagina's-->
+						<li class="huidigePagina"><a href="#" onClick="resetCookie()">onze organisaties</a></li>
+						<li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>	
+						<li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
+					</ul>	
+					<!-- Hoogcontrastknop -->
+					<div class="hoogContrastKnop"><img src="images/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
+					<!-- Mobile navigatie icoon -->
+					<div id="mobileMenuIcon" >
+						<div class="mobileIconLijn1"></div>
+						<div class="mobileIconLijn2"></div>
+						<div class="mobileIconLijn3"></div>
+					</div>
+				</div>
+			</nav>
+			<!-- Selects om zoekopties te filtreren  -->
+			<div id="filter">
+				<p alt="Uitleg voor filter" style="visibility: hidden; display: none;"></p>
+				<div class="filter-container" alt="Filterbalk voor centra's">
+					<!-- Filter voor specialisaties  -->
+					<select class="select-style" name="specialisaties" id="specFilter" alt="Kies een begeleiding">
+						<option value="all" >Specialisatie</option>
+						<option value="all">Alle begeleidingen</option>
+						<option value="visueel">Visuele begeleiding</option>
+						<option value="auditief">Auditieve begeleiding</option>
+						<option value="neuromotorisch">(Neuro-)motorische begeleiding</option>
+					</select>
+					<!-- Filter voor leeftijdscategorïen -->
+					<select class="select-style" name="leeftijdscategorie" id="leeftijdFilter" alt="Kies een leeftijdscategorie">
+						<option value="all">Leeftijdscategorie</option>
+						<option value="all">Alle leeftijdscategorïen</option>
+						<option value="kinderen">Kinderen</option>
+						<option value="jongeren">Jongeren</option>
+						<option value="volwassenen">Volwassenen</option>
+					</select>
+					<!-- Filter voor regio's  -->
+					<select class="select-style" name="regio" id="regioFilter" alt="Kies een regio">
+						<option value="all">Regio</option>
+						<option value="all">Alle regio's</option>
+						<option value="antwerpen">Antwerpen</option>
+						<option value="brussel">Brussel</option>
+						<option value="limburg">Limburg</option>
+						<option value="o-vlaanderen">Oost-Vlaanderen</option>
+						<option value="v-brabant">Vlaams-Brabant</option>
+						<option value="w-vlaanderen">West-Vlaanderen</option>
+					</select>
+					<!-- Bevestigings knop -->
+					<button id="filterBevestiging" onClick="clickToFilter()">Filter Zoekresultaten <span>→</span></button>
+				</div>
+				<div id="mobileFilter">
+					<div class="arrowBtn"><p>Filter</p><img src="images/filterArrow.svg" alt="Pijl om filter menu te tonen"></div>
+				</div>
+			</div>
+		</header>
+		<main class="grid">
+			<!-- Banner met informatieve tekst -->
+			<section id="orgs_banner">
+				<div class="orgs_banner_tekst">
+					<h2>Op zoek naar hulp? Wij geloven in expertise als hefboom!</h2>
+					<p>Onze warme experten helpen u verder in een van onze partnercentra. Aan de hand van deze pagina kan je op een eenvoudige en vlotte manier de juiste centrum vinden dat voldoet aan uw behoeften en criteria. U kan zoeken op basis van de begeleiding dat waaraan u nood heeft, de leeftijd waaraan u of iemand in jullie omgeving aan toebehoord of aan de hand van de dichtsbijzijnde regio.  </p>
+				</div>
+			</section>
+			<div id="dropHere"></div>
+			<h3 class="org_titel" id="org_titel">Onze organisaties</h3>
+			
+			<!-- Indien er geen centra's kunnen worden vertoond: WERKT (nog) NIET -->
+			<p id="geenCriteria">Er zijn geen centra die voldoen aan uw criteria.</p>
+			<!-- Lijst met al de organisaties  -->
+			<section id="orgs_lijst">
+				<!-- St- Gerardus  -->
+				<div class="organisatie all neuromotorisch all jongeren volwassenen all limburg">
+					<figure><img src="individuele_organisaties/logos_organisaties/Logo_SG_def_bsl_felrood%20(1).jpg" alt="logo sint-gerardus"></figure>
+					<article class="org_tekst">
+						<h4>Begeleidingscentrum St-Gerardus</h4>
+						<p>Sint-Gerardus in Diepenbeek biedt onderwijs en zorg op maat voor peuters, kinderen, jongeren en volwassenen met (neuro-)motorische beperkingen. Als school voor buitengewoon basisonderwijs en buitengewoon secundair onderwijs ondersteunen wij ook leerlingen en leerkrachten in het gewone onderwijs door onze ondersteuningsteams voor kinderen en jongeren.</p>
+						<div class="org_buttons">
+						<a target="_blank" href="http://www.sintgerardus.be/">Website</a>
+						<a href="individuele_organisaties/Sint-gerardus.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>		
+				</div>
+				<!-- Heder  -->
+				<div class="organisatie all neuromotorisch all kinderen jongeren volwassenen all antwerpen">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo-heder.svg" alt="logo Heder"></figure>
+					<article class="org_tekst">
+						<h4>Heder</h4>
+						<p> Heder biedt zorg en houvast aan personen met een verstandelijke en/of motorische beperking, al dan niet aangeboren. We willen streven naar een maximale integratie in onze maatschappij.</p>
+						<div class="org_buttons">
+						<a href="https://heder.be/" target="_blank">Website</a>
+						<a href="individuele_organisaties/heder.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- KIDS -->
+				<div class="organisatie all auditief all kinderen jongeren volwassenen all limburg antwerpen v-brabant brussel">
+					<figure><img src="individuele_organisaties/logos_organisaties/KIDS+logo%20(1).jpg" alt="logo kids"></figure>
+					<article class="org_tekst">
+						<h4>KIDS</h4>
+						<p>Wij werken vanuit hartelijke professionaliteit met jou en jouw netwerk samen op 5 verschillende vestigingsplaatsen in Limburg en Vlaams Brabant. Wij willen een kennis en expertisecentrum zijn waarop jij als kind of volwassene en jouw context beroep kunnen doen zodat je je maximaal kan ontplooien. Wij ondersteunen ook graag andere diensten.</p>
+						<div class="org_buttons">
+						<a href="http://www.kids.be/" target="_blank">Website</a>
+						<a href="individuele_organisaties/kids.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Sint Gregorius  -->
+				<div class="organisatie all auditief motorisch all jongeren volwassenen all o-vlaanderen">
+					<figure><img src="individuele_organisaties/logos_organisaties/Logo_250px_ZORG.jpg" alt="logo sint gregorius"></figure>
+					<article class="org_tekst">
+						<h4>MFC Sint-Gregorius</h4>
+						<p>In het Multifunctioneel Centrum worden kinderen en jongeren ondersteund op medisch, paramedisch, psychologisch en pedagogisch vlak. De trajecten zijn gebaseerd op de modules verblijf, dagopvang, dagbesteding en mobiele/ambulante begeleiding.</p>
+						<div class="org_buttons">
+						<a href="http://www.mfcsintgregorius.be/" target="_blank">Website</a>
+						<a href="individuele_organisaties/MFC%20%20Sint%20Gregorius.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- OC De Beweging  -->
+				<div class="organisatie all neuromotorisch all volwassenen all o-vlaanderen">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo-de_beweging.jpg" alt="logo oc de beweging"></figure>
+					<article class="org_tekst">
+						<h4>OC De Beweging</h4>
+						<p>Het OC De Beweging heeft een breed aanbod aan zorg en ondersteuning, met een uitgesproken expertise in de ondersteuning van personen met een fysieke beperking, NAH (niet-aangeboren hersenletsel) en neurodegeneratieve ziekten. </p>
+						<div class="org_buttons">
+						<a href="http://www.ocdebeweging.be/" target="_blank">Website</a>
+						<a href="individuele_organisaties/OC_de_beweging.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Spermalie  -->
+				<div class="organisatie all visueel auditief all kinderen jongeren volwassenen all w-vlaanderen o-vlaanderen">
+					<figure><img src="individuele_organisaties/logos_organisaties/Spermalie_Logo.jpg" alt="logo spermalie"></figure>
+					<article class="org_tekst">
+						<h4>Spermalie</h4>
+						<p>Campus Spermalie gaat voor een inclusieve samenleving die mensen met een beperking gelijke kansen biedt. Ook als dat gespecialiseerde ondersteuning vergt. Want expertise in zorg en onderwijs maakt voor veel kinderen en jongeren een wereld van verschil.</p>
+						<div class="org_buttons">
+						<a href="http://www.de-kade.org/PortaalDeKade/Structuur-De-Kade/Begeleidingscentrum-campus-Spermalie" target="_blank">Website</a>
+						<a href="individuele_organisaties/Spermalie.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Ganspoel  -->
+				<div class="organisatie all visueel all kinderen jongeren volwassenen all v-brabant">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo%20ganspoel.svg" alt="logo ganspoel"></figure>
+					<article class="org_tekst">
+						<h4>Ganspoel</h4>
+						<p>Centrum Ganspoel biedt ondersteuning aan kinderen en jongeren en volwassenen met een visuele of meervoudige beperking. We werken daarbij nauw samen met de ouders en het netwerk van onze cliënten.</p>
+						<div class="org_buttons">
+						<a href="http://www.ganspoel.be/index.php">Website</a>
+						<a href="individuele_organisaties/ganspoel.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Huize Walden -->
+				<div class="organisatie all neuromotorisch all jongeren volwassenen all antwerpen">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo_huizewalden.png" alt="logo ganspoel"></figure>
+					<article class="org_tekst">
+						<h4>Huize Walden</h4>
+						<p>Huize Walden is een kwalitatieve zorg-aanbieder voor personen met een zorg-vraag met professionele en kwalitatieve handen die de uitdaging aangaan om een antwoord te bieden op de zorgvraag die de cliënt en zijn netwerk stelt. De uitdagingen van de cliënt en zijn netwerk zijn de dagelijkse doelen van Huize Walden.</p>
+						<div class="org_buttons">
+						<a href="http://www.huizewalden.be/index-nl.aspx">Website</a>
+						<a href="individuele_organisaties/huize-walden.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Windekind  -->
+				<div class="organisatie all neuromotisch all kinderen all v-brabant">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo_windekind.png" alt="logo ganspoel"></figure>
+					<article class="org_tekst">
+						<h4>Windekind</h4>
+						<p>Bij Windekind Leuven willen we ons samen met u 100% inzetten voor de opvoeding en het onderwijs van uw kind. We willen dat ieder kind zich bij ons thuis voelt. Van daaruit bouwen we (buitengewone) ondersteuning uit voor uw kind. Elk kind met zijn eigen mogelijkheden en beperktheden helpen we om volgens zijn eigen tempo te ontwikkelen. We werken daarbij graag met u samen! </p>
+						<div class="org_buttons">
+						<a href="http://www.windekindleuven.be/">Website</a>
+						<a href="individuele_organisaties/windekind.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- Koninklijk Instituut Woluwe  -->
+				<div class="organisatie all visueel auditief all kinderen jongeren all brussel v-brabant limburg antwerpen o-vlaanderen">
+					<figure><img src="individuele_organisaties/logos_organisaties/logo_kiw_groot.jpg" alt="logo ganspoel"></figure>
+					<article class="org_tekst">
+						<h4>Koninklijk Instituut Woluwe</h4>
+						<p>Binnen het Koninklijk Instituut Woluwe staan verschillende gespecialiseerde diensten klaar om onderwijs en zorg te bieden aan kinderen en volwassenen (vanaf 0 jaar) met een auditieve beperking of met een spraak-taalontwikkelingsstoornis of aan jongeren (12-18 jaar) met een visuele beperking. Deze diensten zijn een school voor buitengewoon basisonderwijs, een school voor Buitengewoon Secundair Onderwijs, een multifunctioneel centrum, een thuisbegeleidingsdienst en een revalidatiecentrum.</p>
+						<div class="org_buttons">
+						<a href="https://www.kiwoluwe.org/">Website</a>
+						<a href="individuele_organisaties/kiw.html">Meer informatie <span>→</span></a>
+					</div>
+					</article>
+				</div>
+				<!-- vvvvv   Voeg hier organisaties toe   vvvvv -->		
+			</section>
+		</main>
+		<footer scrol="no">
+			<img class="schoollogo" src="images/ehb-logo.png" alt="">
+			<p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+		</footer>
+		<!-- Script(s) (ingeladen NA HTML en CSS!)-->
+			<!-- Inladen van jQuery -->
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+			<!-- jQuery code voor responsieve navigatie -->
+			<script type="text/javascript" src="js/mobileNav.js"></script>
+			<!-- jQuery code voor filtering systeem van de organisaties -->
+			<script type="text/javascript" src="js/filter.js"></script>
+			<!-- Cookies script voor bijhouden keuze op homepage -->
+			<script type="text/javascript" src="js/cookies.js"></script>
+			<script>
+				setOption();
+			</script>
+	</body>
+</html>
