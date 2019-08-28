@@ -1,7 +1,7 @@
 figure {
     display: inline-block;
     grid-column: col 3/ span 3;
-    margin: 1.8em 0em 0em 0em;
+    margin: 0.7em 0em 0em 0em;
     width: 100%;
 }
 

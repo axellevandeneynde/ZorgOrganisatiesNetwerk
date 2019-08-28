@@ -1,88 +1,86 @@
 <!DOCTYPE html>
 <html lang="nl">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>ZorgOrganisaties Netwerk</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
 
-<!-- disable scroll functie -->
+    <!-- disable scroll functie -->
 
-	
-<body scroll="no">
-    <header>
-       <!-- Navigatie-->
-			<nav>	
-				<!-- Logo en naam -->
-				<div id="logoNav">
-					<div id="logoTableFix">
-						<a href="#" onClick="resetCookie()">
-							<img src="images/logo.svg" alt="logo van ZorgOrganisatie Netwerk">
-							<h1>ZorgOrganisaties Netwerk</h1>
-						</a>
-					</div>
-				</div>
-				<div id="paginas">		
-					<ul id="mobileNav">
-						<!-- Links naar pagina's-->
-						<li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
-						<li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>
-						<li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
-					</ul>	
-					<!-- Hoogcontrastknop -->
-					<div class="hoogContrastKnop"><img src="images/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
-					<!-- Mobile navigatie icoon -->
-					<div id="mobileMenuIcon" >
-						<div class="mobileIconLijn1"></div>
-						<div class="mobileIconLijn2"></div>
-						<div class="mobileIconLijn3"></div>
-					</div>
-				</div>
-			</nav>
-    </header>
 
-    <!-- slideshow images.  -->
-    <div id="fotoshome">
-    </div>
-
-    <div class="backgroundhome">
-        <!-- Oranje balk met de 3 beperkingen in. -->
-        <div class="backgroundfilter">
-            <main class="grid">
-                <div class="visuelebegeleiding">
-                    <a href="centra.html" onClick="setVisueel()">
-                        <img src="images/oog.svg" alt="oog">
-                        <h4>Visuele begeleiding</h4>
-                    </a>
+    <body scroll="no">
+        <header>
+            <!-- Navigatie-->
+            <nav>	
+                <div id="paginas">		
+                    <ul id="mobileNav">
+                        <!-- Links naar pagina's-->
+                        <li class="huidigePagina"><a href="#" onClick="resetCookie()">home</a></li>
+                        <li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
+                        <li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>
+                        <li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
+                        <li><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
+                    </ul>
+                    <!-- Hoogcontrastknop -->
+                    <div class="hoogContrastKnop"><img src="images/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
+                    <!-- Mobile navigatie icoon -->
+                    <div id="mobileMenuIcon" >
+                        <div class="mobileIconLijn1"></div>
+                        <div class="mobileIconLijn2"></div>
+                        <div class="mobileIconLijn3"></div>
+                    </div>
                 </div>
-                <div class="auditievebegeleiding">
-                    <a href="centra.html" onClick="setAudio()">
-                        <img src="images/oor.svg" alt="oor">
-                        <h4>Auditieve begeleiding</h4>
-                    </a>
-                </div>
-                <div class="motorischebegeleiding">
-                    <a href="centra.html" onClick="setMotorisch()">
-                        <img src="images/rolstoel.svg" alt="rolstoel">
-                        <h4>Motorische begeleiding</h4>
-                    </a>
-                </div>
-            </main>
+            </nav>
+        </header>
+
+        <!-- slideshow images.  -->
+        <div id="fotoshome">
+            <div id="bannerhome">
+                <h1>Op zoek naar hulp?</h1>
+                <h2>Wij geloven in expertise als hefboom!</h2>
+            </div>
+
         </div>
-    </div>
-    <!-- Script(s) (ingeladen NA HTML en CSS!)-->
-    <!-- Inladen van jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- jQuery code voor responsieve navigatie -->
-    <script type="text/javascript" src="js/mobileNav.js"></script>
-    <!-- jQuery code voor filtering systeem van de organisaties -->
-    <script type="text/javascript" src="js/filter.js"></script>
-	<!-- Cookies script voor bijhouden keuze bij filter op centra pagina-->	
-	<script src="js/cookies.js" type="text/javascript"></script>
-	<!-- Script voor carousel-->	
-	<script src="js/carousel.js" type="text/javascript"></script>
-</body>
+
+        <div class="backgroundhome">
+            <!-- Oranje balk met de 3 beperkingen in. -->
+            <div class="backgroundfilter">
+                <main class="grid">
+                    <div class="visuelebegeleiding">
+                        <a href="centra.html" onClick="setVisueel()">
+                            <img src="images/oog.svg" alt="oog">
+                            <h4>Visuele begeleiding</h4>
+                        </a>
+                    </div>
+                    <div class="auditievebegeleiding">
+                        <a href="centra.html" onClick="setAudio()">
+                            <img src="images/oor.svg" alt="oor">
+                            <h4>Auditieve begeleiding</h4>
+                        </a>
+                    </div>
+                    <div class="motorischebegeleiding">
+                        <a href="centra.html" onClick="setMotorisch()">
+                            <img src="images/rolstoel.svg" alt="rolstoel">
+                            <h4>Motorische begeleiding</h4>
+                        </a>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- Script(s) (ingeladen NA HTML en CSS!)-->
+        <!-- Inladen van jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- jQuery code voor responsieve navigatie -->
+        <script type="text/javascript" src="js/mobileNav.js"></script>
+        <!-- jQuery code voor filtering systeem van de organisaties -->
+        <script type="text/javascript" src="js/filter.js"></script>
+        <!-- Cookies script voor bijhouden keuze bij filter op centra pagina-->	
+        <script src="js/cookies.js" type="text/javascript"></script>
+        <!-- Script voor carousel-->	
+        <script src="js/carousel.js" type="text/javascript"></script>
+    </body>
 
 </html>
