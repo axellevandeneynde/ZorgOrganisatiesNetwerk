@@ -29,101 +29,21 @@ h2 {
     margin-top: 10%;
 }
 
-.accordion label {
+.vraag{
     display: block;
     border-bottom: 1px solid #000;
     cursor: pointer;
     padding: 10px;
 }
-
-.accordion p {
+.antwoord{
+    display: none;
+}
+.antwoord p{
     padding: 20px;
     line-height: 30px;
-    visibility: hidden;
-    opacity: 0;
-    height: 0px;
     text-align: left;
     margin-top: 0;
 	transition: 0.5s ease;
-	display: none;
-}
-
-#accordion1:checked ~ .single-text {
-    height: auto;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	display: block;
-}
-
-#accordion1 {
-    display: none;
-    position: relative;
-}
-
-#accordion2:checked ~ .single-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	height: auto;
-}
-
-#accordion2 {
-    display: none;
-    position: relative;
-}
-
-#accordion3:checked ~ .single-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	height: auto;
-}
-
-#accordion3 {
-    display: none;
-    position: relative;
-}
-
-#accordion4:checked ~ .single-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	height: auto;
-}
-
-#accordion4 {
-    display: none;
-    position: relative;
-}
-
-#accordion5:checked ~ .single-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	height: auto;
-}
-
-#accordion5 {
-    display: none;
-    position: relative;
-}
-
-#accordion6:checked ~ .single-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: 0;
-	height: auto;
-}
-
-#accordion6 {
-    display: none;
-    position: relative;
 }
 
 .accordion{

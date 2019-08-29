@@ -5,7 +5,6 @@
 	height: 60px;
 	background-color:#FF7B00;
 	display: flex;
-	border-bottom: 2px solid white;
 }
 .filter-container{
 	width: 100%;
@@ -20,7 +19,7 @@ select{
     font-size: 12px; 
     height: 34px;
 	border-radius: 0;
-	border:3px double #FF7B00;
+	border: 3px double #FF7B00;
 	width: 280px;
 	margin: 0px 10px;
 	background-color: #fff;
@@ -110,7 +109,6 @@ option:hover{
 	display: flex;
 	align-items: center;
 	overflow: hidden;
-	margin-top: 50px;
 }
 .orgs_banner_tekst{
 	background-color: rgba(255,255,255,0.80);
