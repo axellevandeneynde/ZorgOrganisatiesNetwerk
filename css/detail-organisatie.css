@@ -152,16 +152,10 @@ place on grid
         padding: 2% 10px 0px;
 
     }
-    td{
-        width:auto;
-    }
     tr{
         width: 100%;
     }
     
-    tr:child{
-        text-align: right;
-    }
     #logo {
         grid-column: col / span 12;
         grid-row: row;
