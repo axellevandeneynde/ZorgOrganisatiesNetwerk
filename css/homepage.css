@@ -98,7 +98,7 @@ body {
 /**************************
 *    media query tablet groot    *
 **************************/
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1024px) {
     .slide {
         object-fit: cover;
         width: 1024px;

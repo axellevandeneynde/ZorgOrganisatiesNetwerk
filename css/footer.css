@@ -3,13 +3,14 @@ footer{
     height:30px;
     position:relative;
     overflow: hidden;
+    margin-top: 2%;
 }
 
 footer p{
     color: white;
     float: right;
-    font-size: 8px;
-    margin-right: 31%;
+    font-size: 12px;
+    margin-right: 17%;
     margin-top: 0.7%;
 }
 

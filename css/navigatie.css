@@ -7,8 +7,6 @@ nav{
 	border-bottom: 0.5px solid #FF7B00;
 	width: 100%;
 	margin: auto;
-    min-height: 40px;
-	max-height: 75px;
 	font-family: 'Open sans';
 }
 #logoNav{
@@ -29,7 +27,7 @@ nav{
 *			 Logo style 		   *
 ***********************************/
 #logoNav img{
-	height: 50px;	
+	height: 200px;	
 	margin: 0;
 }
 /***********************************
@@ -55,13 +53,11 @@ nav{
 #paginas {
 	float: right;
 	margin-right: 5%;
-	max-height: 75px;
 	display: flex;
 }
 #paginas ul{
 	list-style-type: none;
 	padding: 0;
-	max-height: 60px;
 	margin-top: 20px;
 }
 #paginas li{
@@ -96,7 +92,7 @@ nav{
 
 /******************************
 * Mobile menu icon naar kruis *
-******************************/
+*****************************
 .knopAnimatie1{
 	transform: rotate(-45deg) translate(-9px, 6px);
 	transition: 0.5s;
@@ -107,11 +103,12 @@ nav{
 .knopAnimatie3{
 	transform: rotate(45deg) translate(-8px, -8px);
 	transition: 0.5s;
-}
+} */
+
 /******************************
 *		Media queries 		  *
 ******************************/
-@media only screen and (max-width:890px){
+@media only screen and (max-width:1193px){
 	#paginas ul{
 		display: none;
 		max-height: none;
@@ -152,9 +149,4 @@ nav{
 		background-color: rgba(255, 229, 204, 0.6);	
 	}
 }
-@media only screen and (max-width:680px){
-	#logoNav h1{
-		font-size: 0.8em;
-		padding: 0 0 0 10px;
-	}
 }

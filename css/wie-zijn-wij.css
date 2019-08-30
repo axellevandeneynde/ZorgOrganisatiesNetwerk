@@ -1,7 +1,8 @@
 figure {
     display: inline-block;
     grid-column: col 3/ span 3;
-    margin: 0.7em 0em 0em 0em;
+    grid-row: row/span 5;
+    margin: 1.5em 0em 0em 0em;
     width: 100%;
 }
 
@@ -21,42 +22,19 @@ h5{
 main{
     margin: 7% 0% 4% 0%;
 }
-.grid {
-    grid-template-rows: repeat(1, [row] auto);
-}
+
 body{height: 100%;} /*sticks footer on  the bottem*/
 
 /*media queries*/
-@media only screen and (min-width: 681px) and (max-width:1080px) {
-    .grid {
-    grid-template-rows: repeat(2, [row] auto);
-}
+@media only screen and (max-width:1193px) {
+    
     figure{
-        grid-column: col 3/ span 8;
-        grid-row: row;
-        margin-top: 0;
+        display: none;
     }
     article{
-        grid-column: col 3/ span 8;
-        grid-row: row 2;
+        grid-column: col 2/ span 10;
+        grid-row: row;
     }
 }
 
-@media only screen and (max-width:680px) {
-    .grid {
-    grid-template-rows: repeat(2, [row] auto);
-}
-    figure{
-        grid-column: col 2 / span 10 ;
-        grid-row: row;
-        margin-top: 0;
-    }
-    article{
-        grid-column: col 2 / span 10;
-        grid-row: row 2;
-        
-    }
-}
-   
-}
 
