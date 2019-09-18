@@ -13,7 +13,7 @@
         {
             "centra_ID": "02",
             "naam": "Test2",
-            "doelgroep": ["visus", "physiek"],
+            "doelgroep": ["visus", "fysiek"],
             "leeftijdsgroep": ["kind","tieners"],
             "beschrijving": "test beschrijving",
             "email": "test@test.be",

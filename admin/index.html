@@ -8,5 +8,27 @@
 </head>
 <body>
     <h1>Admin Page</h1>
+
+    <!-- Toevoegen van een centrum aan de centra lijst -->
+    <section>
+        <h2>Voeg centrum toe:</h2>
+        <form id="centrumForm">
+            <p>Centrum naam:</p>
+            <input type="text">
+            <p>Doelgroepen:</p>
+            <p>Visus</p>
+            <input type="checkbox" name="beperking" value="visus">
+            <p>Fysisch</p>
+            <input type="checkbox" name="beperking" value="fysiek">
+            <p>Hoorschade</p>
+            <input type="checkbox" name="beperking" value="hoor">
+            <p>Brein</p>
+            <input type="checkbox" name="beperking" value="mentaal">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/adminFunctions.js"></script>
 </html>

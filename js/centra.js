@@ -17,3 +17,22 @@ $(document).ready(function(){
         console.log("Julien is the best!");
     });
 });
+
+function voegCentrumToe(){
+    $("#centrumForm").submit(function(e){
+        e.preventDefault();
+
+        var centrumObject = {
+            
+        };
+
+        // POST methode
+        $.ajax({
+            url: "http://mentenjulien.com/insertCentrum",
+            data: centrumObject,
+            method:'POST'
+        }).done(function(data){
+            console.log(data);
+        });
+    });
+}
