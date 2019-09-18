@@ -1,0 +1,24 @@
+{
+    "centra": [
+        {
+            "centra_ID": "01",
+            "naam": "Test",
+            "doelgroep": ["visus", "hoor"],
+            "leeftijdsgroep": ["kind","volwassenen"],
+            "beschrijving": "test beschrijving",
+            "email": "test@test.be",
+            "telefoonnummer": "0478198278",
+            "adres": "Stocquoy 5, 7830 Hellebecq"
+        },
+        {
+            "centra_ID": "02",
+            "naam": "Test2",
+            "doelgroep": ["visus", "physiek"],
+            "leeftijdsgroep": ["kind","tieners"],
+            "beschrijving": "test beschrijving",
+            "email": "test@test.be",
+            "telefoonnummer": "0478198278",
+            "adres": "Stocquoy 5, 7830 Hellebecq"
+        }
+    ]
+}
