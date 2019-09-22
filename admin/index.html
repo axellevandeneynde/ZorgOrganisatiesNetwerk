@@ -10,11 +10,11 @@
     <h1>Admin Page</h1>
 
     <!-- Toevoegen van een centrum aan de centra lijst -->
-    <section>
+    <section id="centrumToevoegen">
         <h2>Voeg centrum toe:</h2>
         <form id="centrumForm">
             <p>Centrum naam:</p>
-            <input type="text">
+            <input type="text" name="centrumNaam">
             <p>Doelgroepen:</p>
             <p>Visus</p>
             <input type="checkbox" name="beperking" value="visus">
@@ -27,6 +27,12 @@
             <br>
             <button type="submit">Submit</button>
         </form>
+    </section>
+    <!-- Bekijken en aanpassen van alle centra -->
+    <section id="centraLijst">
+        <ul id="centraLijst">
+            
+        </ul>
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

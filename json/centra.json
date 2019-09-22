@@ -19,6 +19,16 @@
             "email": "test@test.be",
             "telefoonnummer": "0478198278",
             "adres": "Stocquoy 5, 7830 Hellebecq"
+        },
+        {
+            "centra_ID": "03",
+            "naam": "Test3",
+            "doelgroep": ["visus", "fysiek"],
+            "leeftijdsgroep": ["kind","tieners"],
+            "beschrijving": "test beschrijving",
+            "email": "test@test.be",
+            "telefoonnummer": "0478198278",
+            "adres": "Stocquoy 5, 7830 Hellebecq"
         }
     ]
 }
