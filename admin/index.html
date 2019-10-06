@@ -12,24 +12,37 @@
     <!-- Toevoegen van een centrum aan de centra lijst -->
     <section id="centrumToevoegen">
         <h2>Voeg centrum toe:</h2>
-        <form id="centrumForm">
+        <form id="centrumForm" action="" method="POST">
             <p>Centrum naam:</p>
-            <input type="text" name="centrumNaam">
-            <p>Doelgroepen:</p>
-            <p>Visus</p>
-            <input type="checkbox" name="beperking" value="visus">
-            <p>Fysisch</p>
-            <input type="checkbox" name="beperking" value="fysiek">
-            <p>Hoorschade</p>
-            <input type="checkbox" name="beperking" value="hoor">
-            <p>Brein</p>
-            <input type="checkbox" name="beperking" value="mentaal">
-            <br>
+            <input type="text" name="centrumNaam" id="naamInput">
+            <div id="formDoelgroepen">
+                <h3>Beperking:</h3>
+                <p>Visuele beperking</p>
+                <input type="checkbox" name="beperking" value="visuele">
+                <p>Motorische beperking</p>
+                <input type="checkbox" name="beperking" value="motorische">
+                <p>Auditieve beperking</p>
+                <input type="checkbox" name="beperking" value="auditief">
+                <p>Mentale beperking</p>
+                <input type="checkbox" name="beperking" value="mentale">
+                <p>Taal beperking</p>
+                <input type="checkbox" name="beperking" value="taal">
+                <br>
+            </div>
+            <div id="formLeeftijd">
+                <h3>Leeftijd(en):</h3>
+                <p>Kinderen</p>
+                <input type="checkbox" name="leeftijd" value="kinderen">
+                <p>Jongeren</p>
+                <input type="checkbox" name="leeftijd" value="jongeren">
+                <p>Volwassenen</p>
+                <input type="checkbox" name="leeftijd" value="Volwassenen">
+            </div>
             <button type="submit">Submit</button>
         </form>
     </section>
     <!-- Bekijken en aanpassen van alle centra -->
-    <section id="centraLijst">
+    <section id="centraAanpassen">
         <ul id="centraLijst">
             
         </ul>

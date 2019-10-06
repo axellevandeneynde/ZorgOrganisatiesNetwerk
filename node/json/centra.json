@@ -23,7 +23,7 @@
         {
             "centra_ID": "03",
             "naam": "Test3",
-            "doelgroep": ["visus", "fysiek"],
+            "doelgroep": ["hoor", "mentaal"],
             "leeftijdsgroep": ["kind","tieners"],
             "beschrijving": "test beschrijving",
             "email": "test@test.be",
