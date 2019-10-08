@@ -36,12 +36,12 @@ app.post('/insertCentrum', (req, res) => {
     var data = JSON.stringify(req.body);
     var file = JSON.parse(fs.readFileSync('json/centra.json', 'utf8'));
     console.log(data, file);
-	var newProjectID = req.body.project_ID;
-    
-    var arr = file.projects;
+	var newCentraID = req.body.centra_ID;
+    var arr = file.centra;
+    console.log(arr)
     var dataString = JSON.parse(data);
     arr.push(dataString);
-    file.projects = arr;
+    file.centra = arr;
     
     fs.writeFile('json/centra.json', JSON.stringify(file), function(err){
        if (err) throw err;

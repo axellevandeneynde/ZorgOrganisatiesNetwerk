@@ -16,7 +16,7 @@ function voegCentrumToe(){
         // POST methode
         $.ajax({
             url: "http://127.0.0.1:3000/insertCentrum",
-            method:'POST',
+            method: 'POST',
             data: centrumObject
         }).done(function(data){
             console.log(data);
