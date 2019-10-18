@@ -59,6 +59,8 @@ Lijst van mogelijke waarden binnen de filters:
 	- visueel
 	- auditief
 	- neuromotorisch
+	- taal
+	- nah
 	
 - leeftijd:
 	- all
