@@ -3,8 +3,8 @@ export default class Centrum{
     constructor(id,name, doelgroep, leeftijdsgroep,beschrijving, website, email, telefoonnummer, adres, regio){
         this.id = id;
         this.name = name; 
-        this.doelgroep = doelgroep;
-        this.leeftijdsgroep = leeftijdsgroep;
+        this.doelgroep = this.stringifyArray(doelgroep);
+        this.leeftijdsgroep = this.stringifyArray(leeftijdsgroep);
         this.beschrijving = beschrijving;
         this.website = website;
         this.email = email;
@@ -17,7 +17,8 @@ export default class Centrum{
         return ``;
     }
     createCentrumThumbnail(){
-        return `<div class="organisatie all ${this.doelgroep} all ${this.leeftijdsgroep} all ${this.regio}">
+        return `<!-- ${this.name}-->
+                <div class="organisatie all ${this.doelgroep} all ${this.leeftijdsgroep} all ${this.regio}">
                     <figure><img src="./images/centra/${this.id}/logo.png" alt="logo ${this.name}"></figure>
                     <article class="org_tekst">
                         <h4>${this.name}</h4>
@@ -28,5 +29,9 @@ export default class Centrum{
                         </div>
                     </article>
                 </div>`;
+    }
+    stringifyArray(array){
+        let string = array.toString();
+        return string.replace(new RegExp(",", 'g'), " ");
     }
 }
