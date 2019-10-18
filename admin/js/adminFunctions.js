@@ -8,9 +8,21 @@ $(document).ready(function(){
 function voegCentrumToe(){
     $("#centrumForm").submit(function(e){
         e.preventDefault();
-        
+        let newID = 4;
         let centrumObject = {
-            naam: $("#naamInput").val()
+            centra_ID: newID+1,
+            naam: $("#naamInput").val(),
+            doelgroep: [],
+            leeftijdsgroep: [],
+            beschrijving: $("#descInput").val(),
+            email: $("#emailInput").val(),
+            telefoonnummer: $("#telInput").val(),
+            adres: {
+                straat: $("#straatInput").val(),
+                nummer: null,
+                stad: $("#stadInput").val(),
+                provincie: $("#provincieInput").val()
+            }
         };
 
         // POST methode
@@ -27,7 +39,6 @@ function voegCentrumToe(){
         });
     });
 }
-
 
 //! Vertonen van lijst van centra en die aanpassen
 function toonCentra(){

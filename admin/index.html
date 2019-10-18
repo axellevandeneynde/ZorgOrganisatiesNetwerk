@@ -13,7 +13,7 @@
     <section id="centrumToevoegen">
         <h2>Voeg centrum toe:</h2>
         <form id="centrumForm" action="" method="POST">
-            <p>Centrum naam:</p>
+            <label for="naamInput">Centrum naam:</label>
             <input type="text" name="centrumNaam" id="naamInput">
             <div id="formDoelgroepen">
                 <h3>Beperking:</h3>
@@ -37,6 +37,33 @@
                 <input type="checkbox" name="leeftijd" value="jongeren">
                 <p>Volwassenen</p>
                 <input type="checkbox" name="leeftijd" value="Volwassenen">
+            </div>
+            <label for="descInput">Beschrijving: </label>
+            <input type="text" name="centrumBeschrijving" id="descInput">
+
+            <label for="emailInput">Email: </label>
+            <input type="text" name="centrumEmail" id="emailInput">
+
+            <label for="telInput">Telefoonnummer: </label>
+            <input type="text" name="centrumTelefoonnummer" id="telInput">
+
+            <div id="formAdres">
+                <h3>Centrum adres:</h3>
+                <label for="straatInput">Straat:</label>
+                <input type="text" name="centrumAdres_straat" id="straatInput">
+                <label for="nummerInput">Nummer:</label>
+                <input type="text" name="centrumAdres_nummer" id="nummerInput">
+                <label for="stadInput">Stad:</label>
+                <input type="text" name="centrumAdres_stad" id="stadInput">
+                <label for="provincieInput">Provincie:</label>
+                <select type="" name="centrumAdres_provincie" id="provincieInput">
+                    <option value="vlaams-brabant">Vlaams-Brabant</option>
+                    <option value="oost-vlaanderen">Oost-Vlaanderen</option>
+                    <option value="west-vlaanderen">West-Vlaanderen</option>
+                    <option value="antwerpen">Antwerpen</option>
+                    <option value="limburg">Limburg</option>
+                    <option value="brussel">Brussel</option>
+                </select>
             </div>
             <button type="submit">Submit</button>
         </form>
