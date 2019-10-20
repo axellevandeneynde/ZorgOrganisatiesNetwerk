@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const fs = require('fs'); //! install fs with node!
 const app = express();

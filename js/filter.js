@@ -3,7 +3,6 @@
 var filterMenuDown = false;
 
 // Main Filter functie 
-
 function filterCentra(){
 	var begeleiding = $("#specFilter").val();
 	var regio = $("#regioFilter").val();
@@ -27,7 +26,7 @@ function filterCentra(){
 		$('.filter-container').slideToggle().removeClass('mobileFilterToggle');
 		$(".arrowBtn>img").toggleClass("arrowAnimation");
 		$(".arrowBtn>p").toggleClass("filterTextAnimation");
-	};
+	}
 	floatRight();
 }
 // Zig zag vertoning van resultaten
@@ -45,8 +44,8 @@ function dropToList(){
 	}
     if($(window).width() > 1193){
 	   list.scrollIntoView({behavior:"smooth", block:"start"});
-	};		
-};
+	}
+}
 // Functie specifiek voor de filter button
 function clickToFilter(){
 	filterCentra();
@@ -122,9 +121,9 @@ $(window).on('resize', function(){
 	if($(this).width() > 731){
 		$("div.organisatie").css("display", "inline-flex");	
 		notFilter.css("display","none");
-	};
+	}
 	if(filterMenuDown == true){
 		$(".arrowBtn>img").removeClass("arrowAnimation");
 		$(".arrowBtn>p").removeClass("filterTextAnimation");
-	};
+	}
 });
