@@ -22,6 +22,7 @@ body {
 #bannerhome{
     background-color: rgba(255,255,255,0.80);
     padding: 2%;
+    margin-top: 80px;
 }
 
 #bannerhome h1{
