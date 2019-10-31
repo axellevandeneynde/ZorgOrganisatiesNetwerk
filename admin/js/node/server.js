@@ -28,7 +28,7 @@ app.listen(port, () =>
 );
 
 app.get('/getCentra', (req, res) => 
-fs.readFile('json/centra.json', 'utf8', function(error, data){
+fs.readFileSync('json/centra.json', 'utf8', function(error, data){
     res.json(JSON.parse(data));
 }));
 
