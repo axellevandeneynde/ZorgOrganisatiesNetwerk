@@ -5,7 +5,7 @@ $(document).ready(function(){
     console.log("linked!");
 
     $.ajax({
-        url: p.path + '/getCentra',
+        url: 'js/json/centra.json',
         dataType: 'JSON',
         method: 'GET'
     }).done(function(data){
@@ -29,6 +29,5 @@ $(document).ready(function(){
     }).fail(function(a,b){
         console.log(a,b);
     }).always(function(){
-        console.log("Julien is the best!");
     });
 });
