@@ -20,7 +20,7 @@ app.use(function(req, res, next){
 });
 
 app.get('/', (req, res) => 
-    res.send('Hello World!')
+    res.send('Zorg Organisatie')
 );
 
 app.listen(port, () => 
@@ -28,9 +28,10 @@ app.listen(port, () =>
 );
 
 app.get('/getCentra', (req, res) => 
-fs.readFileSync('json/centra.json', 'utf8', function(error, data){
+fs.readFile('json/centra.json', 'utf8', function(error, data){
     res.json(JSON.parse(data));
 }));
+
 
 app.post('/insertCentrum', (req, res) => {
     console.log('insert triggered!');

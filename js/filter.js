@@ -2,6 +2,11 @@
 //Globale variabelen
 var filterMenuDown = false;
 
+$(document).ready(function(){
+	filterCentra();
+	floatRight()
+});
+
 // Main Filter functie 
 function filterCentra(){
 	var begeleiding = $("#specFilter").val();

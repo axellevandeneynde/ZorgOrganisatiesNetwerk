@@ -18,7 +18,7 @@ export default class Centrum{
     }
     createCentrumThumbnail(){
         return `<!-- ${this.name}-->
-                <div class="organisatie all ${this.doelgroep} all ${this.leeftijdsgroep} all ${this.regio}">
+                <div class="organisatie all ${this.doelgroep} all ${this.leeftijdsgroep} all ${this.regio} result">
                     <figure><img src="./images/centra/${this.id}/logo.png" alt="logo ${this.name}"></figure>
                     <article class="org_tekst">
                         <h4>${this.name}</h4>
