@@ -1,0 +1,142 @@
+/* Main getuigenis stijl */
+#mainGetuigenis{
+    width: 100%;
+    display: flex;
+    min-height: 60vh;
+    margin-bottom: 100px;
+}
+.mainGetContainer{
+    width: 50%;    
+}
+.mainGetuigenisTekstContainer section{
+    padding-top: 40px;
+    width: 80%;
+    vertical-align: middle;
+    margin: auto;
+}
+.mainNaamVanPersoon{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:5rem;
+    margin: 0;
+    letter-spacing: -5px;
+    line-height: 68px;
+}
+.mainCentrumVanGetuigenis{
+    font-size:1.4rem;
+    margin:0;
+}
+.mainCentrumVanGetuigenis span{
+    font-size:2rem;
+    color: #f79838;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.mainTekstVanGetuigenis{
+    text-align: justify;
+}
+.getuigenisFotoContainer{
+    background-image: url('../images/getuigenissen/7.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#alleGetuigenissen{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.centraMenu{
+    width: 20%;
+}
+.centraMenu button{
+    width: 100%;
+    margin:0;
+    border: none;
+    background-color:#f79838;
+    height: 100px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    border-bottom: white 1px solid;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.centraMenu button:hover{
+    width: 100%;
+    margin:0;
+    border: none;
+    background-color:white;
+    color: #f79838;
+}
+.activatedButton{
+    background-color: white;
+    color: #f79838;
+    border: none;
+}
+.centraMenu button:last-child{
+    border-bottom: none;
+}
+.centrumGetuigenissenContent{
+    width: 80%;
+    position: sticky;
+    top: 70px;
+    position: -webkit-sticky;
+    height: 100%;
+}
+.contentContainer{
+    width: 80%;
+    margin: auto;
+}
+
+
+/* GETUIGENIS */
+#allGetuigenissenCarouselContainer{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f79838;
+    color: white;
+    padding: 50px 0px;
+}
+#allGetuigenissenCarouselContainer .getuigenissenContainer{
+    margin: auto;
+    width: 90%;
+}
+
+#allGetuigenissenCarouselContainer .getuigenis blockquote{
+    display: -webkit-box;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+#allGetuigenissenCarouselContainer .getuigenis blockquote:hover{
+    transition: 0.2s ease;
+}
+#allGetuigenissenCarouselContainer.getuigenissenContainer{
+ display: flex; 
+ flex-direction: row;
+}
+#allGetuigenissenCarouselContainer.getuigenisLijnContainer {
+   display: flex;
+    justify-content: center;
+}
+#allGetuigenissenCarouselContainer.getuigenis{
+    width: 33%;
+    font-size: 12px;
+}
+
+#allGetuigenissenCarouselContainer.getuigenis .getuigenisInfo{
+    text-align: end;
+}
+.slick-dots li button::before{
+    font-size: 10px !important;
+    color: white;
+}
+
+.slick-dots li.slick-active button::before{
+    color: white !important;
+}
+.slick-dots li button::before{
+    color: white !important;
+}

@@ -1,10 +1,26 @@
 
 //Globale variabelen
-var filterMenuDown = false;
+
 
 $(document).ready(function(){
+	var filterMenuDown = false;
+	console.log(filterMenuDown);
+	
+	$("#mobileFilter").click(function(){
+		if(filterMenuDown == true){
+			$('.arrowBtn>p').css("display", "none");
+			$('.filter-container').css("display", "block");
+			filterMenuDown = false;
+			console.log(filterMenuDown);
+		}else{ 	// de menu balk wordt geopend.
+			$('.arrowBtn>p').css("display", "block");
+			$('.filter-container').css("display", "none");
+	
+			filterMenuDown = true;
+			console.log(filterMenuDown);
+		}
+	});
 	filterCentra();
-	floatRight()
 });
 
 // Main Filter functie 
@@ -26,16 +42,15 @@ function filterCentra(){
 	}
 	//Deze stuk code verbergd de ongewenste centra 
 	notFilter.css( "display", "none");
+	
 	// Eens je op bevestigen drukt, verdwijnt de mobiele filter blok
 	if($(window).width() <= 1193){
 		$('.filter-container').slideToggle().removeClass('mobileFilterToggle');
-		$(".arrowBtn>img").toggleClass("arrowAnimation");
-		$(".arrowBtn>p").toggleClass("filterTextAnimation");
 	}
 	floatRight();
 }
 // Zig zag vertoning van resultaten
-function floatRight(){
+async function floatRight(){
 	$("#orgs_lijst .organisatie:hidden").removeClass("result");
 	$("#orgs_lijst .organisatie:visible").addClass("result");
 	$(".result").css("float", "none");
@@ -55,6 +70,7 @@ function dropToList(){
 function clickToFilter(){
 	filterCentra();
 	dropToList();
+	geenCriteriaTekstTonen();	
 }
 /*
 Lijst van mogelijke waarden binnen de filters: 
@@ -87,29 +103,20 @@ var num = 60; // Grootte van navigatie balk boven de filterbalk
 $(window).bind('scroll', function () {
     if ($(window).scrollTop() > num) {
         $('#filter').addClass('sticky');
-		$('.grid').css("padding-top","70px");
     } else {
         $('#filter').removeClass('sticky');
-		$('.grid').css("padding-top","00px");
     }
 });
 // Mobile versie van de filter balk
-$("#mobileFilter").click(function(){
-	$('.filter-container').slideToggle().toggleClass('mobileFilterToggle');
-	$(".arrowBtn>img").toggleClass("arrowAnimation");
-	$(".arrowBtn>p").toggleClass("filterTextAnimation");
-	filterMenuDown = true;
-});
+
 
 $(window).on('resize', function(){
 	// Fix voor het verdwijnen van de filter balk bij resize van schermbreedte (Reset) 
 	if($(this).width() <= 1193){
-		$(".filter-container").addClass('mobileFilterToggle');
-		$(".filter-container").css("display","none");
+		
 	}
 	if($(this).width() >= 1193){
-		$(".filter-container").removeClass('mobileFilterToggle');
-		$(".filter-container").css("display","block");
+		
 	}
 	// Vermijden van aanpassen van 'display' door het resizen van schermen, maar toch de 'display' mode dynamisch aanpassen tussen 'block' en 'inline-flex'
 	var begeleiding = $("#specFilter").val();
@@ -127,8 +134,18 @@ $(window).on('resize', function(){
 		$("div.organisatie").css("display", "inline-flex");	
 		notFilter.css("display","none");
 	}
-	if(filterMenuDown == true){
-		$(".arrowBtn>img").removeClass("arrowAnimation");
-		$(".arrowBtn>p").removeClass("filterTextAnimation");
-	}
 });
+
+function geenCriteriaTekstTonen(){
+	var i = 0;
+	$('#orgs_lijst .organisatie:visible').each(function(){
+		i++;
+	});
+	if(i == 0){
+		console.log("Geen criteria");
+		$("#geenCriteria").css("display", "block");
+	}else{
+		console.log("Centrum Gevonden");
+		$("#geenCriteria").css("display", "none");
+	}
+}

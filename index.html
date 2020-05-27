@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" href="css/homepage.css">
     </head>
 
     <!-- disable scroll functie -->
@@ -13,73 +14,90 @@
 
     <body scroll="no">
         <header>
-            <!-- Navigatie-->
-            <nav>	
-                <div id="paginas">		
-                    <ul id="mobileNav">
-                        <!-- Links naar pagina's-->
-                        <li class="huidigePagina"><a href="#" onClick="resetCookie()">home</a></li>
-                        <li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
-                        <li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>
-                        <li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
-                        <li><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
-                    </ul>
-                    <!-- Hoogcontrastknop -->
-                    <div class="hoogContrastKnop"><img src="images/assets/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
-                    <!-- Mobile navigatie icoon -->
-                    <div id="mobileMenuIcon" >
-                        <img src="images/assets/iconfinder_menu_1540174.svg" alt= "menu icon">
+             <!-- Navigatie-->
+        <nav>	
+            <div id="paginas">
+                <ul id="mobileNav">
+                    <!-- Links naar pagina's-->
+                    <li class="huidigePagina"><a href="index.html" onClick="resetCookie()">home</a></li>
+                    <li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
+                    <li><a href="over-ons.html" onClick="resetCookie()">over ons</a></li>
+                    <li><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
+                </ul>
+                <!-- Mobile navigatie icoon -->
+                <div class="mobileMenu" id="mobileMenuIcon">
+                    <span id="menuTopBar"></span>
+                    <div id="menuMiddleBar">
+                        <span class="menuMiddleSection" id="middleTopBar"></span>
+                        <span class="menuMiddleSection" id="middleBottomBar"></span>
                     </div>
+                    <span id="menuBottomBar"></span>
                 </div>
-            </nav>
+            </div>
+        </nav>
         </header>
 
         <!-- slideshow images.  -->
         <div id="fotoshome">
+          
             <div id="bannerhome">
                 <h1>Op zoek naar ondersteuning?</h1>
                 <h2>Wij geloven in expertise als hefboom en helpen je graag op weg</h2>
+                <section id="getuigenisContainer">
+                    <!-- Hier word een willekeurige getuigenis ingeladen -> misschien uitbreiden naar 3?-->
+                </section>
             </div>
 
         </div>
 
         <div class="backgroundhome">
             <!-- Oranje balk met de 3 beperkingen in. -->
+           
             <div class="backgroundfilter">
-                <main class="grid">
-                    <div class="visuelebegeleiding">
+                
+                <section id="filterContainers" class="grid">
+                    <div class="visuelebegeleiding filterLink">
                         <a href="centra.html" onClick="setFilter('visueel')">
                             <img src="images/assets/home_icons/oog.svg" alt="oog">
-                            <h4>Visuele begeleiding</h4>
+                            <h4>Visuele expertise</h4>
                         </a>
                     </div>
-                    <div class="auditievebegeleiding">
+                    <div class="auditievebegeleiding filterLink">
                         <a href="centra.html" onClick="setFilter('auditief')">
                             <img src="images/assets/home_icons/oor.svg" alt="oor">
-                            <h4>Auditieve begeleiding</h4>
+                            <h4>Auditieve expertise</h4>
                         </a>
                     </div>
-                    <div class="motorischebegeleiding">
-                        <a href="centra.html" onClick="setFilter('neuromotorisch')">
+                    <div class="motorischebegeleiding filterLink">
+                        <a href="centra.html" onClick="setFilter('motorisch')">
                             <img src="images/assets/home_icons/rolstoel.svg" alt="rolstoel">
-                            <h4>Motorische begeleiding</h4>
+                            <h4>Motorische expertise</h4>
                         </a>
                     </div>
-                    <div class="taalbegeleiding">
+                    <div class="taalbegeleiding filterLink">
                         <a href="centra.html" onClick="setFilter('taal')">
                             <img src="images/assets/home_icons/taal.svg" alt="rolstoel">
-                            <h4>Taal begeleiding</h4>
+                            <h4>Taal expertise</h4>
                         </a>
                     </div>
-                    <div class="nahbegeleiding">
+                    <div class="nahbegeleiding filterLink">
                         <a href="centra.html" onClick="setFilter('nah')">
                             <img src="images/assets/home_icons/nah.svg" alt="rolstoel">
-                            <h4>Nah begeleiding</h4>
+                            <h4>Niet-aaangeboren hersenletsels expertise</h4>
                         </a>
                     </div>
-                </main>
+                </section>
             </div>
         </div>
+        <ul class="cb-slideshow">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+        <section class="footerHomepage">
+            website gemaakt door <a href="mentenjulien.com">Menten Julien</a>
+        </section>
         <!-- Script(s) (ingeladen NA HTML en CSS!)-->
         <!-- Inladen van jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -89,8 +107,8 @@
         <script type="text/javascript" src="js/filter.js"></script>
         <!-- Cookies script voor bijhouden keuze bij filter op centra pagina-->	
         <script src="js/cookies.js" type="text/javascript"></script>
-        <!-- Script voor carousel-->	
-        <script src="js/carousel.js" type="text/javascript"></script>
+        <!-- Algemente script voor de homepage -->	
+        <script src="js/homepage.js" type="module"></script>
     </body>
 
 </html>

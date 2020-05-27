@@ -10,28 +10,26 @@
 		
 		<!--Stylesheet(s) -->
 		<link rel="stylesheet" href="css/alleOrgs.css">
-		
 		<!-- Scripts -->
 	</head>
-	<body>
+	<body onload="filterCentra();">
 		<header>
-			<!-- Navigatie-->
-			<nav>	
-				<div id="paginas">		
+			  <!-- Navigatie-->
+			  <nav>	
+				<div id="paginas">
 					<ul id="mobileNav">
 						<!-- Links naar pagina's-->
 						<li><a href="index.html" onClick="resetCookie()">home</a></li>
-						<li class="huidigePagina"><a href="#" onClick="resetCookie()">onze organisaties</a></li>
-						<li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>	
-						<li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
+						<li class="huidigePagina"><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
+						<li><a href="over-ons.html" onClick="resetCookie()">over ons</a></li>
 						<li><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
-					</ul>	
-					<!-- Hoogcontrastknop -->
-					<div class="hoogContrastKnop"><img src="images/assets/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
+					</ul>
 					<!-- Mobile navigatie icoon -->
-					<div id="mobileMenuIcon" >
-                        <img src="images/assets/iconfinder_menu_1540174.svg" alt= "menu icon">
-                    </div>
+					<div class="mobileMenu" id="mobileMenuIcon">
+						<span id="menuTopBar"></span>
+						<span id="menuMiddleBar"></span>
+						<span id="menuBottomBar"></span>
+					</div>
 				</div>
 			</nav>
 			<!-- Selects om zoekopties te filtreren  -->
@@ -42,11 +40,11 @@
 					<select class="select-style" name="specialisaties" id="specFilter" alt="Kies een begeleiding">
 						<option selected="selected" value="all" >Specialisatie</option>
 						<option value="all">Alle begeleidingen</option>
-						<option value="visueel">Visuele begeleiding</option>
-						<option value="auditief">Auditieve begeleiding</option>
-						<option value="neuromotorisch">(Neuro-)motorische begeleiding</option>
-						<option value="taal">Taal begeleiding</option>
-						<option value="nah">Niet aangeboren hersenletsel begeleiding</option>
+						<option value="visueel">Visuele expertise</option>
+						<option value="auditief">Auditieve expertise</option>
+						<option value="motorisch">(Neuro-)motorische expertise</option>
+						<option value="taal">Taal expertise</option>
+						<option value="nah">Niet aangeboren hersenletsel expertise</option>
 					</select>
 					<!-- Filter voor leeftijdscategorïen -->
 					<select class="select-style" name="leeftijdscategorie" id="leeftijdFilter" alt="Kies een leeftijdscategorie">
@@ -71,7 +69,7 @@
 					<button id="filterBevestiging" onClick="clickToFilter()">Zoek<span>→</span></button>
 				</div>
 				<div id="mobileFilter">
-					<div class="arrowBtn"><p>Zoek</p><img src="images/filterArrow.svg" alt="Pijl om filter menu te tonen"></div>
+					<div class="arrowBtn"><p>Zoek</p><span></span></div>
 				</div>
 			</div>
 		</header>
@@ -83,19 +81,51 @@
 					<p>Onze warme experten helpen u verder in een van onze partnercentra. Aan de hand van deze pagina kan je op een eenvoudige en vlotte manier het juiste centrum vinden dat voldoet aan uw behoeften en criteria. U kan zoeken op basis van de begeleiding waaraan u nood heeft, de leeftijd waaraan u of iemand in jullie omgeving aan toebehoord en/of aan de hand van de dichtsbijzijnde regio.  </p>
 				</div>
 			</section>
-			<div id="dropHere"></div>
-			<h3 class="org_titel" id="org_titel">Onze organisaties</h3>
-			
-			<!-- Indien er geen centra's kunnen worden vertoond: WERKT (nog) NIET -->
-			<p id="geenCriteria">Er zijn geen centra die voldoen aan uw criteria.</p>
-			<!-- Lijst met al de organisaties  -->
-			<section id="orgs_lijst">
-				<!-- Organisaties worden via centra.js ingeladen-->	
+			<section class="orgsLijstContainer">
+					<div id="dropHere"></div>
+					<h3 class="org_titel" id="org_titel">ZOEKRESULTATEN:</h3>
+					
+					<!-- Indien er geen centra's kunnen worden vertoond: WERKT (nog) NIET -->
+					<p id="geenCriteria">Er is geen centrum gevonden die voldoet aan uw criteria.</p>
+					<!-- Lijst met al de organisaties  -->
+					<section id="orgs_lijst">
+						<!-- Organisaties worden via centra.js ingeladen-->	
+					</section>
 			</section>
 		</main>
-		<footer scrol="no">
-			<img class="schoollogo" src="images/ehb-logo.png" alt="">
-			<p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+		<footer>
+			<div class="footerContainer">
+				
+				
+				<div class="footerContent">
+					<section id="footerTitle">
+						<article>
+							<img src="images/logoFooter.svg" alt="Logo Expertise als hefboom">
+						</article>
+						<article>
+							<p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+						</article>
+					</section>
+					<section id="footerSitemap" class="footerColumn">
+						<h3>Menu</h3>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="centra.html">Centra</a></li>
+							<li><a href="over-ons.html">Over Ons</a></li>
+							<li><a href="getuigenissen.html">Getuigenissen</a></li>
+						</ul>
+					</section>
+					<setion id="footerGetuigenis" class="footerColumn">
+						<article class="footerGetuigenisContainer">
+
+						</article>
+						<div>
+							<a href="getuigenissen.html">Lees meer...</a>
+						</div>
+					</setion>
+				</div>
+				<p>Copyright &copy; 2020, Expertise als Hefboom</p>
+			</div>
 		</footer>
 		<!-- Script(s) (ingeladen NA HTML en CSS!)-->
 			<!-- Inladen van jQuery -->
@@ -106,12 +136,14 @@
 			<script type="text/javascript" src="js/filter.js"></script>
 			<!-- Cookies script voor bijhouden keuze op homepage -->
 			<script type="text/javascript" src="js/cookies.js"></script>
+			
+			<!-- Script voor het inladen van alle centra -->
+			<script src="js/serverPath.js" type="module"></script>
+			<script src="js/classes/Centrum.js" type="module"></script>
+			<script src="js/centra.js" type="module"></script>
+			<script src="js/footer.js" type="module"></script>
 			<script>
 				setOption();
 			</script>
-			<!-- Script voor het inladen van alle centra -->
-			<script src="js/serverPath.js" type="module"></script>
-			<script src="js/Centrum.js" type="module"></script>
-			<script src="js/centra.js" type="module"></script>
 	</body>
 </html>

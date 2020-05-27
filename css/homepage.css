@@ -22,20 +22,64 @@ body {
 #bannerhome{
     background-color: rgba(255,255,255,0.80);
     padding: 2%;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 #bannerhome h1{
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 #bannerhome h2{
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 /**************************
-*    Oranje balk met de 3 beperkingen.   *
+*        Getuigenis      *
 **************************/
 
+#getuigenisContainer{
+    width: 50%;
+    display: block;
+    margin: auto;
+    position: relative;
+    
+}
+#getuigenis blockquote{
+    text-align: justify;
+    text-justify: inter-word;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+#getuigenis blockquote::before{
+    content: '"';
+    color: #BA4E00;
+    font-size: 100px;
+    font-style: italic;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+}
+.getuigenisInfoContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+.getuigenisInfo::before{
+    content: '-';
+    margin-right: 2px;
+}
+
+/**************************
+*    Oranje balk met de filter opties.   *
+**************************/
+#filterContainers{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
 .backgroundhome h4 {
     color: white;
     display: table-cell;
@@ -61,40 +105,38 @@ body {
 .visuelebegeleiding {
     display: inline-block;
     vertical-align: middle;
-    grid-column: col 2/ span 2;
+    
 	transition: 0.3s ease;
 }
 
 .auditievebegeleiding {
     display: inline-block;
     vertical-align: middle;
-    grid-column: col 4/ span 2;
+   
 	transition: 0.3s ease;
 }
 
 .motorischebegeleiding {
     display: inline-block;
     vertical-align: middle;
-    grid-column: col 6/ span 2;
+    
 	transition: 0.3s ease;
 }
 .taalbegeleiding{
     display: inline-block;
     vertical-align: middle;
-    grid-column: col 8/ span 2;
+  
 	transition: 0.3s ease;
 }
 .nahbegeleiding{
     display: inline-block;
     vertical-align: middle;
-    grid-column: col 10/ span 2;
 	transition: 0.3s ease;
 }
-.visuelebegeleiding:hover,
-.auditievebegeleiding:hover,
-.motorischebegeleiding:hover,
-.taalbegeleiding:hover,
-.nahbegeleiding:hover{
+.filterLink{
+    width: 300px;
+}
+.filterLink:hover{
 	background-color: #FFC181;
 	transform: scale(1.1);  
   	transition: transform 300ms ease-in-out;
@@ -105,7 +147,7 @@ body {
     top: 70%;
     width: 100%;  
     max-height: 150px;
-    background-color: #BA4E00;
+    background-color: #f79838;
     opacity: .9;
 	overflow: hidden;
 }
@@ -119,7 +161,9 @@ body {
         width: 1024px;
         height: 1366px;
     }
-
+    #getuigenisContainer{
+        display: none;
+    }
 /**************************
 *        Andere filter       *
 **************************/
@@ -179,6 +223,9 @@ body {
         .backgroundhome h4 {
             margin-top: 3vh;
         }
+        #getuigenisContainer{
+            display: none;
+        }
     }
 
 /**************************
@@ -200,3 +247,91 @@ body {
     }
 }
 
+/***************************
+        footer
+****************************/
+.footerHomepage{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    opacity: 0.5;
+}
+.footerHomepage a{
+    color: white;
+    margin-left: 4px;
+}
+/***************************
+        Carousel
+****************************/
+/* Source: https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/ */
+.cb-slideshow{
+    z-index: -99;
+}
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -999; 
+}
+
+
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: -9999;
+    animation: imageAnimation 24s linear infinite 0s; 
+}
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(../images/homepage/homepagebackground.jpg);
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(../images/homepage/homepagebackground2.jpg);
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(../images/homepage/homepagebackground3.jpg);
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(../images/homepage/homepagebackground4.jpg);
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 
+    animation-delay: 18s; 
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    40% {opacity: 0;}
+    100% { opacity: 0 }
+}
+@keyframes firstImage {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

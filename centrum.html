@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+
+   
+    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/detail-organisatie.css">
+</head>
+<body>
+    <header>
+        <!-- Navigatie-->
+        <nav>	
+            <div id="paginas">
+                <ul id="mobileNav">
+                    <!-- Links naar pagina's-->
+                    <li><a href="index.html" onClick="resetCookie()">home</a></li>
+                    <li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
+                    <li><a href="over-ons.html" onClick="resetCookie()">over ons</a></li>
+                    <li><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
+                </ul>
+                <!-- Mobile navigatie icoon -->
+                <div class="mobileMenu" id="mobileMenuIcon">
+                    <span id="menuTopBar"></span>
+                    <span id="menuMiddleBar"></span>
+                    <span id="menuBottomBar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+   <main>
+    <section id="centrumResult"></section>
+    <section id="centrumGetuigenissen">
+        <h3>Getuigenissen: </h3>
+        <article class="getuigenissenContainer"></article>
+    </section>
+   </main>
+   <footer>
+        <div class="footerContainer">
+            
+            
+            <div class="footerContent">
+                <section id="footerTitle">
+                    <article>
+                        <img src="images/logoFooter.svg" alt="Logo Expertise als hefboom">
+                    </article>
+                    <article>
+                        <p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+                    </article>
+                </section>
+                <section id="footerSitemap" class="footerColumn">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="centra.html">Centra</a></li>
+                        <li><a href="over-ons.html">Over Ons</a></li>
+                        <li><a href="getuigenissen.html">Getuigenissen</a></li>
+                    </ul>
+                </section>
+                <setion id="footerGetuigenis" class="footerColumn">
+                    <article class="footerGetuigenisContainer">
+
+                    </article>
+                    <div>
+                        <a href="getuigenissen.html">Lees meer...</a>
+                    </div>
+                </setion>
+            </div>
+            <p>Copyright &copy; 2020, Expertise als Hefboom</p>
+        </div>
+    </footer>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/serverPath.js" type="module"></script>
+    <script src="js/classes/Centrum.js" type="module"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/libraries/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="js/detailPage.js" type="module"></script>
+   
+     <!-- jQuery code voor responsieve navigatie -->
+     <script type="text/javascript" src="js/mobileNav.js"></script>
+     <script src="js/footer.js" type="module"></script>
+</body>
+
+</html>

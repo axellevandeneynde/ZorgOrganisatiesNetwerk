@@ -6,46 +6,131 @@
     <meta charset="UTF-8">
     <title>Getuigenissen</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/getuigenissen.css">
+    <!-- CSS libraries van Slick zelf-->
+    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick-theme.css"/>
 </head>
 
 <!-- disable scroll functie -->
-
-	
 <body scroll="no">
     <header>
-       <!-- Navigatie-->
-			<nav>	
-				<div id="paginas">		
-					<ul id="mobileNav">
-						<!-- Links naar pagina's-->
-						<li><a href="index.html" onClick="resetCookie()">home</a></li>
-						<li><a href="centra.html" onClick="resetCookie()">onze organisaties</a></li>
-						<li><a href="wie-zijn-wij.html" onClick="resetCookie()">wie zijn wij</a></li>
-						<li><a href="FAQ.html" onClick="resetCookie()">FAQ</a></li>
-						<li class="huidigePagina"><a href="getuigenissen.html" onClick="resetCookie()">getuigenissen</a></li>
-					</ul>
-					<!-- Hoogcontrastknop -->
-					<div class="hoogContrastKnop"><img src="images/assets/logo hoog contrast.svg" alt="Hoog contrast knop"></div>
-					<!-- Mobile navigatie icoon -->
-					<div id="mobileMenuIcon" >
-                        <img src="images/assets/iconfinder_menu_1540174.svg" alt= "menu icon">
-                    </div>
-				</div>
-			</nav>
+         <!-- Navigatie-->
+		 <nav>	
+            <div id="paginas">
+                <ul id="mobileNav">
+                    <!-- Links naar pagina's-->
+                    <li><a href="index.html" onClick="resetCookie()" tabindex="1">home</a></li>
+                    <li><a href="centra.html" onClick="resetCookie()" tabindex="2">onze organisaties</a></li>
+                    <li><a href="over-ons.html" onClick="resetCookie()" tabindex="3">over ons</a></li>
+                    <li class="huidigePagina"><a href="getuigenissen.html" onClick="resetCookie()" tabindex="4">getuigenissen</a></li>
+                </ul>
+                <!-- Mobile navigatie icoon -->
+                <div class="mobileMenu" id="mobileMenuIcon">
+                    <span id="menuTopBar"></span>
+                    <span id="menuMiddleBar"></span>
+                    <span id="menuBottomBar"></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    
+	<main>
+        <section id="mainGetuigenis">
+            <div class="mainGetuigenisTekstContainer mainGetContainer">
+                <section class="mainGetuigenisTekstContent">
+                    <article class="mainGetuigenisTekstTitel">
+                        <h2 class="mainNaamVanPersoon"></h2>
+                        <h3 class="mainCentrumVanGetuigenis">over <span></span></h3>
+                    </article>
+                   
+                    <p class="mainTekstVanGetuigenis"></p>
+                </section>
+                <section class="mainLinksNaarCentrum">
+                    <div class="linkButton">
+                        <a href="/" id="mainLinkWebsiteCentrum" target="_blank" alt="Link naar de website van de bovenstaande organisatie">Website</a>
+                        <a href="centrum.html" id="mainDetailPageCentrum" alt="Deze link brengt u naar het detail pagina van de bovenstaande organsiatie">Meer informatie <span>→</span> </a>
+                    </div>
+                </section>
+            </div>
+            <div class="getuigenisFotoContainer mainGetContainer">   
+                
+            </div>
+        </section>
+        <section id="allGetuigenissenCarouselContainer">
+            <article class="getuigenissenContainer">
+
+            </article>
+        </section>
+        <section id="alleGetuigenissen">
+           
+            <section class="centraMenu">
+
+            </section>
+            <section class="centrumGetuigenissenContent">
+                <div class="contentContainer">
+                    <h1>Getuigenissen <span class="naamCentrumTitel"></span></h1>
+                    <h2 class="naamPersoonGetuigenis"></h2>
+                    <p class="tekstGetuigenis"></p>
+                   
+                    <div id="getuigenissenCarousel">
+                        <article class="getuigenissenContainer"></article>
+                    </div>
+                    <div class="linkButton">
+                        <a href="/" id="linkWebsiteCentrum" target="_blank" alt="Link naar de website van de bovenstaande organisatie">Website</a>
+                        <a href="centrum.html" id="detailPageCentrum" alt="Deze link brengt u naar het detail pagina van de bovenstaande organsiatie">Meer informatie <span>→</span> </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+	</main>
+    <footer>
+        <div class="footerContainer">
+            <div class="footerContent">
+                <section id="footerTitle">
+                    <article>
+                        <img src="images/logoFooter.svg" alt="Logo Expertise als hefboom">
+                    </article>
+                    <article>
+                        <p>Deze website is ontstaan vanuit een partnerschap binnen het Vlaams Welzijnsverbond tussen organisaties die zich richten tot bovenstaande doelgroepen.</p>
+                    </article>
+                </section>
+                <section id="footerSitemap" class="footerColumn">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="centra.html">Centra</a></li>
+                        <li><a href="over-ons.html">Over Ons</a></li>
+                        <li><a href="getuigenissen.html">Getuigenissen</a></li>
+                    </ul>
+                </section>
+                <setion id="footerGetuigenis" class="footerColumn">
+                    <article class="footerGetuigenisContainer">
+
+                    </article>
+                    <div>
+                        <a href="getuigenissen.html">Lees meer...</a>
+                    </div>
+                </setion>
+            </div>
+            <p>Copyright &copy; 2020, Expertise als Hefboom</p>
+        </div>
+    </footer>
     <!-- Script(s) (ingeladen NA HTML en CSS!)-->
     <!-- Inladen van jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/libraries/slick-1.8.1/slick/slick.min.js"></script>
     <!-- jQuery code voor responsieve navigatie -->
     <script type="text/javascript" src="js/mobileNav.js"></script>
-    <!-- jQuery code voor filtering systeem van de organisaties -->
-    <script type="text/javascript" src="js/filter.js"></script>
-	<!-- Cookies script voor bijhouden keuze bij filter op centra pagina-->	
+	<!-- Cookies script voor bijhouden keuze bij filter op centra pagina of centrum-->	
 	<script src="js/cookies.js" type="text/javascript"></script>
-	<!-- Script voor carousel-->	
-	<script src="js/carousel.js" type="text/javascript"></script>
+    <!-- Script voor Footer -->	
+    <script src="js/footer.js" type="module"></script>
+
+    <script src="js/mainGetuigenis.js"></script>
+   
+    <script src="js/classes/Getuigenis.js" type="module"></script>
+    <script src="js/getuigenissen.js" type="module"></script>
 </body>
 
 </html>

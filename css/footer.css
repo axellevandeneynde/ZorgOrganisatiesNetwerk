@@ -1,62 +1,120 @@
-footer{
-    background-color: #BA4E00;
-    height:30px;
-    position:relative;
-    overflow: hidden;
-    margin-top: 2%;
-}
-
-footer p{
-    color: white;
-    float: right;
-    font-size: 12px;
-    margin-right: 17%;
-    margin-top: 0.7%;
-}
-
 body{
     display:flex;
     flex-direction: column;
-}
-
-main{
-    flex:1;
-}
-
-.schoollogo{
-    max-width: 100px;
-    max-height:30px;
-    margin-left: 10px;
 }
 
 body{
     min-height: 100vh;
 }
 
-@media only screen and (max-width: 1080px){
-    footer p{
-    margin-right: 25%;
-    margin-top: 0.9%;
-    }
+
+footer{
+    height: 350px;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    color: grey;
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+.footerContainer{
+    width: 80%;
+    margin: auto;
+    
+}
+.footerContent{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.footerColumn{
+    margin: 0;
+    padding: 0;
+
+}
+#footerTitle{
+    width: 30%;
+}
+#footerTitle article{
+    margin-bottom:10px;
+}
+#footerTitle p{
+    text-align: justify;
+}
+#footerSitemap{
+    width: 15%;
+}
+#footerSitemap h3{
+    margin: 0;
+}
+#footerGetuigenis{
+    font-size: 15px;
+    width: 40%;
+}
+#footerGetuigenis .getuigenis{
+    position: relative;
+}
+#footerGetuigenis .getuigenis blockquote{
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: 0.2s ease;
+    position: relative;
+    font-style: italic;
+    text-align: justify;
+    text-justify: auto;
+    margin-top: 0;
+}
+#footerGetuigenis .getuigenis::before{
+    content: '"';
+    display: inline;
+    position: absolute;
+    font-size: 4rem;
+    font-style: italic;
+    top: -30px;
+}
+.footerGetuigenisContainer .getuigenisInfo{
+    float: right;
+}
+#footerGetuigenis a{
+    display: flex;
+    justify-content: right;
+    width: 100%;
 }
 
-@media only screen and (max-width: 900px){
-    footer p{
-    font-size: 6px;
-    margin-top: 1.3%;
-    }
+
+footer a{
+    color: rgb(192, 192, 192);
+    text-decoration: none;
+    transition: 0.2s;
+}
+footer a:hover{
+    color: #f79838;
+    transition: 0.5s;
+}
+footer h2{
+    font-size: 25px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline;
+}
+footer p{
+    display: inline-block;
+    margin: 0;
 }
 
-@media only screen and (max-width: 700px){
-    footer p{
-    margin-right: 5%;
-    font-size: 4px;
-    margin-top: 3%;
-    }
+article img{
+    width: 200px;
 }
-
-@media only screen and (max-width: 359px){
-    footer p{
-    font-size: 3.5px;   
-    }
+footer li{
+    margin-top: 10px;
+}
+footer h3{
+    text-transform: uppercase;
+    color: #f79838;
+    font-weight: bold;
 }

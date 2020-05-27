@@ -12,8 +12,15 @@ html{
 *{
     font-family: 'Open Sans', sans-serif;
 }
-
-
+body{
+	margin-bottom: 350px;
+}
+main{
+	margin-top: 58px;
+	background: white;
+	position: relative;
+	z-index: 1;
+}
 h1,
 h2,
 h3,
@@ -25,15 +32,44 @@ h6 {
     text-decoration: none;
 }
 
-p,
-td,a {
-    font-weight: 300;
-    color: #000;
+ul{
+    list-style: none;
+    padding: 0;
 }
-
 /*grid*/
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(12, [col] 1fr);
-        grid-column-gap: 2%;
-    }
+   
+.linkButton{
+	vertical-align: top;
+	width: 100%;
+	cursor: pointer;
+}
+.linkButton a{
+	text-decoration: none;
+	color: white;
+	background-color: #f79838;
+	border: 0;
+	font-size: 16px;
+	margin-right: 30px;
+	padding: 3px 10px;
+	transition: 0.2s;
+	
+}
+.linkButton a:hover{
+	background-color: #FFC181;
+	transition: 0.2s;
+	cursor: pointer;
+}
+.linkButton a:focus{
+	background-color: #FFC181;
+	border: 1px;
+	border-color: rgb(126, 81, 14);
+}
+.linkButton span{
+	padding-left: 10px;
+	vertical-align: 1px;
+	transition: 0.2s
+}
+.linkButton a:hover span{
+	padding-left: 30px;
+	transition: 0.2s
+}

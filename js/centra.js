@@ -1,8 +1,8 @@
-import Centrum from './Centrum.js';
+import Centrum from './classes/Centrum.js';
 import * as p from './serverPath.js';
 
 $(document).ready(function(){
-    console.log("linked!");
+    
 
     $.ajax({
         url: 'js/json/centra.json',
@@ -10,7 +10,6 @@ $(document).ready(function(){
         method: 'GET'
     }).done(function(data){
         let centraArray = data.centra;
-        console.log(centraArray);
         for(let centrum of centraArray){
             let centrumID = centrum.centra_ID;
             let centrumName = centrum.naam;
