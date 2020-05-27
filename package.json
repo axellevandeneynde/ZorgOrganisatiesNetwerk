@@ -1,0 +1,23 @@
+{
+  "name": "eah",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axellevandeneynde/ZorgOrganisatiesNetwerk.git"
+  },
+  "author": "Julien Menten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axellevandeneynde/ZorgOrganisatiesNetwerk/issues"
+  },
+  "homepage": "https://github.com/axellevandeneynde/ZorgOrganisatiesNetwerk#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
