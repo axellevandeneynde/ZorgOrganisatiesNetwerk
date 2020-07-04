@@ -103,20 +103,22 @@ header{
 #mobileMenuIcon{
 	display: none;
 }
-
+#mobileNav{
+	display: none;
+}
 /******************************
 * Mobile menu icon naar kruis *
 ***************************** */
 .knopAnimatie1{
 	transform: rotate(-45deg) translate(-9px, 6px);
-	transition: 0.5s;
+	transition: 0.2s;
 }
 .knopAnimatie2{
 	opacity: 0;
 }
 .knopAnimatie3{
 	transform: rotate(45deg) translate(-8px, -8px);
-	transition: 0.5s;
+	transition: 0.2s;
 } 
 .mobileMenu{
 	display: inline-block;
@@ -124,10 +126,16 @@ header{
 .mobileMenu span{
 	content:' ';
 	display: block;
-	height: 6px;
-	width: 50px;
-	background-color: black;
+	height: 3px;
+	width: 40px;
+	background-color: var(--darker-orange);
 	margin-top: 10px;
+	border-radius: 5px;
+}
+#menuMiddleBar{
+	width: 30px;
+	margin-left: auto;
+	margin-right: auto;
 }
 /******************************
 *		Media queries 		  *
@@ -137,7 +145,7 @@ header{
 		margin: 0;
 		box-shadow: 1px 0px 5px rgba(73, 72, 72, 0.425);
 	}
-	#mobileNav{
+	#desktopeNav{
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -147,15 +155,11 @@ header{
 		margin-left: 0px;
 	}
 	#paginas li{
-		margin:0;
-		width: 25%;
+		margin:0px 20px;
 	}
 	#paginas li a{
-		display: block;
 		text-align: center;
 		width: 100%;
-		border-left: orangered 1px solid;
-		border-right: orangered 1px solid;
 		padding: 15px 0px;
 	}
 	#paginas li a:after {
@@ -164,20 +168,17 @@ header{
 	  }
 }
 @media only screen and (max-width:755px){
-	#paginas ul{
-		display: flex;
-		flex-direction: column;
-		align-content: flex-end;
-		
+	#desktopNav{
+		display: none !important;
 	}
-	#paginas li {
+	#paginas{
+		flex-direction: row;
+		justify-content: space-between;
 		width: 100%;
-		
+		margin:auto;
+		height: 60px;
 	}
-	#paginas li a{
-		text-align: right;
-		padding-right: 20px;
-	}
+	
 	.navContainer{
 		display: flex;
 		align-items: flex-end;
@@ -185,26 +186,43 @@ header{
 	#mobileMenuIcon{
 		display: block;
 		z-index: 999;
+		margin-right: 20px;
+		background: none;
+		border: 0;
 	}
 
 	#mobileNav{
+		display: flex;
 		margin: 0;
 		position: fixed;
-		background-color: rgba(186, 77, 0, 0.9);
+		background-color: var(--main-dark);
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
 		z-index: 999;
-		display: none;
+		transform: translatex(100vw);
+		transition: 0.5s;
+	}
+	#mobileNav li a{
+		text-align: right;
+		border: none;
+		color: white;
+		margin: 10px 0;
+	}
+	#mobileNav ul{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		margin: auto;
+		width: 60%;
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
 	#mobileNav li{
-		margin-top: 20px;
+		width: 100%;
+		margin: 20px 0;
 		text-align: right;
-	}
-	#paginas ul li a{
-		color: white;
-		font-size: 60px;
-		
 	}
 	#paginas li a:after {
 	  display:none;

@@ -1,21 +1,30 @@
-@import url("general.css");
-#centrumResult{
 
+body{
+    margin-bottom: 350px;
+    min-height: none;
+}
+footer{
+    z-index: 0;
+}
+.mainContentWrapper{
+    margin-top: 50px;
+    max-width: 1280px;
+    min-height: 100vh;
 }
 .centrumHeader{
-    margin: 40px auto 10px;
-    width: 80%;
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 50px;
 }
 .centrumHeader img{
     width: auto;
+   
     height: 100px;
 }
 .centrumHeader h2{
     font-size: 40px;
     margin: 0;
     text-transform: uppercase;
+    font-weight: bold;
 }
 .centrumHeader div{
     position: relative;
@@ -33,10 +42,10 @@
 .centrumInfo{
     margin: auto;
     display: grid;
-    width: 80%;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 50% 50%;
     grid-gap: 20px;
     margin-bottom: 100px;
+    min-height: 650px;
 }
 .centrumDetails{
     width: 80%;
@@ -51,15 +60,37 @@
     padding: 0;
     width: 100%;
 }
+table tr{
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--main-orange);
+    display: grid;
+    grid-template-columns: auto auto;
+}
+table td:nth-child(1){
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+}
 .cBeschrijving{
     font-size: 16px;
 }
 .centrumImage{
     overflow: hidden;
-    min-width: 28vw;
-    min-height: 28vw;
-    max-width: 28vw;
-    max-height: 28vw;
+    position: relative;
+}
+.centrumImage picture{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 3;
+    width: 150px;
+    padding: 5px 20px 5px 10px;
+    background-color: white;
+
+}
+.centrumImage picture img{
+    width: 100%;
 }
 .cImageContainer{
     display: flex;
@@ -72,55 +103,120 @@
 .cImageContainer img{
     position: absolute;
     margin: auto;
-    width: inherit;
-    height: inherit;
+    width: 100%;
 }
 .tableInfo{
-    float: right;
+   justify-self: flex-end;
+   text-align: right;
 }
 .linkButton {
     margin-top: 50px;
     display: flex;
     justify-content: center;
 }
-
-/* GETUIGENIS */
-#centrumGetuigenissen{
-    width: 80%;
-    margin: auto;
+#iconsContainer{
+    display:flex;
+    align-items: center;
+    gap: 20px;
 }
-#centrumGetuigenissen .getuigenis blockquote{
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: 0.2s ease;
+#iconsList{
+    display: flex;
+    gap: 20px;
+    margin: 2px;
 }
-#centrumGetuigenissen .getuigenis blockquote:hover{
-    -webkit-line-clamp: initial;
-    transition: 0.2s ease;
-}
-#centrumGetuigenissen.getuigenissenContainer{
- display: flex; 
- flex-direction: column;
-}
-#centrumGetuigenissen.getuigenisLijnContainer {
-   display: flex;
-    justify-content: center;
-}
-#centrumGetuigenissen.getuigenis{
-    width: 33%;
-    font-size: 12px;
+#iconsList li {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
 }
 
-#centrumGetuigenissen.getuigenis .getuigenisInfo{
-    text-align: end;
-}
-.slick-dots li button::before{
-    font-size: 10px;
-    color: #BA4E00;
-}
+/* Media queries /*/
 
-.slick-dots li.slick-active button::before{
-    color: #BA4E00;
+@media only screen and (max-width: 1350px){
+    .mainContentWrapper{
+        max-width: 1080px;
+        margin: auto;
+    }
+    .centrumInfo{
+        margin: auto;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-gap: 20px;
+        margin-bottom: 100px;
+        min-height: 650px;
+    }
+    
+}
+@media only screen and (max-width: 1080px){
+    .mainContentWrapper{
+        max-width:900px;
+        margin: auto;
+    }
+    .centrumInfo{
+        margin: auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 20px;
+        margin-bottom: 100px;
+        min-height: 650px;
+    }
+    .centrumDetails{
+        width: 80%;
+        display: flex;
+        flex-direction: column;  
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .cImageContainer{
+        height: 500px;
+    }
+    .linkButton a{
+        padding: 20px;
+    }
+}
+@media only screen and (max-width: 700px){
+    .centrumHeader h2{
+        font-size: 26px;
+    }
+    .titleUnderline{
+        top: 20px;
+        height: 15px;
+    }
+    table td{
+        display: block;
+        text-align: left;
+    }
+    table tr{
+        margin-bottom: 20px;
+        display: block;
+        border-bottom: none;
+    }
+    td:nth-child(1){
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 5px;
+        border-bottom: 2px solid var(--main-orange);
+    }
+    .linkButton a{
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+    }
+    .cImageContainer img{
+        height: 100%;
+        width: auto;
+    }
+}
+@media only screen and (max-width: 400px){
+    .cBeschrijving{
+        display: none;
+    }
+    .centrumHeader{
+        margin-bottom: 0;
+    }
+    .titleUnderline{
+        display: none;
+    }
 }

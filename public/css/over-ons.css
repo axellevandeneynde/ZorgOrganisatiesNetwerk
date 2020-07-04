@@ -1,3 +1,6 @@
+@import url(footer.css);
+@import url(general.css);
+
 figure {
     display: inline-block;
     grid-column: col 3/ span 3;

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" href="/css/homepage.css">
+    </head>
+
+    <!-- disable scroll functie -->
+
+
+    <body scroll="no">
+        <header>
+            <%- include('partials/navigation'); %>
+        </header>
+
+        <main>
+            <section id="homeIntro">
+                <article class="homeSlideShow">
+                    <div class="centerImageInContainer">
+                    </div>
+                  
+                </article>
+                <article class="homeIntroTekst">
+                    <h1>Op zoek naar ondersteuning?</h1>
+                    <h2>Wij geloven in expertise als hefboom en helpen je graag op weg</h2>
+                    <div class="linkButton">
+                        <a href="/organisaties=all&all&all">Bekijk al onze organisaties</a>
+                    </div>
+                </article>
+                <article id="getuigenisContainer">
+                    <!-- Hier word een willekeurige getuigenis ingeladen -> misschien uitbreiden naar 3?-->
+                </article>
+            </section>
+            <section id="homeFilterContainer">
+                <div class="mainContentWrapper">
+                <article class="filterTagLine">
+                   <h1> Ik ben op zoek naar...</h1>
+                    <a id="alleOrgsBtn" href="/organisaties=all&all&all">alle organisaties </a>
+                </article>
+                <article id="filterContainers">
+                    <div class="visuelebegeleiding filterLink">
+                        <a href="/organisaties=visueel&all&all">
+                            <div>
+                                <img src="images/assets/home_icons/visueel.svg" alt="oog">
+                            </div>
+                            
+                            <h4>Visuele expertise  <span class="underline"></span></h4>
+                           
+                        </a>
+                    </div>
+                    <div class="auditievebegeleiding filterLink">
+                        <a href="/organisaties=auditief&all&all" >
+                            <div>
+                                <img src="images/assets/home_icons/auditief.svg" alt="oor">
+                            </div>
+                            
+                            <h4>Auditieve expertise  <span class="underline"></span></h4>
+                           
+                        </a>
+                    </div>
+                    <div class="motorischebegeleiding filterLink">
+                        <a href="/organisaties=motorisch&all&all" >
+                            <div>
+                                <img src="images/assets/home_icons/motorisch.svg" alt="rolstoel">
+                            </div>
+                            
+                            <h4>Motorische expertise  <span class="underline"></span></h4>
+                           
+                        </a>
+                    </div>
+                    <div class="taalbegeleiding filterLink">
+                        <a href="/organisaties=taal&all&all">
+                            <div>
+                                <img src="images/assets/home_icons/taal.svg" alt="rolstoel">
+                            </div>
+                            
+                            <h4>Taal expertise <span class="underline"></span></h4>
+                            
+                        </a>
+                    </div>
+                    <div class="nahbegeleiding filterLink">
+                        <a href="/organisaties=nah&all&all" >
+                            <div>
+                                <img src="images/assets/home_icons/nah.svg" alt="rolstoel">
+                            </div>
+                            
+                            <h4>Niet-aaangeboren <br> hersenletsels expertise <span class="underline"></span></h4>
+                            
+                        </a>
+                    </div>
+                </article>
+            </div>
+           
+            </section>
+        </main>
+      
+    <%- include('partials/footer') %>
+        <!-- Script(s) (ingeladen NA HTML en CSS!)-->
+        <!-- Inladen van jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+        <!-- Algemente script voor de homepage -->	
+        <script src="/js/homepage.js" type="module"></script>
+    </body>
+
+</html>

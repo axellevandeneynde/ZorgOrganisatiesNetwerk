@@ -2,336 +2,436 @@
 *    disable scroll functie   *
 **************************/
 body {
+   
+}
+/* intro */
+#homeIntro{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 20vh 20vh 50px 20vh 20vh 50px;
     overflow: hidden;
 }
 
-/**************************
-*    foto's slideshow   *
-**************************/
-#fotoshome{
+.homeSlideShow{
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 7;
+}
+.homeSlideShow img{
     width: 100%;
-    height: 100vh;
-	background: no-repeat;
-	background-size: cover;
-	background-position: center;
-	-webkit-transition: background 0.2s ease;
-	transition: background 0.5s ease-in-out;
-    text-align: center;
+    
 }
 
-#bannerhome{
-    background-color: rgba(255,255,255,0.80);
-    padding: 2%;
+.homeIntroTekst{
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
     margin-top: 50px;
+    
 }
 
-#bannerhome h1{
-    margin-bottom: 0px;
-    margin-top: 0px;
+.homeIntroTekst .linkButton a{
+    display: block;
+    text-align: center;
+    width: 70%;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1.5rem;
 }
-
-#bannerhome h2{
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-/**************************
-*        Getuigenis      *
-**************************/
 
 #getuigenisContainer{
-    width: 50%;
-    display: block;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 80%;
     margin: auto;
-    position: relative;
-    
 }
-#getuigenis blockquote{
+
+#getuigenisContainer blockquote {
+    font-style: italic;
+    margin-left: 0;
+    margin-right: 0;
     text-align: justify;
-    text-justify: inter-word;
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-top: 50px;
+    position: relative;
+    margin-top: 40px;
 }
-#getuigenis blockquote::before{
+
+#getuigenisContainer blockquote::before {
     content: '"';
-    color: #BA4E00;
-    font-size: 100px;
-    font-style: italic;
     position: absolute;
+    left: -50px;
+    font-size: 6rem;
     top: -50px;
-    left: -10px;
+    color: var(--darker-orange);
 }
+
 .getuigenisInfoContainer{
     display: flex;
-    justify-content: flex-end;
-}
-.getuigenisInfo::before{
-    content: '-';
-    margin-right: 2px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/**************************
-*    Oranje balk met de filter opties.   *
-**************************/
-#filterContainers{
-    display: flex;
-    justify-content: center;
+#getuigenisContainer .getuigenisInfo{
+    font-weight: bold;
+}
+#getuigenisContainer .linkButton{
+    width: 20%;
+}
+#getuigenisContainer .linkButton a{
+    display: block;
+    padding: 10px 10px;
     width: 100%;
+    text-align: center;
+}
+.centerImageInContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/homepage/KIDS-206.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+/*Filter selectors*/
+#homeFilterContainer{
+    background-color: var(--darker-orange);
+
+}
+#homeFilterContainer h2 a{
+    text-align: center;
     margin: auto;
-    overflow: hidden;
+    display: block;
+    width: 100%;
 }
-.backgroundhome h4 {
+.mainContentWrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 100px;
+}
+.filterTagLine h1{
     color: white;
-    display: table-cell;
-    padding: 0 0 0 20px;
-    vertical-align: middle;
-   
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 4rem;
 }
-
-.backgroundhome a {
+.filterTagLine a{
+    color: var(--main-dark);
+    position: relative;
     text-decoration: none;
-    color: black;
-    display: table;
-    margin:  0px auto;
-	text-align: center;
-	padding: 40px;
+    z-index: 99;
+    transition: .1s ease-in-out;
+    border: 2px solid var(--main-orange);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-
-.backgroundhome img {
-    width: 76px;
-    height: 76px;
+.filterTagLine a:hover{
+    color: var(--darker-orange);
+    background-color: var(--main-dark);
+    border: 2px solid transparent;
 }
-
-.visuelebegeleiding {
-    display: inline-block;
-    vertical-align: middle;
+.filterLink h4 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+}
+.filterLink a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--darker-orange);
+    font-size: 20px;
     
-	transition: 0.3s ease;
+}
+.filterLink:hover .underline{
+    width: 100%;
+
+}
+.filterLink:focus .underline{
+    width: 100%;
+
+}
+.filterLink a div{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.filterLink a div img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
 }
 
-.auditievebegeleiding {
-    display: inline-block;
-    vertical-align: middle;
-   
-	transition: 0.3s ease;
-}
-
-.motorischebegeleiding {
-    display: inline-block;
-    vertical-align: middle;
-    
-	transition: 0.3s ease;
-}
-.taalbegeleiding{
-    display: inline-block;
-    vertical-align: middle;
-  
-	transition: 0.3s ease;
-}
-.nahbegeleiding{
-    display: inline-block;
-    vertical-align: middle;
-	transition: 0.3s ease;
-}
-.filterLink{
-    width: 300px;
-}
-.filterLink:hover{
-	background-color: #FFC181;
-	transform: scale(1.1);  
-  	transition: transform 300ms ease-in-out;
-	
-}
-.backgroundfilter {
+.underline{
     position: absolute;
-    top: 70%;
-    width: 100%;  
-    max-height: 150px;
-    background-color: #f79838;
-    opacity: .9;
-	overflow: hidden;
+    width: 0%;
+    height: 20px;
+    background-color: white;
+    bottom: -8px;
+    left: 20px;
+    opacity: 0.6;
+    transition: 0.2s ease-in-out;
+    z-index: 0;
+}
+.homeIntroTekst h1{
+    text-align: center;
+    font-size: calc(100vw/38);
+    line-height: calc(100vw/45);
+    font-weight: bold;
+    color: var(--darker-orange);
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.homeIntroTekst h2{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--main-dark);
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
 }
 
-/**************************
-*    media query tablet groot    *
-**************************/
-@media only screen and (max-width: 1024px) {
-    .slide {
-        object-fit: cover;
-        width: 1024px;
-        height: 1366px;
+@media only screen and (max-width: 1280px){
+    .mainContentWrapper{
+        display: grid;
+        grid-template-columns: auto auto;
+        max-width: 900px;
+    }
+    #homeIntro{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        min-height: 100vh;
+        
+    }
+    .homeSlideShow{
+        grid-column: 1;
+        grid-row: 2;
+        height: 500px;
+    }
+    .centerImageInContainer{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/homepage/mediumBG.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .homeIntroTekst{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 90%;
+        margin: auto;
+    }
+    .homeIntroTekst h1{
+        margin-top: 50px;
+        font-size: calc(100vw/18);
+        line-height: calc(100vw/24);
+    }.homeIntroTekst h2{
+        margin-top: 50px;
+        font-size: calc(100vw/40);
+    }
+    #getuigenissenContainer{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    #getuigenisContainer{
+        grid-row-start: 4;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 80%;
+        margin: 40px auto;
+    }
+    .homeIntroTekst .linkButton a{
+        display: block;
+        text-align: center;
+        width:50%;
+        padding: 20px;
+        margin: 50px auto;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    #homeIntro{
+        grid-template-columns: auto;
+        grid-template-rows: auto 300px ;
+        margin-top: 00px;
+    }
+    .homeSlideShow{
+        grid-row: 2;
+        height: auto;
+    }
+    .centerImageInContainer {
+        display: block;
+        height: auto;
+        height: 100%;
+        width: 100vw;
+    }
+    .homeIntroTekst{
+        grid-row: 1;
+        grid-column: 1;
+        width: 90%;
+        margin: auto;
+
+    }
+    .homeIntroTekst h1{
+        text-align: center;
+        font-size: calc(100vw/15);
+        line-height: calc(100vw/17);
+        font-weight: bold;
+        color: var(--darker-orange);
+        text-transform: uppercase;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .homeIntroTekst h2{
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--main-dark);
+        text-transform: uppercase;
+        text-align: left;
+        margin: 0;
+        width: 60%;
+    }
+    .homeIntroTekst .linkButton a{
+        font-size: calc(100vw/30);
+        display: block;
+        text-align: center;
+        width:80%;
+        padding: 20px;
+        margin: 50px auto 0px;
     }
     #getuigenisContainer{
         display: none;
     }
-/**************************
-*        Andere filter       *
-**************************/
-    .backgroundfilter {
-        position: fixed;
-        top: 65%;
-        margin-top: 0;
-        height: 35%;
-        max-height: 100%;
+    .mainContentWrapper{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        max-width: 580px;
+        gap: 50px;
     }
-
-    .visuelebegeleiding {
-        grid-column: col 2/ span 10;
-        border-bottom: 2px solid white;
+    .filterTagLine{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-
-    .auditievebegeleiding {
-        grid-column: col 2/ span 10;
-        border-bottom: 2px solid white;
+    .filterTagLine h1{
+        margin: 20px 0 30px;
+        font-size:  calc(100vw/16);
+        line-height: calc(100vw/12);
+        text-align: center;
     }
-
-    .motorischebegeleiding {
-        grid-column: col 2/ span 10;
-        border-bottom: 2px solid white;
+    #alleOrgsBtn{
+        margin: auto;
+        padding: 30px 50px;
     }
-
-    .backgroundhome img {
+}
+@media only screen and (max-width: 450px){
+    #homeIntro{
+        max-height: none;
+        grid-template-columns: auto;
+        grid-template-rows: auto 300px ;
+    }
+    .homeSlideShow{
+        grid-row: 2;
+    }
+    .centerImageInContainer{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/homepage/phoneBG.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-height: 300px;
+    }
+    .homeIntroTekst{
+        grid-row: 1;
+        grid-column: 1;
+        width: 90%;
+        margin: auto;
+    }
+    .homeIntroTekst h1{
+        text-align: center;
+        font-size: calc(100vw/11);
+        line-height: calc(100vw/12);
+        font-weight: bold;
+        color: var(--darker-orange);
+        text-transform: uppercase;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .homeIntroTekst h2{
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--main-dark);
+        text-transform: uppercase;
+        text-align: left;
+        margin: 0;
+        width: 90%;
+    }
+    .homeIntroTekst .linkButton a{
+        font-size: calc(100vw/30);
+        display: block;
+        text-align: center;
+        width:80%;
+        padding: 20px;
+        margin: 50px auto 0px;
+    }
+    .homeIntroTekst #getuigenisContainer{
         display: none;
     }
-
-    .backgroundhome h4 {
-        font-size: 20px;
-        padding: 0;
+    .mainContentWrapper{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        max-width: 580px;
+        gap: 50px;
+    }
+    .filterTagLine{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .filterTagLine h1{
+        margin: 20px 0 30px;
+        font-size:  calc(100vw/16);
+        line-height: calc(100vw/12);
         text-align: center;
-        display: block;
-        margin-top: 6vh;
     }
-
-    .backgroundhome a {
-        display: block;
-		padding: 10px 0px;
-		margin: 2px;
-    }
-
-/**************************
-*    media query tablet klein   *
-**************************/
-    @media only screen and (max-width: 768px) {
-/**************************
-*    cut homepage background images   *
-**************************/
-        .slide {
-            max-width: 768px;
-            max-height: 1024px;
-        }
-
-        .backgroundhome h4 {
-            margin-top: 3vh;
-        }
-        #getuigenisContainer{
-            display: none;
-        }
-    }
-
-/**************************
-*    media query mobile    *
-**************************/
-    @media only screen and (max-width: 414px) {
-/**************************
-*    cut homepage background images   *
-**************************/
-        .slide {
-            max-width: 414px;
-            max-height: 823px;
-        }
-
-        .backgroundhome h4 {
-            font-size: 78%;
-            margin-top: 2vh;
-        }
-    }
-}
-
-/***************************
-        footer
-****************************/
-.footerHomepage{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    color: white;
-    font-size: 10px;
-    opacity: 0.5;
-}
-.footerHomepage a{
-    color: white;
-    margin-left: 4px;
-}
-/***************************
-        Carousel
-****************************/
-/* Source: https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/ */
-.cb-slideshow{
-    z-index: -99;
-}
-.cb-slideshow,
-.cb-slideshow:after { 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: -999; 
-}
-
-
-.cb-slideshow li span { 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-    opacity: 0;
-    z-index: -9999;
-    animation: imageAnimation 24s linear infinite 0s; 
-}
-
-.cb-slideshow li:nth-child(1) span { 
-    background-image: url(../images/homepage/homepagebackground.jpg);
-}
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(../images/homepage/homepagebackground2.jpg);
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(../images/homepage/homepagebackground3.jpg);
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) span { 
-    background-image: url(../images/homepage/homepagebackground4.jpg);
-    animation-delay: 18s; 
-}
-.cb-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) div { 
-    animation-delay: 18s; 
-}
-@keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    8% { opacity: 1; animation-timing-function: ease-out; }
-    25% { opacity: 1 }
-    40% {opacity: 0;}
-    100% { opacity: 0 }
-}
-@keyframes firstImage {
-    from{
-        opacity: 0;
-    }to{
-        opacity: 1;
+    #alleOrgsBtn{
+        margin: auto;
+        padding: 30px 50px;
     }
 }

@@ -1,0 +1,11 @@
+/* COLORS */
+:root{
+    --main-orange: #FFC181;
+    --darker-orange: #f79838;
+    --main-dark: rgb(39, 39, 39);
+}
+/* NUMBERS */ 
+
+:root {
+    --max-width: 1280px;
+} 

@@ -94,7 +94,7 @@ export default class Centrum{
                         <p>${this.beschrijving}</p> 
                         <div class="linkButton">
                             <a href="https://${this.website}" target="_blank">Website</a>
-                            <a href="centrum.html" onClick="setCentrum('${this.id}')">Meer informatie <span>→</span></a>
+                            <a href="/centrum/${this.name}" onClick="setCentrum('${this.id}')">Meer informatie <span>→</span></a>
                         </div>
                     </article>
                 </div>`;

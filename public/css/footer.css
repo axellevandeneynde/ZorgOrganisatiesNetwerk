@@ -20,7 +20,6 @@ footer{
     font-size: 14px;
 }
 .footerContainer{
-    width: 80%;
     margin: auto;
     
 }
@@ -117,4 +116,68 @@ footer h3{
     text-transform: uppercase;
     color: #f79838;
     font-weight: bold;
+}
+.mainContentWrapperFooter{
+    max-width: var(--max-width) !important;
+    padding: 0px 30px;
+    margin: auto;
+}
+@media only screen and (max-width: 1300px){
+    .mainContentWrapperFooter{
+        max-width: 960px !important;
+        padding: 0px 30px;
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 900px){
+    .footerContent{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #footerTitle{
+        grid-column: 1;
+        width: 100%;
+    }
+    #footerSitemap{
+        grid-column: 2;
+        margin: auto;
+        width: 60%;
+    }
+    #footerGetuigenis{
+        display: none;
+    }
+}
+@media only screen and (max-width: 580px){
+    .mainContentWrapperFooter{
+        max-width: 960px !important;
+        padding: 0px 10px;
+        margin: auto;
+    }
+    body{
+        margin-bottom: 400px !important;
+    }
+    footer{
+        min-height: 400px;
+    }
+    .footerContent{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 50% 50%;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+    #footerTitle{
+        grid-row: 1;
+        width: 100%;
+    }
+    #footerSitemap{
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+        margin: 0;
+        width: 100%;
+    }
+    #footerGetuigenis{
+        display: none;
+    }
 }

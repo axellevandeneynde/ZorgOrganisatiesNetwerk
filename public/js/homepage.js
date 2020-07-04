@@ -1,9 +1,9 @@
 import Getuigenis from './classes/Getuigenis.js';
 
-
+const url = "http://localhost:8000";
 $(function(){
     $.ajax({
-        url: 'js/json/getuigenissen.json',
+        url: url + '/API/getuigenissen',
         dataType: 'JSON',
         method: 'GET'
     }).done(function(data){

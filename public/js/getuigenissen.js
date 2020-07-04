@@ -1,8 +1,9 @@
 import Getuigenis  from './classes/Getuigenis.js';
-
+const url = "http://localhost:8000";
 const getuigenissen = getuigenissenCall();
 const centra = centraCall();
 const buttons = [];
+
 
 $(function(){
     loadButtons();
@@ -63,7 +64,7 @@ function loadGetuigenissen(centrumID){
 function centraCall(){
     var centraArray;
     $.ajax({
-        url: 'js/json/centra.json',
+        url: url +'/API/centra',
         dataType: 'JSON',
         method: 'GET',
         async: false
@@ -75,10 +76,11 @@ function centraCall(){
     });
     return centraArray;
 }
+
 function getuigenissenCall(){
     var getuigenissen;
     $.ajax({
-        url: 'js/json/getuigenissen.json',
+        url: url +'/API/getuigenissen',
         dataType: 'JSON',
         method: 'GET',
         async: false

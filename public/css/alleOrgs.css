@@ -1,5 +1,7 @@
 @import "navigatie.css";
-@import "general.css";
+@import "main.css";
+
+
 .result:nth-child(even){
 	float: right;
 }

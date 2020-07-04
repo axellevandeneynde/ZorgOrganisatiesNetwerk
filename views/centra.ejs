@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<!-- Meta tags  -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta author="Erasmus Hogeschool Brussel- Zoë Martens - Seppe Clottemans - Julien Menten - Axelle Vanden Eynde">
+		<!-- titel + favicon -->
+		<title>Alle organisaties</title>	
+		
+		<!--Stylesheet(s) -->
+		<link rel="stylesheet" href="/css/alleOrgs.css">
+		<!-- Scripts -->
+	</head>
+	<body>
+		<header>
+			<%- include('partials/navigation'); %>
+			<!-- Selects om zoekopties te filtreren  -->
+			<div id="filter">
+				<p alt="Uitleg voor filter" style="visibility: hidden; display: none;"></p>
+				<div class="filter-container" alt="Filterbalk voor centra's">
+					<!-- Filter voor specialisaties  -->
+					<select class="select-style" name="specialisaties" id="specFilter" alt="Kies een begeleiding">
+						<option selected="selected" value="all" >Specialisatie</option>
+						<option value="all">Alle begeleidingen</option>
+						<option value="visueel">Visuele expertise</option>
+						<option value="auditief">Auditieve expertise</option>
+						<option value="motorisch">(Neuro-)motorische expertise</option>
+						<option value="taal">Taal expertise</option>
+						<option value="nah">Niet aangeboren hersenletsel expertise</option>
+					</select>
+					<!-- Filter voor leeftijdscategorïen -->
+					<select class="select-style" name="leeftijdscategorie" id="leeftijdFilter" alt="Kies een leeftijdscategorie">
+						<option value="all" selected="selected">Leeftijdscategorie</option>
+						<option value="all">Alle leeftijdscategorïen</option>
+						<option value="kinderen">Kinderen</option>
+						<option value="jongeren">Jongeren</option>
+						<option value="volwassenen">Volwassenen</option>
+					</select>
+					<!-- Filter voor regio's  -->
+					<select class="select-style" name="regio" id="regioFilter" alt="Kies een regio">
+						<option value="all" selected="selected">Werkzaam in</option>
+						<option value="all">Alle regio's</option>
+						<option value="Antwerpen">Antwerpen</option>
+						<option value="Brussel">Brussel</option>
+						<option value="Limburg">Limburg</option>
+						<option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+						<option value="Vlaams-Brabant">Vlaams-Brabant</option>
+						<option value="West-Vlaanderen">West-Vlaanderen</option>
+					</select>
+					<!-- Bevestigings knop -->
+					<button id="filterBevestiging" onClick="clickToFilter()">Zoek<span>→</span></button>
+				</div>
+				<div id="mobileFilter">
+					<div class="arrowBtn"><p>Zoek</p><span></span></div>
+				</div>
+			</div>
+		</header>
+		<main class="grid">
+			<!-- Banner met informatieve tekst -->
+			<section id="orgs_banner">
+				<div class="orgs_banner_tekst">
+					<h2>Op zoek naar hulp? Wij geloven in expertise als hefboom!</h2>
+					<p>Onze warme experten helpen u verder in een van onze partnercentra. Aan de hand van deze pagina kan je op een eenvoudige en vlotte manier het juiste centrum vinden dat voldoet aan uw behoeften en criteria. U kan zoeken op basis van de begeleiding waaraan u nood heeft, de leeftijd waaraan u of iemand in jullie omgeving aan toebehoord en/of aan de hand van de dichtsbijzijnde regio.  </p>
+				</div>
+			</section>
+			<section class="orgsLijstContainer">
+				<div class="mainContentWrapper">
+					<div id="dropHere"></div>
+					<h3 class="org_titel" id="org_titel">ZOEKRESULTATEN:</h3>
+					
+					<!-- Indien er geen centra's kunnen worden vertoond: WERKT (nog) NIET -->
+					<p id="geenCriteria">Er is geen centrum gevonden die voldoet aan uw criteria.</p>
+					<!-- Lijst met al de organisaties  -->
+					<section id="orgs_lijst">
+						<!-- Organisaties worden via centra.js ingeladen-->	
+					</section>
+				</div>
+			</section>
+		</main>
+		<%- include('partials/footer'); %>
+		<!-- Script(s) (ingeladen NA HTML en CSS!)-->
+			<!-- Inladen van jQuery -->
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+			<!-- jQuery code voor filtering systeem van de organisaties -->
+			<script type="text/javascript" src="/js/filter.js"></script>
+			<!-- Cookies script voor bijhouden keuze op homepage -->
+			<script type="text/javascript" src="/js/cookies.js"></script>
+			
+			<!-- Script voor het inladen van alle centra -->
+			<script src="/js/classes/Centrum.js" type="module"></script>
+			<script src="/js/centra.js" type="module"></script>
+			<script>
+				setOption();
+			</script>
+	</body>
+</html>

@@ -2,7 +2,7 @@
 imports
 *************/
 @import url("navigatie.css");
-@import url("footer.css");
+@import "variables.css"; 
 
 /*font*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i');
@@ -14,12 +14,17 @@ html{
 }
 body{
 	margin-bottom: 350px;
+	width: 100%;
 }
 main{
 	margin-top: 58px;
 	background: white;
 	position: relative;
 	z-index: 1;
+}
+.mainContentWrapper{
+	max-width: var(--max-width);
+	margin: auto;
 }
 h1,
 h2,
@@ -48,21 +53,20 @@ ul{
 	color: white;
 	background-color: #f79838;
 	border: 0;
-	font-size: 16px;
+	font-size: 12px;
 	margin-right: 30px;
 	padding: 3px 10px;
 	transition: 0.2s;
+
+	text-transform: uppercase;
+	font-weight: bold;
 	
 }
 .linkButton a:hover{
-	background-color: #FFC181;
+	background-color: var(--main-dark);
+	color:var(--darker-orange);
 	transition: 0.2s;
 	cursor: pointer;
-}
-.linkButton a:focus{
-	background-color: #FFC181;
-	border: 1px;
-	border-color: rgb(126, 81, 14);
 }
 .linkButton span{
 	padding-left: 10px;
@@ -72,4 +76,21 @@ ul{
 .linkButton a:hover span{
 	padding-left: 30px;
 	transition: 0.2s
+}
+@media only screen and (max-width: 650px){
+	.linkButton{
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		margin: auto;
+	}
+	.linkButton span{
+		display: none;
+	}
+	.linkButton a {
+		width: 50%;
+		text-align: center;
+		padding: 10px 0px ;
+		margin-right: 0px;
+	}
 }

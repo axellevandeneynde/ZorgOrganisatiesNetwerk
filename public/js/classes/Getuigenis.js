@@ -15,7 +15,11 @@ export default class Getuigenis{
                         ${this.body}
                     </blockquote>
                     <section class="getuigenisInfoContainer">
-                        <p class="getuigenisInfo"><span class="getuigenisAuthor"> ${this.auteur}</span>  over  <span class="getuigenisCentrum">${this.findCentrum(this.gelinkteCentrum)}</span></p>
+                        <p class="getuigenisInfo"><span class="getuigenisAuthor"> ${this.auteur}</span></p>
+                        <div class="linkButton">
+                            <a class="getuigenisInfoLink" href="/getuigenissen">Lees meer getuigenissen...</a>
+                        </div>
+                        
                     </section>
                 </article>`;
     }
@@ -36,7 +40,7 @@ export default class Getuigenis{
                         ${this.body}
                     </blockquote>
                     <section class="getuigenisInfoContainer">
-                         <p class="getuigenisInfo"><span class="getuigenisAuthor"> ${this.auteur}</span>  over  <span class="getuigenisCentrum">${this.findCentrum(this.gelinkteCentrum)}</span></p>
+                         <p class="getuigenisInfo"><span class="getuigenisAuthor"> ${this.auteur}</span></p>
                     </section>
                 </article>
         `;
@@ -46,7 +50,7 @@ export default class Getuigenis{
     findCentrum(centrumID){
         var result;
         $.ajax({
-            url: '../js/json/centra.json',
+            url: 'http://localhost:8000/API/getuigenissen',
             dataType: 'JSON',
             method: 'GET',
             async: false

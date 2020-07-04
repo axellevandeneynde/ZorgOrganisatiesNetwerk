@@ -1,5 +1,5 @@
 'use strict';
-
+const url = "http://localhost:8000";
 
 $(function(){
 
@@ -10,7 +10,7 @@ loadGetuigenis();
 
 async function loadGetuigenis(){
    await $.ajax({
-        url: 'js/json/getuigenissen.json',
+        url: url +'/API/getuigenissen',
         dataType: 'JSON',
         method: 'GET',
         async: false
@@ -48,13 +48,13 @@ function printGetuigenis(getuigenis){
     centrum.text(centrumInfo.naam);
     tekst.text(getuigenis.body);
     websiteLink.href = centrumInfo.website;
-    detailPageLink.attr("onclick", `setCentrum("${centrumID}")`);
+    detailPageLink.attr("href", `centrum/${centrumInfo.naam}`);
 }
 
 function loadCentrumInfo(centrumID){
     var centrumInfo;
     $.ajax({
-        url: 'js/json/centra.json',
+        url: url +'/API/centra',
         dataType: 'JSON',
         method: 'GET',
         async: false
@@ -76,5 +76,5 @@ function loadCentrumInfo(centrumID){
 
 function loadImage(getuigenisID){
     
-    $('.getuigenisFotoContainer').css("background-image", `url('../images/getuigenissen/${getuigenisID}.png')`);
+    $('.getuigenisFotoContainer').css("background-image", `url('/images/getuigenissen/${getuigenisID}.png')`);
 }
