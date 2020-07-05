@@ -1,10 +1,9 @@
 import Centrum from './classes/Centrum.js';
-import * as p from './serverPath.js';
-const url = "http://localhost:8000";
+
 $(document).ready(function(){
 
     $.ajax({
-        url: url + "/API/centra",
+        url: "/API/centra",
         dataType: 'JSON',
         method: 'GET'
     }).done(function(data){

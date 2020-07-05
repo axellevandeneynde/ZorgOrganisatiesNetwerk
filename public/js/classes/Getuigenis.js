@@ -50,7 +50,7 @@ export default class Getuigenis{
     findCentrum(centrumID){
         var result;
         $.ajax({
-            url: 'http://localhost:8000/API/getuigenissen',
+            url: '/API/getuigenissen',
             dataType: 'JSON',
             method: 'GET',
             async: false

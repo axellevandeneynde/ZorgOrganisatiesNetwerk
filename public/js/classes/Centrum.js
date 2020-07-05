@@ -136,7 +136,7 @@ export default class Centrum{
     //Getuigenis inladen van de 
     setMainGetuigenis(centrumID){
         $.ajax({
-            url: '../js/json/getuigenissen.json',
+            url: 'API/getuigenissen',
             dataType: 'JSON',
             method: 'GET',
             async: true

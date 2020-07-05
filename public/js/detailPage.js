@@ -1,5 +1,4 @@
 
-const url = "http://localhost:8000"
 const pathToIcons = url + "/images/assets/home_icons/";
 
 
