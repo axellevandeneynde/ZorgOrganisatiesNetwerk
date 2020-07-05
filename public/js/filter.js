@@ -132,7 +132,6 @@ function slideFilter(){
 	let btn = document.getElementById('openFilterBtn')
 	let filter = document.getElementById('filter')
 	let icon = btn.childNodes[1]
-	console.log(icon)
 	let opened = false;
 	btn.addEventListener('click', function(){
 		if(opened == false){
