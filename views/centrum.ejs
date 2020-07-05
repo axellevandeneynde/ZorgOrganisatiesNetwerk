@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>  
-    <%if (centrumExists) { %>
-        <%= centrum.naam %>
-    <% } else{ %>
-        Centrum bestaat niet
-    <% } %>
-</title>
+        <%if (centrumExists) { %>
+            <%= centrum.naam %>
+        <% } else{ %>
+            Centrum bestaat niet
+        <% } %>
+    </title>
+    <%- include('partials/favicon'); %>
+
+
+
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     
     <link rel="stylesheet" href="/css/detail-organisatie.css">
