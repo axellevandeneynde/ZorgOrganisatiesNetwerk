@@ -25,7 +25,6 @@ app.get('/organisaties=:doelgroep&:leeftijd&:werkzaamIn', (req, res)=>{
         leeftijdsgroep: req.params.leeftijd,
         werkzaamIn: req.params.werkzaamIn
     }
-    console.log(filter)
     res.render('centra', {filter:filter});
 });
 
@@ -34,33 +33,42 @@ app.get('/centrum/:centrum', (req, res)=>{
     let centrumExists = false;
     let query = req.params.centrum;
     const centraList = require(__dirname + '/json/centra.json').centra;
-
-    for(let i = 0; i <= centraList.length; i++){
-        console.log(centraList[i].naam)
-        if(query == centraList[i].naam){
-            let centrum = centraList[i]
-            centrumExists = true;
-
-            let centrumObject = {
-                id: centrum.centra_ID,
-                naam: centrum.naam,
-                desc: centrum.beschrijving,
-                doelgroep:  centrum.doelgroep,
-                leeftijdsgroep: centrum.leeftijdsgroep,
-                werkzaamIn:  centrum.regio,
-                contactInfo: {
-                    website:  centrum.website, 
-                    tel:  centrum.telefoonnummer,
-                    email:  centrum.email,
-                    adres: centrum.adres
-                }
+    centrumExists = false;
+    class CentrumObject {
+        constructor(id, naam, desc, doelgroep, leeftijdsgroep, werkzaamIn, website, tel, email, adres) {
+            this.id = id,
+            this.naam = naam,
+            this.desc = desc,
+            this.doelgroep =  doelgroep,
+            this.leeftijdsgroep = leeftijdsgroep,
+            this.werkzaamIn =  werkzaamIn,
+            this.contactInfo = {
+               " website": website, 
+                'tel': tel,
+                "email": email,
+               " adres": adres
             }
-            res.render('centrum', {centrumExists: centrumExists, centrum: centrumObject});
+        }
+    }
+    let result;
+    for(let i = 0; i < centraList.length; i++){
+
+        if(query == centraList[i].naam){
+            
+            let centrum = centraList[i]
+            result = new CentrumObject(centrum.centra_ID, centrum.naam, centrum.beschrijving, centrum.doelgroep, centrum.leeftijdsgroep, centrum.regio, centrum.website, centrum.telefoonnummer, centrum.email, centrum.adres)
+            centrumExists = true;
             break;
         }else{
-           
+            centrumExists = false;
         }
-    } res.render('centrum', {centrumExists: centrumExists});
+    } 
+    if(centrumExists == true){
+        res.render('centrum', {centrumExists: centrumExists, centrum: result});
+    }else{
+        res.render('centrum', {centrumExists: centrumExists});
+    }
+   
    
 });
 // over-ons page render
