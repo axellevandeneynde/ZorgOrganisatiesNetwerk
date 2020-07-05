@@ -10,7 +10,7 @@ loadGetuigenis();
 
 async function loadGetuigenis(){
    await $.ajax({
-        url: url +'/API/getuigenissen',
+        url: '/API/getuigenissen',
         dataType: 'JSON',
         method: 'GET',
         async: false
@@ -54,7 +54,7 @@ function printGetuigenis(getuigenis){
 function loadCentrumInfo(centrumID){
     var centrumInfo;
     $.ajax({
-        url: url +'/API/centra',
+        url: '/API/centra',
         dataType: 'JSON',
         method: 'GET',
         async: false
