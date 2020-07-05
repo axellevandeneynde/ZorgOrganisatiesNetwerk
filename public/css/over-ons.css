@@ -1,43 +1,202 @@
 @import url(footer.css);
 @import url(general.css);
 
-figure {
-    display: inline-block;
-    grid-column: col 3/ span 3;
-    grid-row: row/span 5;
-    margin: 1.5em 0em 0em 0em;
-    width: 100%;
-}
-
-article{
-    display: inline-block;
-    grid-column: col 6/ span 5;
-    grid-row: row/span 5;
-    margin: 0;
-    padding: 0;
-}
-h5{
-    font-weight: 700;
-    font-size: 1.3em;
-    margin: 0em 0em 0.4em 0em;
-}
 
 main{
-    margin: 7% 0% 4% 0%;
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: 20% auto auto 20%;
+    grid-template-rows: auto auto auto;
+}
+.imageContainerRight{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row: 1;
+}
+.imageContainerLeft{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
+
+}
+.moreTekstContainer{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 2;
+    height: auto;
+    min-height: 400px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tekstWrapper{
+    width: 90%;
+    margin:auto;
+    
+}
+.tekstWrapper p{
+    text-align: justify;
+}
+.tekstWrapper h1{
+    margin-bottom: 30px;
+}
+.centerImageInContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/directeur.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.imageContainerLeft .centerImageInContainer{
+    background-image: url("../images/overons2.JPG");
+}
+.faqContainer{
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+}
+.aboutContainer{
+    grid-column: 2;
+    max-width: 780px;
+    min-width: 600px;
+}
+.aboutContainer p{
+    margin-bottom: 40px;
+}
+.beperkingenLijst li{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: bold;
+    color: var(--main-dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-align: left;
+}
+.beperkingenLijst li b{
+    color: var(--darker-orange);
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: block;
+}
+.beperkingenLijst li:nth-child(1) .icon{
+    mask: url(/images/assets/home_icons/auditief.svg) no-repeat center / contain;
+}
+.beperkingenLijst li:nth-child(2) .icon{
+    mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
+}
+.beperkingenLijst li:nth-child(3) .icon{
+    mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
+}
+.beperkingenLijst li:nth-child(4) .icon{
+    mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
+}
+.beperkingenLijst li:nth-child(6) .icon{
+    mask: url(/images/assets/home_icons/nah.svg) no-repeat center / contain;
+}
+.beperkingenLijst li:nth-child(5) .icon{
+    mask: url(/images/assets/home_icons/motorisch.svg) no-repeat center / contain;
+}
+/*media queries*/
+@media only screen and (max-width:1670px) {
+    main{
+        margin-top: 58px;
+        display: grid;
+        grid-template-columns: 10% auto auto 10%;
+        grid-template-rows: auto auto auto;
+    }
 }
 
-body{height: 100%;} /*sticks footer on  the bottem*/
 
-/*media queries*/
-@media only screen and (max-width:1193px) {
-    
-    figure{
+@media only screen and (max-width: 1280px){
+    main{
+        margin-top: 58px;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: auto auto auto;
+    }
+    .aboutContainer{
+        grid-column-start: 1;
+        grid-column-end: 4;
+
+        max-width: 780px;
+        min-width: 0px;
+    }
+    .imageContainerRight{
+        grid-column-start: 4;
+        grid-column-end: -1;
+        grid-row: 1;
+    }
+    .imageContainerLeft{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .moreTekstContainer{
+        grid-column-start: 3;
+        grid-column-end: 6;
+       
+    }
+}
+@media only screen and (max-width: 880px){
+    main{
+        margin-top: 58px;
+        display: grid;
+        grid-template-columns: auto ;
+        grid-template-rows: auto 400px auto auto;
+    }
+    .aboutContainer{
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        max-width: 780px;
+        min-width: 0px;
+    }
+    .imageContainerRight{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+    .imageContainerLeft{
+        grid-column-start: 1;
+        grid-column-end: 2;
         display: none;
     }
-    article{
-        grid-column: col 2/ span 10;
-        grid-row: row;
+    .moreTekstContainer{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+    .faqContainer{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 4;
     }
 }
 
+@media only screen and (max-width:550px){
+    .icon{
+        display: none;
+    }
+    .beperkingenLijst li{
+        margin: 15px 0px;
+    }
+    .faqContainer{display: none;}
+}
+@media only screen and (max-width:400px){
+    .aboutContainer{
+        min-width: 0px;
+    }
+    .moreTekstContainer{
+        min-height: 0px;
+        min-width: 0px;
 
+    }
+    .faqContainer{display: none;}
+}

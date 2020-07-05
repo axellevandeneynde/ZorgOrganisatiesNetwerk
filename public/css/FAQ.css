@@ -1,87 +1,65 @@
-.grid {
-    grid-template-rows: repeat(1, [row] auto);
-}
-main{
-	margin-bottom: 60px;
-    margin-top: 5%;
-}
-h1 {
-    display: block;
-    grid-column: col 4/ span 2;
-    grid-row: row;
-    text-align: left;
-    padding: 0;
-    font-weight: 600;
+.faqContentWrapper{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    margin: 20px 0px; 
 }
 
-p,
-h2 {
-    text-align: left;
-    margin-top: 1%;
+.vragen{
+    grid-column: 1;
+    background-color: var(--darker-orange);
 }
 
-h2 {
-    font-weight: 400;
-}
-
-
-.vraag{
-    display: block;
-    border-bottom: 1px solid #000;
-    cursor: pointer;
-    padding: 10px;
-}
 .antwoord{
-    display: none;
+    grid-column: 2;
 }
-.antwoord p{
-    padding: 20px;
-    line-height: 30px;
+
+#vragenContainer li button{
+    background: none;
+    border: 0;
+    position: relative;
     text-align: left;
-    margin-top: 0;
-	transition: 0.5s ease;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    width: 90%;
+    z-index: 1;
+    margin-left: 20px;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
 }
-
-.accordion{
-	transition: 0.2s ease;
+#vragenContainer li button::before{
+    background-color: var(--main-orange);
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: -1;
+    width: 0%;
+    transition: 0.2s ease-in-out;
+    opacity: 0.5;
 }
-.accordion:hover {
-    background-color: #ffe5cc;
-	transition: 0.2s ease;
+#vragenContainer li button:hover::before{
+    width: 90%;
 }
-
-/*media queries*/
-
-@media only screen and (min-width: 681px) and (max-width:1193px) {
-    #container {
-    
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    h1 {
-        grid-column: col 2 / span 2;
-        margin-top: 0;
-    }
-
+#vragenContainer li button:focus::before{
+    width: 90%;
 }
-
-@media only screen and (max-width:680px) {
-    h2 {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    #container {
-        margin-top: 20%;
-        grid-column: col / span 12;
-    }
-    h1 {
-        grid-column: col 2 / span 2;
-        margin: 0;
-    }
+.activeQuestion::before{
+    width: 90% !important;
+}
+.answerWrapper{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#antwoordContainer{
+    width: 80%;
+    margin: auto;
+    font-size: 1.5rem;
 }
 

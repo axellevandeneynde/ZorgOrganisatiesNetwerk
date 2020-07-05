@@ -2,6 +2,7 @@
 imports
 *************/
 @import url("navigatie.css");
+@import url("footer.css");
 @import "variables.css"; 
 
 /*font*/
@@ -26,17 +27,6 @@ main{
 	max-width: var(--max-width);
 	margin: auto;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 400;
-    color: #000;
-    text-decoration: none;
-}
-
 ul{
     list-style: none;
     padding: 0;
@@ -68,14 +58,44 @@ ul{
 	transition: 0.2s;
 	cursor: pointer;
 }
+.linkButton a:focus{
+	background-color: var(--main-dark);
+	color:var(--darker-orange);
+}
 .linkButton span{
 	padding-left: 10px;
 	vertical-align: 1px;
 	transition: 0.2s
 }
 .linkButton a:hover span{
-	padding-left: 30px;
+	padding-left:30px;
 	transition: 0.2s
+}
+.pageTitle{
+	text-align: center;
+    font-size: calc(100vw/27);
+    line-height: calc(100vw/29);
+    font-weight: bold;
+    color: var(--darker-orange);
+    text-transform: uppercase;
+    text-align: left;
+	margin-bottom: 10px;
+	margin-top: 20px ;
+}
+
+@media only screen and (max-width:1780px){
+	.pageTitle{
+		margin-top: 20px;
+        font-size: calc(100vw/20);
+        line-height: calc(100vw/24);
+	}
+}
+@media only screen and (max-width: 1280px){
+	.pageTitle{
+		margin-top: 20px;
+		font-size: 5rem;
+        line-height: calc(100vw/10);
+	}
 }
 @media only screen and (max-width: 650px){
 	.linkButton{
@@ -92,5 +112,10 @@ ul{
 		text-align: center;
 		padding: 10px 0px ;
 		margin-right: 0px;
+	}
+	.pageTitle{
+		margin-top: 50px;
+        font-size:4rem;
+        line-height: calc(100vw/10);
 	}
 }
