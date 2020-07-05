@@ -19,18 +19,24 @@ app.get('/',(req, res)=>{
 // Centra page render
 app.get('/organisaties=:doelgroep&:leeftijd&:werkzaamIn', (req, res)=>{
     // Eventueel werken met parameters hier? voor filter 
-    console.log(req.params)
-    res.render('centra');
+    
+    let filter = {
+        doelgroep: req.params.doelgroep,
+        leeftijdsgroep: req.params.leeftijd,
+        werkzaamIn: req.params.werkzaamIn
+    }
+    console.log(filter)
+    res.render('centra', {filter:filter});
 });
 
 // detail pagina voor centrum 
 app.get('/centrum/:centrum', (req, res)=>{
     let centrumExists = false;
-    let query = req.params.centrum
-    console.log(query);
+    let query = req.params.centrum;
     const centraList = require(__dirname + '/json/centra.json').centra;
 
     for(let i = 0; i <= centraList.length; i++){
+        console.log(centraList[i].naam)
         if(query == centraList[i].naam){
             let centrum = centraList[i]
             centrumExists = true;
@@ -49,13 +55,13 @@ app.get('/centrum/:centrum', (req, res)=>{
                     adres: centrum.adres
                 }
             }
-
             res.render('centrum', {centrumExists: centrumExists, centrum: centrumObject});
             break;
         }else{
+           
         }
-    }
-    res.render('centrum', {centrumExists: centrumExists});
+    } res.render('centrum', {centrumExists: centrumExists});
+   
 });
 // over-ons page render
 app.get('/over-ons', (req, res)=>{

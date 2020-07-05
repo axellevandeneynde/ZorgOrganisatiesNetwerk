@@ -18,6 +18,11 @@
 			<!-- Selects om zoekopties te filtreren  -->
 			<div id="filter">
 				<p alt="Uitleg voor filter" style="visibility: hidden; display: none;"></p>
+				<button id="openFilterBtn">
+					<div class="searchIcon">
+
+					</div>
+				</button>
 				<div class="filter-container" alt="Filterbalk voor centra's">
 					<!-- Filter voor specialisaties  -->
 					<select class="select-style" name="specialisaties" id="specFilter" alt="Kies een begeleiding">
@@ -49,20 +54,32 @@
 						<option value="West-Vlaanderen">West-Vlaanderen</option>
 					</select>
 					<!-- Bevestigings knop -->
-					<button id="filterBevestiging" onClick="clickToFilter()">Zoek<span>→</span></button>
+					<button id="filterBevestiging" onClick="clickToFilter()">
+						<div class="filterBtnWrapper">
+							<span>Zoek</span>
+							<div class="searchIcon">
+							</div>
+						</div>
+						
+					</button>
 				</div>
-				<div id="mobileFilter">
-					<div class="arrowBtn"><p>Zoek</p><span></span></div>
-				</div>
+			
 			</div>
 		</header>
 		<main class="grid">
 			<!-- Banner met informatieve tekst -->
-			<section id="orgs_banner">
-				<div class="orgs_banner_tekst">
-					<h2>Op zoek naar hulp? Wij geloven in expertise als hefboom!</h2>
-					<p>Onze warme experten helpen u verder in een van onze partnercentra. Aan de hand van deze pagina kan je op een eenvoudige en vlotte manier het juiste centrum vinden dat voldoet aan uw behoeften en criteria. U kan zoeken op basis van de begeleiding waaraan u nood heeft, de leeftijd waaraan u of iemand in jullie omgeving aan toebehoord en/of aan de hand van de dichtsbijzijnde regio.  </p>
+			<section id="orgsIntro">
+				<div class="imageContainer">
+					
 				</div>
+				<div class="orgsTekstContainer">
+					<div class="orgsTekstWrapper">
+						<h2>Op zoek naar hulp?<br> Wij geloven in expertise als hefboom!</h2>
+						<p>Onze warme experten helpen u verder in een van onze partnercentra. Aan de hand van deze pagina kan je op een eenvoudige en vlotte manier het juiste centrum vinden dat voldoet aan uw behoeften en criteria. U kan zoeken op basis van de begeleiding waaraan u nood heeft, de leeftijd waaraan u of iemand in jullie omgeving aan toebehoord en/of aan de hand van de dichtsbijzijnde regio.  </p>
+					</div>
+					
+				</div>
+				
 			</section>
 			<section class="orgsLijstContainer">
 				<div class="mainContentWrapper">
@@ -82,17 +99,17 @@
 		<!-- Script(s) (ingeladen NA HTML en CSS!)-->
 			<!-- Inladen van jQuery -->
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+			<script>
+				const homepageOption = "<%= filter.doelgroep %>";
+			</script>
 			<!-- jQuery code voor filtering systeem van de organisaties -->
 			<script type="text/javascript" src="/js/filter.js"></script>
-			<!-- Cookies script voor bijhouden keuze op homepage -->
-			<script type="text/javascript" src="/js/cookies.js"></script>
-			
+			<script>
+				window.onload = loadedFromHomePage(homepageOption);
+			</script>
 			<!-- Script voor het inladen van alle centra -->
 			<script src="/js/classes/Centrum.js" type="module"></script>
 			<script src="/js/centra.js" type="module"></script>
-			<script>
-				setOption();
-			</script>
+			
 	</body>
 </html>
