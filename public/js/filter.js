@@ -38,7 +38,12 @@ function filterCentra(){
 	var notFilter = $("div.organisatie:not("+"." + begeleiding +"."+ leeftijd +"."+ regio +")");
 	
 	//Op kleine schermen moet de display block zijn, en op grote schermen inline-flex. Deze stuk code toont de gewenste centra 
-	$("div.organisatie").css("display", "inline-flex");
+	
+	if(window.innerWidth >= 731){
+		$("div.organisatie").css("display", "inline-flex");
+	}else{
+		$("div.organisatie").css("display", "block");
+	}
 	//Deze stuk code verbergd de ongewenste centra 
 	notFilter.css( "display", "none");
 	
