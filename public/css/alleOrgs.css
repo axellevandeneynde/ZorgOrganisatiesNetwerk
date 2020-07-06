@@ -480,3 +480,13 @@ background-color: transparent;
 		margin:auto
 	}
 }
+
+@media only screen and (max-width:400px){
+	.linkButton{
+		display: flex;
+		flex-direction: column;
+	}
+	.linkButton a {
+		width: 100%;
+	}
+}

@@ -137,15 +137,17 @@ function searchButton(){
 	let btn = document.getElementById('openFilterBtn')
 	
 	btn.addEventListener('click', function(){
-		
-		if(opened == false){
+		console.log(filterOpened)
+		if(filterOpened == false){
 			slideFilter(filterOpened, btn)
-			filterOpened = true
-		}else{
-			slideFilter(filterOpened, btn)
-			filterOpened = false
+			filterOpened = true;
+		}else if(filterOpened == true){
+			filterOpened = false;
+			slideFilter(true, btn)
+			
 		}
 	})
+	
 }
 searchButton()
 
@@ -157,6 +159,7 @@ function slideFilter(opened, btn){
 	
 	let filter = document.getElementById('filter')
 	let icon = btn.childNodes[1]
+
 	if(opened == false){
 		filter.style.transform = "translateY(0%)"
 		icon.style.setProperty('mask', "url('/images/assets/cross.svg') no-repeat center / contain");
