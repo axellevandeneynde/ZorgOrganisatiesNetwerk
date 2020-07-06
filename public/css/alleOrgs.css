@@ -473,7 +473,8 @@ background-color: transparent;
 	}
 	.select-style{
 		width: 98%;
-		margin:auto
+		margin:10px auto;
+		min-width:0px;
 	}
 	#filterBevestiging{
 		margin:auto
