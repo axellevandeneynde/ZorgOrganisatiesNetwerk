@@ -229,6 +229,7 @@ background-color: transparent;
 .org_tekst{
 	margin-left: 40px;
 	vertical-align: middle;
+	text-align: justify;
 }
 /******************************
 *	Geen criteria stijl 	  *
@@ -356,6 +357,10 @@ background-color: transparent;
 	.orgsTekstContainer h2{
 		font-size: calc(100vw/15);
 		line-height: calc(100vw/15);
+
+	}.orgsTekstContainer p{
+		width: 100%;
+		text-align: justify;
 	}
 	#orgsIntro .imageContainer{
 		grid-row: 2;
