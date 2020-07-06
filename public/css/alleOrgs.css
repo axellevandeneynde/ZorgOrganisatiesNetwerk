@@ -477,6 +477,9 @@ background-color: transparent;
 	.linkButton a {
 		width: 100%;
 	}
+	.linkButton a:nth-child(2){
+		margin-top: 20px;
+	}
 }
 @media only screen and (max-width:600px){
 	.filter-container{
