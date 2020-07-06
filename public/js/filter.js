@@ -1,5 +1,6 @@
 
 //Globale variabelen
+let filterOpened = false;
 /*
 Lijst van mogelijke waarden binnen de filters: 
 - begeleiding: 
@@ -32,7 +33,6 @@ function filterCentra(){
 	var begeleiding = document.getElementById('specFilter').value;
 	var regio = document.getElementById('regioFilter').value;
 	var leeftijd = document.getElementById('leeftijdFilter').value;
-	console.log(begeleiding, regio, leeftijd)
 	var windowWidth = $(window).width();
 	//Bepalen van de filter dat getoond moet worden, en diegene dat moet verborgen worden
 	var notFilter = $("div.organisatie:not("+"." + begeleiding +"."+ leeftijd +"."+ regio +")");
@@ -68,6 +68,11 @@ function clickToFilter(){
 	filterCentra();
 	dropToList();
 	geenCriteriaTekstTonen();	
+
+	if(window.innerWidth <= 750){
+		slideFilter(true, document.getElementById("openFilterBtn"));
+		filterOpened = false;
+	}
 }
 
 
@@ -128,28 +133,37 @@ function geenCriteriaTekstTonen(){
 	}
 }
 
-function slideFilter(){
+function searchButton(){
 	let btn = document.getElementById('openFilterBtn')
-	let filter = document.getElementById('filter')
-	let icon = btn.childNodes[1]
-	let opened = false;
+	
 	btn.addEventListener('click', function(){
-		if(opened == false){
-			filter.style.transform = "translateY(0%)"
-			icon.style.setProperty('mask', "url('/images/assets/cross.svg') no-repeat center / contain");
-			icon.style.setProperty('-webkit-mask',"url('/images/assets/cross.svg') no-repeat center / contain");
-			opened = true;
-		}else{
-			filter.style.transform = "translateY(100%)"
-			icon.style.setProperty('mask', "url('/images/assets/search.svg') no-repeat center / contain");
-			icon.style.setProperty('-webkit-mask',"url('/images/assets/search.svg') no-repeat center / contain");
-			opened = false;
-		}
 		
+		if(opened == false){
+			slideFilter(filterOpened, btn)
+			filterOpened = true
+		}else{
+			slideFilter(filterOpened, btn)
+			filterOpened = false
+		}
 	})
 }
-slideFilter()
+searchButton()
 
 function filterStyleReset(){
 
+}
+
+function slideFilter(opened, btn){
+	
+	let filter = document.getElementById('filter')
+	let icon = btn.childNodes[1]
+	if(opened == false){
+		filter.style.transform = "translateY(0%)"
+		icon.style.setProperty('mask', "url('/images/assets/cross.svg') no-repeat center / contain");
+		icon.style.setProperty('-webkit-mask',"url('/images/assets/cross.svg') no-repeat center / contain");
+	}else{
+		filter.style.transform = "translateY(100%)"
+		icon.style.setProperty('mask', "url('/images/assets/search.svg') no-repeat center / contain");
+		icon.style.setProperty('-webkit-mask',"url('/images/assets/search.svg') no-repeat center / contain");
+	}
 }
