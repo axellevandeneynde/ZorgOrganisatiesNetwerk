@@ -1,3 +1,29 @@
+/* page header*/
+.pageHeader{
+    display: grid;
+    grid-template-columns: 20% 10% 10% 20% 20% 20%;
+	height:500px;
+}
+.imageContainer{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-image: url(/images/headers/getuigenissen.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.titleContainer{
+    grid-column-start: 3;
+    grid-column-end: 6;
+   
+}
+
+.titleContent{
+    width: 90%;
+    margin: auto;
+}
+/**/
+
 #getuigenissenContainer{
     display: flex;
     flex-wrap: wrap;
@@ -5,21 +31,108 @@
     margin-bottom: 20px;
 }
 #getuigenissenContainer article{
-width: 30%;
-min-width: 300px;
-max-width: 30%;
+    width: 30%;
+    min-width: 300px;
+    max-width: 30%;
+    margin: 20px;
+}
+
+#getuigenissenContainer article h3{
+    text-transform: uppercase;
+    color: var(--main-dark);
+    font-weight: bold;
+    font-size: 24px;
 }
 #getuigenissenContainer article p{
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    width: 90%;
+}
+
+
+article .thumbnailContainer{
+    width: 95%;
+    margin: auto;
+    border-bottom: 2px solid var(--darker-orange);
+    padding-bottom: 20px;
+}
+.thumbnailContainer h3{
+    position: relative;
+    margin-bottom: 20px;
+}
+.thumbnailContainer p{
+    margin-bottom: 20px;
+}
+.thumbnailContainer h3::after{
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 50%;
+    top: 15px;
+    left:20px;
+    background-color: var(--main-orange);
+    z-index: -1;
 }
 
 @media only screen and (max-width: 1350px){
+    .mainContentWrapper{
+        width: 90%;
+    }
     #getuigenissenContainer{
-       width: 80%;
+       width: 90%;
+       margin:auto;
+       justify-content: space-between;
+    }
+    #getuigenissenContainer article{
+        width: 42%;
+        min-width: 0px;
+        max-width: none;
+        margin: 20px;
+        }
+}
+@media only screen and (max-width: 1000px){
+    .pageHeader{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+        margin: auto;
+    }
+    .pageHeader .titleContent h1{
+        text-align: center;
+    }
+    #getuigenissenContainer{
+        width: 90%;
+    } 
+    #getuigenissenContainer article{
+        width: 42%;
+        min-width: 0px;
+        max-width: 315PX;
+        margin: 20px;
+        }
+
+}
+@media only screen and (max-width: 850px){
+    
+    #getuigenissenContainer{
+       width: 100%;
        margin:auto;
     }
-
+    #getuigenissenContainer article{
+        width: 100%;
+        min-width: none;
+        max-width: none;
+        margin: 20px auto;
+        
+        }
+}
+@media only screen and (max-width: 650px){
+  article .linkButton{
+      width: 100%;
+  }
+  article .linkButton a{
+    width: 100%;
+}
 }

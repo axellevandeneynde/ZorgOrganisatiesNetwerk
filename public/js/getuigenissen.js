@@ -74,6 +74,8 @@ function loadCentrumData(centrumID){
 
 function createGetuigenisThumbnail(data){
     let newGetuigenis = document.createElement('article')
+    let container = document.createElement('div')
+    container.classList.add('thumbnailContainer')
     let title = document.createElement('h3')
     title.innerHTML = data.auteur
     let teaser = document.createElement('p')
@@ -85,8 +87,8 @@ function createGetuigenisThumbnail(data){
     doorLeesBtn.setAttribute('href', `/getuigenis/${data.getuigenisID}`)
     doorLeesBtnContainer.append(doorLeesBtn)
 
-    newGetuigenis.append(title, teaser, doorLeesBtnContainer)
-
+    container.append(title, teaser, doorLeesBtnContainer)
+    newGetuigenis.append(container)
 
     return newGetuigenis
 }
