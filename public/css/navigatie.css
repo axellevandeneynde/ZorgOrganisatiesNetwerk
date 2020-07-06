@@ -104,6 +104,8 @@ header{
 #mobileMenuIcon{
 	display: none;
 	border: 0 ;
+}#mobileMenuIcon:focus{
+	border: 0 ;
 }
 #mobileNav{
 	display: none;
