@@ -79,6 +79,39 @@ app.get('/over-ons', (req, res)=>{
 app.get('/getuigenissen', (req, res)=>{
     res.render('getuigenissen');
 });
+app.get('/getuigenis/:getuigenis', (req, res) => {
+    let getuigenisExists = false;
+    let query = req.params.getuigenis;
+    const getuigenisList = require(__dirname + '/json/getuigenissen.json');
+    class Getuigenis{
+        constructor(id, auteur, body, centrum){
+            this.id = id,
+            this.auteur = auteur,
+            this.body = body,
+            this.centrum = centrum
+        }
+    }
+
+    let result;
+
+    for(let i = 0; i < getuigenisList.length; i++){
+
+        if(query ==  getuigenisList[i].getuigenisID){
+            
+            let get =  getuigenisList[i]
+            result = new Getuigenis(get.getuigenisID, get.auteur, get.body, get.centrum)
+            getuigenisExists = true;
+            break;
+        }else{
+            getuigenisExists = false;
+        }
+    } 
+    if( getuigenisExists == true){
+        res.render('getuigenis', { getuigenisExists:  getuigenisExists, getuigenis: result});
+    }else{
+        res.render('getuigenis', { getuigenisExists:  getuigenisExists});
+    }
+});
 // Post feedback
 app.post('/feedbackEAH', (req, res)=>{
     
