@@ -43,10 +43,10 @@ app.get('/centrum/:centrum', (req, res)=>{
             this.leeftijdsgroep = leeftijdsgroep,
             this.werkzaamIn =  werkzaamIn,
             this.contactInfo = {
-               " website": website, 
+                "website": website, 
                 'tel': tel,
                 "email": email,
-               " adres": adres
+                "adres": adres
             }
         }
     }
