@@ -119,6 +119,7 @@ option:hover{
 	width: 20px;
 	height: 20px;
 	mask: url("/images/assets/search.svg")no-repeat center / contain;
+	-webkit-mask: url("/images/assets/search.svg")no-repeat center / contain;
 	background-color: var(--main-dark);
 	transform: rotate(90deg);
 	justify-self: flex-end;
@@ -286,6 +287,7 @@ background-color: transparent;
 		width: 20px;
 		height: 20px;
 		mask: url("/images/assets/search.svg")no-repeat center / contain;
+		-webkit-mask: url("/images/assets/search.svg")no-repeat center / contain;
 		background-color: var(--main-dark);
 		transform: rotate(90deg);
 		justify-self: flex-end;

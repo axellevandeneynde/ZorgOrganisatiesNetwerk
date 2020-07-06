@@ -129,6 +129,7 @@ table td:nth-child(1){
     height: 50px;
     background-color: black;
     mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
 }
 
 /* Media queries /*/
