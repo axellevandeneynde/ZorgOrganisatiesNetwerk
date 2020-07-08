@@ -52,8 +52,9 @@
 }
 
 
-article .thumbnailContainer{
-    width: 95%;
+.thumbnailContainer{
+    display: grid;
+    grid-template-rows: auto auto 50px;
     margin: auto;
     border-bottom: 2px solid var(--darker-orange);
     padding-bottom: 20px;
@@ -64,6 +65,19 @@ article .thumbnailContainer{
 }
 .thumbnailContainer p{
     margin-bottom: 20px;
+}
+.thumbnailContainer .linkButton{
+    width: 30%;
+    align-self: center;
+    justify-self:left;
+}
+.thumbnailContainer .linkButton a{
+    display:block;
+    width: 100%;
+    margin-right: 0px;
+    min-width: 100px;
+    max-width: 100px;
+    text-align:center;
 }
 .thumbnailContainer h3::after{
     position: absolute;
@@ -90,7 +104,13 @@ article .thumbnailContainer{
         min-width: 0px;
         max-width: none;
         margin: 20px;
-        }
+    }
+    .thumbnailContainer{
+        min-height: 270px;
+    }
+    .thumbnailContainer .linkButton a{
+        padding: 10px 15px;
+    }
 }
 @media only screen and (max-width: 1000px){
     .pageHeader{
@@ -111,7 +131,8 @@ article .thumbnailContainer{
         min-width: 0px;
         max-width: 315PX;
         margin: 20px;
-        }
+    }
+   
 
 }
 @media only screen and (max-width: 850px){
@@ -125,14 +146,17 @@ article .thumbnailContainer{
         min-width: none;
         max-width: none;
         margin: 20px auto;
-        
         }
+    .thumbnailContainer{
+        min-height: 0px;
+    }
 }
 @media only screen and (max-width: 650px){
-  article .linkButton{
-      width: 100%;
-  }
-  article .linkButton a{
-    width: 100%;
-}
+    article .linkButton{
+        width: 100%;
+    }
+    article .linkButton a{
+        width: 100%;
+        max-width: none !important;
+    }
 }

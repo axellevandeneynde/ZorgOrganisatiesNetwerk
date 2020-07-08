@@ -5,11 +5,10 @@ const buttons = [];
 
 
 $(function(){
-    loadGetuigenissenInHTML(getuigenissen)
+    
 });
 
-function loadGetuigenissenInHTML(lijst){
-    let container = document.getElementById('getuigenissenContainer')
+export function loadGetuigenissenInHTML(lijst, container){
     lijst.forEach(g => {
        
         container.append( createGetuigenisThumbnail(g))
@@ -34,7 +33,7 @@ function centraCall(){
     return centraArray;
 }
 
-function getuigenissenCall(){
+export function getuigenissenCall(){
     var getuigenissen;
     $.ajax({
         url: '/API/getuigenissen',
@@ -91,4 +90,17 @@ function createGetuigenisThumbnail(data){
     newGetuigenis.append(container)
 
     return newGetuigenis
+}
+
+export function pickRandomGetuigenissen(container, amnt){
+    let list = getuigenissenCall();
+    let newList = []; 
+    //TO-DO: Dubbelen verwijderen (pop?)
+    for(let i = 0; i < 3; i++){
+        let randomNbr = Math.floor( Math.random()*list.length)
+        let random = list[randomNbr]
+        list.splice(randomNbr, 1)
+        newList.push(random)
+    }
+     loadGetuigenissenInHTML(newList, container)
 }

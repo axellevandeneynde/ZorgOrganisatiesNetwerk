@@ -54,6 +54,12 @@
    
     <script src="/js/classes/Getuigenis.js" type="module"></script>
     <script src="/js/getuigenissen.js" type="module"></script>
+
+    <script type="module">
+        import {getuigenissenCall, loadGetuigenissenInHTML} from '/js/getuigenissen.js';
+        const getuigenissen = getuigenissenCall();
+        loadGetuigenissenInHTML(getuigenissen, document.getElementById('getuigenissenContainer'))
+    </script>
 </body>
 
 </html>

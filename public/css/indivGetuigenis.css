@@ -1,0 +1,204 @@
+.mainContentWrapper{
+    display:grid;
+    grid-template-columns: 45% 5% 50%;
+    grid-template-rows: auto 20px auto;
+    place-items: center;
+    min-height: 0px;
+    margin-top: 40px;
+}
+body{
+    height:auto;
+    min-height: 0px;
+}
+.getuigenisBody{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.getuigenisBody p{
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+   
+}
+.getuigenisTitle h2{
+    color: var(--main-dark);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.otherGetuigenissenContainer{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width:100%;
+    height:100%;
+}
+#otherGetuigenissenWrapper{
+    display:flex;
+    flex-wrap: wrap;
+}
+#otherGetuigenissenWrapper article{
+    width: 30%;
+    min-width: 300px;
+    max-width: 30%;
+    margin: 20px;
+}
+#otherGetuigenissenWrapper article h3{
+    text-transform: uppercase;
+    color: var(--main-dark);
+    font-weight: bold;
+    font-size: 24px;
+}
+#otherGetuigenissenWrapper article p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 90%;
+}
+.alleGetuigenissenBtn{
+    width: 40%;
+    margin: auto;
+}
+.alleGetuigenissenBtn {
+    overflow:hidden;
+    margin-bottom: 50px;
+}
+.alleGetuigenissenBtn .linkButton a{
+    width: 100%;
+    padding: 20px 0px;
+    margin-right: 0px;
+}
+@media only screen and (max-width: 1350px){
+    .pageTitle{
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    .getuigenisTitle{
+        text-align: center;
+        position:relative;
+    }
+    .getuigenisTitle h2{
+        margin: 0px 0px 20px 0px;
+    }
+    .getuigenisTitle::after{
+        content: "";
+        width: 80%;
+        background-color: var(--main-dark);
+        height: 3px; 
+        position:absolute;
+        bottom: 10px;
+        margin: auto;
+        transform: translateX(-50%);
+    }
+    .mainContentWrapper{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 20px auto;
+    place-items: center;
+    min-height: 0px;
+    margin-top: 40px;
+    }
+    .getuigenisBody{
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row: 2;
+    }
+    .getuigenisBody p{
+        width: 100%;
+    
+    }
+    .getuigenisTitle{
+        grid-column-start: 1;
+        grid-column-end: -1;
+         grid-row: 1;
+    }
+    .otherGetuigenissenContainer{
+         grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    #otherGetuigenissenWrapper{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #otherGetuigenissenWrapper article:nth-child(3){
+        display:none;
+    }
+    .alleGetuigenissenBtn {
+        overflow:hidden;
+        margin-bottom: 50px;
+    }
+    .alleGetuigenissenBtn .linkButton a{
+        width: 100%;
+        padding: 20px 0px;
+        margin-right: 0px;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .pageHeader{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+        margin: auto;
+    }
+    .pageHeader .titleContent h1{
+        text-align: center;
+    }
+    #otherGetuigenissenWrapper{
+        width: 90%;
+        margin: auto;
+    } 
+    #otherGetuigenissenWrapper article{
+        width: 42%;
+        min-width: 0px;
+        max-width: 315PX;
+        margin: 20px;
+    }
+    .alleGetuigenissenBtn {
+        overflow:hidden;
+        margin-bottom: 50px;
+        width:82%;
+    }
+    .alleGetuigenissenBtn .linkButton a{
+        width: 100%;
+        padding: 20px 0px;
+        margin-right: 0px;
+    }
+
+}
+@media only screen and (max-width: 850px){
+    .getuigenisTitle h2{
+        font-size: calc(100vw/21)
+    }
+    .alleGetuigenissenBtn{
+        width: 100%;
+    }
+    #otherGetuigenissenWrapper{
+       width: 100%;
+       margin:auto;
+    }
+    #otherGetuigenissenWrapper article{
+        width: 100%;
+        min-width: 0px;
+        max-width: none;
+        margin: 20px auto;
+        min-height: 0px;
+    }
+    #otherGetuigenissenWrapper article:nth-child(3){
+        display: block;
+    }
+    
+}
+@media only screen and (max-width: 650px){
+    article .linkButton{
+        width: 100%;
+    }
+    article .linkButton a{
+        width: 100%;
+        max-width: none !important;
+    }
+
+}
