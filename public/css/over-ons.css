@@ -88,21 +88,27 @@ main{
 }
 .beperkingenLijst li:nth-child(1) .icon{
     mask: url(/images/assets/home_icons/auditief.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/auditief.svg) no-repeat center / contain;
 }
 .beperkingenLijst li:nth-child(2) .icon{
     mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
 }
 .beperkingenLijst li:nth-child(3) .icon{
     mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
 }
 .beperkingenLijst li:nth-child(4) .icon{
     mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/visueel.svg) no-repeat center / contain;
 }
 .beperkingenLijst li:nth-child(6) .icon{
     mask: url(/images/assets/home_icons/nah.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/nah.svg) no-repeat center / contain;
 }
 .beperkingenLijst li:nth-child(5) .icon{
     mask: url(/images/assets/home_icons/motorisch.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/motorisch.svg) no-repeat center / contain;
 }
 /*media queries*/
 @media only screen and (max-width:1670px) {
