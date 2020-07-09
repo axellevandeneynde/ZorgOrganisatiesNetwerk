@@ -92,10 +92,13 @@ export default class Centrum{
                     <article class="org_tekst">
                         <div><h4 class="orgThumbnailTitle">${this.name}</h4></div>
                         <p>${this.beschrijving}</p> 
-                        <div class="linkButton">
-                            <a href="https://${this.website}" target="_blank">Website</a>
-                            <a href="/centrum/${this.name}" onClick="setCentrum('${this.id}')">Meer informatie <span>→</span></a>
+                        <div class="thumbnailLinks">
+                            <div class="linkButton">
+                            <a href="https://${this.website}" target="_blank">Website</a>  
+                            </div>
+                            <div class="linkButton"><a href="/centrum/${this.name}" onClick="setCentrum('${this.id}')">Meer informatie <span>→</span></a></div>
                         </div>
+                       
                     </article>
                 </div>`;
     }

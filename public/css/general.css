@@ -68,10 +68,6 @@ ul{
 	vertical-align: 1px;
 	transition: 0.2s
 }
-.linkButton a:hover span{
-	padding-left:30px;
-	transition: 0.2s
-}
 .pageTitle{
 	text-align: center;
     font-size: calc(100vw/27);

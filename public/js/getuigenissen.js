@@ -92,15 +92,26 @@ function createGetuigenisThumbnail(data){
     return newGetuigenis
 }
 
-export function pickRandomGetuigenissen(container, amnt){
+export function pickRandomGetuigenissen(container, amnt, shownID){
+    //TO-DO: Ervoor zorgen dat diegene dat op de pagina staat, niet getoond wordt in deze lijst.
     let list = getuigenissenCall();
     let newList = []; 
-    //TO-DO: Dubbelen verwijderen (pop?)
+    for(let i = 0; i < list.length; i++){
+        if(list[i].getuigenisID == shownID){
+            console.log(list[i].getuigenisID)
+            list.splice(i, 1);
+            break;
+        }
+    }
     for(let i = 0; i < 3; i++){
+
         let randomNbr = Math.floor( Math.random()*list.length)
         let random = list[randomNbr]
+        
         list.splice(randomNbr, 1)
         newList.push(random)
+        
     }
+    console.log(list, newList)
      loadGetuigenissenInHTML(newList, container)
 }

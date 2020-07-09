@@ -1,6 +1,6 @@
 .mainContentWrapper{
     display:grid;
-    grid-template-columns: 45% 5% 50%;
+    grid-template-columns: 35% 5% 60%;
     grid-template-rows: auto 20px auto;
     place-items: center;
     min-height: 0px;
@@ -20,6 +20,9 @@ body{
     text-align: justify;
    
 }
+.getuigenisTitle{
+    place-self: center;
+}
 .getuigenisTitle h2{
     color: var(--main-dark);
     text-transform: uppercase;
@@ -32,6 +35,13 @@ body{
     grid-row-end: 4;
     width:100%;
     height:100%;
+}
+.otherGetuigenissenTitle{
+    width: 96%;
+    margin: auto;
+    text-transform: uppercase;
+    color: var(--main-dark);
+    border-bottom: 2px solid var(--main-dark);
 }
 #otherGetuigenissenWrapper{
     display:flex;
@@ -93,12 +103,12 @@ body{
         transform: translateX(-50%);
     }
     .mainContentWrapper{
-    display:grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto 20px auto;
-    place-items: center;
-    min-height: 0px;
-    margin-top: 40px;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 20px auto;
+        place-items: center;
+        min-height: 0px;
+        margin-top: 40px;
     }
     .getuigenisBody{
         grid-column-start: 1;
@@ -106,7 +116,7 @@ body{
         grid-row: 2;
     }
     .getuigenisBody p{
-        width: 100%;
+        width: 60%;
     
     }
     .getuigenisTitle{
@@ -117,6 +127,9 @@ body{
     .otherGetuigenissenContainer{
          grid-row-start: 4;
         grid-row-end: 5;
+    }
+    .otherGetuigenissenTitle{
+        width: 80%;
     }
     #otherGetuigenissenWrapper{
         display:flex;
@@ -137,6 +150,9 @@ body{
     }
 }
 @media only screen and (max-width: 1000px){
+    .otherGetuigenissenTitle{
+        width: 80%;
+    }
     .pageHeader{
         display: flex;
         flex-direction: column;
@@ -170,6 +186,13 @@ body{
 
 }
 @media only screen and (max-width: 850px){
+    .otherGetuigenissenTitle{
+        width: 100%;
+    }
+    .getuigenisBody p{
+        width: 100%;
+    
+    }
     .getuigenisTitle h2{
         font-size: calc(100vw/21)
     }

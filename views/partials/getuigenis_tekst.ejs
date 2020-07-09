@@ -7,12 +7,17 @@
 </div>
 
 <section class="otherGetuigenissenContainer">
+    <div class="otherGetuigenissenTitle">
+        <h3>
+            Meer getuigenissen
+        </h3>
+    </div>
     <div id="otherGetuigenissenWrapper">
 
     </div>
     <div class="alleGetuigenissenBtn">
         <div class="linkButton">
-            <a href="/getuigenissen">Meer getuigenissen</a>
+            <a href="/getuigenissen">Alle getuigenissen</a>
         </div>
     </div>
     
@@ -25,5 +30,5 @@
 <script src="/js/getuigenissen.js" type="module"></script>
 <script type="module">
     import {getuigenissenCall, pickRandomGetuigenissen} from '/js/getuigenissen.js'
-    pickRandomGetuigenissen(document.getElementById('otherGetuigenissenWrapper'), 3)
+    pickRandomGetuigenissen(document.getElementById('otherGetuigenissenWrapper'), 3, "<%= getuigenis.id %>")
 </script>
