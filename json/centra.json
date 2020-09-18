@@ -83,7 +83,7 @@
             "email": "kids@kids.be",
             "telefoonnummer": "011/22.25.93",
             "adres": "broggravevijverstraat 9, 3500 Hasselt",
-            "regio": "Limburg"
+            "regio": ["Limburg", "Antwerpen", "Vlaams-Brabant"]
         },
         {
             "centra_ID": "05",
@@ -181,7 +181,7 @@
             "email": "vzw@windekindleuven.b",
             "telefoonnummer": "016/24.11.10",
             "adres": "Schapenstraat 98, 3000 Leuven",
-            "regio": "Vlaams-Brabant"
+            "regio": ["Vlaams-Brabant"]
         },
         {
             "centra_ID": "10",
@@ -200,7 +200,7 @@
             "email": "info@kiwoluwe.org",
             "telefoonnummer": "027/35.40.85",
             "adres": "Georges Henrilaan 278, 1200 Sint-Lambrechts-Woluwe",
-            "regio": "Brussel"
+            "regio": ["Brussel"]
         },
         {
             "centra_ID": "11",
@@ -246,8 +246,7 @@
             "email": "info@dominiek-savio.be",
             "telefoonnummer": "051/23.06.11",
             "adres": "Koolskampstraat 24, 8830 Gits",
-            "regio": [
-            ]
+            "regio": [ "West-Vlaanderen"]
         }
     ]
 }

@@ -6,7 +6,7 @@
 	float: right;
 }
 main{
-	padding-top: 70px;
+	padding-top: 61px;
 }
 #filter{
 	width: 100%;
@@ -19,6 +19,8 @@ main{
 	width: 100%;
 	margin: auto;
 	text-align: center;	
+	display: flex;
+	justify-content: center;
 }
 /**************************
 *    Style voor selects   *
@@ -26,25 +28,34 @@ main{
 select{
     padding: 5px;
     font-size: 12px; 
-    height: 34px;
+    height: 40px;
 	border-radius: 0;
-	border: 3px double #f79838;
+	border: none;
 	width: 280px;
 	margin: 0px 10px;
-	background-color: #fff;
-	background-image: url('../images/assets/downArrow.svg');
-	background-size: 29px;
-	background-repeat: no-repeat;
-	background-position: 100.3%;
 	cursor: pointer;
 	transition: 0.2s;
-    overflow: auto;
+	overflow: auto;
+	position: relative;
+	background-image: url(/images/assets/arrow.svg);
+	background-repeat: no-repeat;
+	background-size: 5%;
+	background-position: 95% 50%;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 select:hover{
-	background-color: #F1F1F1;
 	transition: 0.2s;
+	color: var(--darker-orange);
+}select:focus{
+	transition: 0.2s;
+	color: var(--darker-orange);
 }
-
+select option{
+	color: black;
+	text-transform: none;
+	font-weight: normal;
+}
 /************************************
 *	   Default style van selects    *
 *	verwijderen voor verschillende  *
@@ -68,76 +79,93 @@ option:hover{
 ***********************/
 #filterBevestiging{ 
 	background-color: white;
-	border: 3px double #f79838;
-	padding: 6px 5px;
-	width: 280px;
+	border: none;
+	padding: 5.5px 5.5px;
+	width: 20%;
 	transition: 0.2s;
+	height: 100%;
+	max-width: 200px;
+	min-height: 40px;
+}
+.filterBtnWrapper{
+	display: grid;
+	grid-template-columns: auto auto;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:var(--main-dark);
+}.filterBtnWrapper span{
+	justify-self: flex-start;
+	margin-left: 10px;
 }
 #filterBevestiging:hover{ 
-	background-color:#ffe5cc;
+	background-color:var(--main-dark);
 	cursor: pointer;
-	transition: 0.2s;    
+	transition: 0.2s;   
+	color:var(--darker-orange); 
 }
-#filterBevestiging:hover span{ 
-	padding-left: 50px;
-	transition: 0.2s;
+#filterBevestiging:hover div{ 
+	color:var(--darker-orange); 
 }
-
-#filterBevestiging:active{ 
-	background-color:#f79838;
+#filterBevestiging:focus{ 
+	background-color:var(--main-dark);
 	cursor: pointer;
-	transition: 0.2s;
+	transition: 0.2s;   
+	color:var(--darker-orange); 
 }
-#filterBevestiging span{
-	padding-left: 30px;
-	vertical-align: 1px;
-	transition: 0.2s;
+#filterBevestiging:focus div{ 
+	color:var(--darker-orange); 
+}
+.searchIcon{
+	width: 20px;
+	height: 20px;
+	mask: url("/images/assets/search.svg")no-repeat center / contain;
+	-webkit-mask: url("/images/assets/search.svg")no-repeat center / contain;
+	background-color: var(--main-dark);
+	transform: rotate(90deg);
+	justify-self: flex-end;
+}#filterBevestiging:hover .searchIcon{
+	background-color: var(--darker-orange);
+}#filterBevestiging:focus .searchIcon{
+	background-color: var(--darker-orange);
 }
 /****************************
 *  Mobiele navigatie style  *
 ****************************/
-.sticky{
-	position: fixed;
-}
-#mobileFilter{
-	display: none;
+#openFilterBtn{
+display: none;
+border: 0;
+background-color: transparent;
 }
 /*******************************
 * Intro banner met tekst style *
 *******************************/
-#orgs_banner{
-	width: 100%;
-	height: 480px;
-	background: url("../images/org_banner.jpg");
-	background-position: center ;
-	background-size: cover;
-	background-repeat: no-repeat; 
-	display: flex;
-	align-items: center;
-	overflow: hidden;
+#orgsIntro{
+	display: grid;
+	grid-template-columns: 20% 10% 10% 20% 20% 20%;
+	height: 500px;
 }
-.orgs_banner_tekst{
-	background-color: rgba(255,255,255,0.80);
-	width: 100%;
+.imageContainer{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	background-image: url(/images/headers/allOrgs.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
 }
-.orgs_banner_tekst h2{
-	margin: auto;
-	width: 100%;
-	padding: 25px 0px;
-	font-size: 2rem;
-	font-weight: 400;
-	text-align: center;
+.orgsTekstContainer{
+	grid-column-start: 3;
+	grid-column-end: 6;
 }
-.orgs_banner_tekst p{
-	width: 50%;
-	margin: auto;
-	font-size: 14px;
-	padding-bottom: 30px;
-	text-align: center;
+.orgsTekstWrapper{
+	width: 80%;
+	margin:auto;
+}.orgsTekstWrapper h2{
+	font-size: calc(100vw/35);
+	line-height: calc(100vw/39);
+	text-transform: uppercase;
+	color: var(--main-dark);
 }
-.org_titel{
-    font-weight: 700;
-	margin-top: 20px;
+.orgsTekstWrapper p{
+	width: 70%;
 }
 /************************************
 * Style voor lijst van organisaties *
@@ -170,6 +198,7 @@ option:hover{
 	display: inline-flex;
 	width: 77%;
 	padding: 25px 0;
+	
 }
 .orRight{
 	background-color: green;
@@ -201,6 +230,22 @@ option:hover{
 .org_tekst{
 	margin-left: 40px;
 	vertical-align: middle;
+	text-align: justify;
+}
+.thumbnailLinks{
+	display: grid;
+	grid-template-columns: auto 30px auto;
+	gap: 20px;
+	width: 98%;
+}
+.thumbnailLinks .linkButton{
+	width: inherit;
+}
+.thumbnailLinks .linkButton a{
+	padding: 10px 0px;
+}
+.thumbnailLinks .linkButton:nth-child(2){
+	grid-column: 3;
 }
 /******************************
 *	Geen criteria stijl 	  *
@@ -213,9 +258,61 @@ option:hover{
 /******************************
 *		Media queries 		  *
 ******************************/
+@media only screen and (max-width:1450px){
+	#orgsIntro{
+		display: grid;
+		grid-template-columns: 20% 10%  auto;
+		height: 500px;
+	}
+	.orgsTekstWrapper h2{
+		font-size: 3rem;
+		line-height: 3rem;
+		text-transform: uppercase;
+		color: var(--main-dark);
+	}
+	.orgsTekstWrapper p{
+		width: 90%;
+	}
+}
+@media only screen and (max-width:1250px){
+	#filterBevestiging{
+	
+		min-width: 40px;
+		border-radius: 50%;
+		background-color: transparent;
+		border: 2px solid var(--main-orange);
+		width: max-content;
+		height: max-content;
+	}
+	#filterBevestiging:hover{
+		
+		min-width: 40px;
+		border-radius: 50%;
+		border: 2px solid transparent;
+		width: max-content;
+		height: max-content;
+	}	#filterBevestiging:focus{
+		width: auto;
+		min-width: 40px;
+		border-radius: 50%;
+		border: 2px solid transparent;
+	}
+	#filterBevestiging span{
+		display: none;
+	}
+	.searchIcon{
+		width: 20px;
+		height: 20px;
+		mask: url("/images/assets/search.svg")no-repeat center / contain;
+		-webkit-mask: url("/images/assets/search.svg")no-repeat center / contain;
+		background-color: var(--main-dark);
+		transform: rotate(90deg);
+		justify-self: flex-end;
+	}
+}
 @media only screen and (max-width:1150px){
 	.filter-container{
-		display: none;
+		
 	}
 	#orgs_banner{
 		margin-top: 0px;
@@ -230,67 +327,7 @@ option:hover{
 	.organisatie:nth-child(2n+0){
 	}
 }
-@media only screen and (max-width:880px){
-	#orgs_lijst {
-		grid-column: col 1/ span 12;
-	}
-}
-@media only screen and (max-width:892px){
-	#filter{	
-		height: auto;	
-	}
-	.select-style{
-		margin-top: 10px;
-	}
-	#filterBevestiging{
-		margin:10px;
-	}
-}
-@media only screen and (max-width:1193px){
-/****************************
-*  Mobiele navigatie style  *
-****************************/
-	.mobileFilterToggle{
-		width: 100%;
-		display: none;
-	}
-	#mobileFilter{
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		align-items: center;
-		padding: 5px;
-	}
-	.filter-container{
-		display: none;
-	}
-	.arrowBtn{
-		text-align: center;
-	}
-	#filter{
-		display: block;
-		height: auto;
-	}
-	#filterBevestiging{
-		margin-top: 10px;
-	}
-	/**************************
-	* Filter pijl en animatie *
-	**************************/
-	.arrowBtn span{
-		border: solid white;
-		border-width: 0 9px 9px 0;
-		display: inline-block;
-		padding: 9px;
-		transform: rotate(45deg);
-	}
-	.arrowBtn p{
-		margin: 10px 0 0;
-		color: white;
-		font-weight: 600;
-		transition: 0.4s;
-	}
-}
+
 @media only screen and (max-width:1080px){
 	.orgs_banner_tekst p{
 		width: 70%;	
@@ -298,7 +335,120 @@ option:hover{
 	.organisatie{
 		float: left;
 	}
+}@media only screen and (max-width:1000px){
+	main{
+		padding-top: 0px;
+	}
+	#filter{
+		position: fixed;
+		bottom: 0;
+	}
+	.filter-container{
+		position: relative;
+		align-items: center;
+	}
+	.select-style{
+		width: 26%;
+		margin:10px ;
+	}
+
 }
+@media only screen and (max-width:892px){
+	#filter{	
+		height: auto;	
+	}
+
+}
+@media only screen and (max-width:750px){
+	.organisatie{
+		border-bottom: 2px solid var(--main-dark);
+	}
+	.thumbnailLinks{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: 100%;
+	}
+	.thumbnailLinks .linkButton{
+		padding: 10px 0px;
+	}
+	#orgsIntro{
+		display: grid;
+		grid-template-columns:  auto;
+		grid-template-rows: auto 200px;
+		height: auto;
+	}
+	.orgsTekstContainer{
+		grid-column-start: 1;
+		grid-column-end: 2;
+
+	}
+	.orgsTekstContainer h2{
+		font-size: calc(100vw/15);
+		line-height: calc(100vw/15);
+
+	}.orgsTekstContainer p{
+		width: 100%;
+		text-align: justify;
+	}
+	#orgsIntro .imageContainer{
+		grid-row: 2;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		height: 100%;
+		background-position: center 70%;
+	}
+	#openFilterBtn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 60px;
+		background-color: var(--darker-orange);
+		width: 100%;
+		position: absolute;
+		top: -60px;
+		cursor: pointer;
+		transition: 0.2s ease;
+
+	}
+	#openFilterBtn:focus .searchIcon{
+		background-color: var(--darker-orange);
+	}
+	#openFilterBtn:focus{
+		background-color: var(--main-dark);
+	}
+	#openFilterBtn:hover.searchIcon{
+		background-color: var(--darker-orange);
+	}
+	#openFilterBtn:hover{
+		background-color: var(--main-dark);
+	}
+	#filter{
+		transform: translateY(100%);
+		transition: 0.2s ease;
+	}
+	.filter-container{
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		gap: 10px;
+		margin: 20px 0px;
+	}
+	.select-style{
+		margin: auto;
+		width: 100%;
+		margin-top: 0px !important;
+		min-width: 280px;
+	}
+	#filterBevestiging{
+		width: max-content;
+		height: max-content;
+		margin: 0px;
+		justify-self: center;
+	}
+}
+
+
 @media only screen and (max-width:731px){
 	.org_titel{
 		text-align: left;
@@ -313,7 +463,7 @@ option:hover{
     .organisatie picture{
         width: 50%;
         height: 40%;
-        margin: auto;
+        margin: 10px auto ;
     }
 	.organisatie picture img{
 		width: 100%;
@@ -349,11 +499,32 @@ option:hover{
 	.orgs_banner_tekst p{
 		width: 90%;
 	}
+	.linkButton{
+		display: flex;
+		flex-direction: column;
+	}
+	.linkButton a {
+		width: 100%;
+	}
+	.linkButton a:nth-child(2){
+		margin-top: 20px;
+	}
 }
-@media only screen and (max-width:444px){
+@media only screen and (max-width:600px){
+	.filter-container{
+		display: flex;
+		flex-direction: column;
+	}
 	.select-style{
 		width: 98%;
-		margin-left: 0px;
-		margin-right: 0px;
+		margin:10px auto;
+		min-width:0px;
 	}
+	#filterBevestiging{
+		margin:auto
+	}
+}
+
+@media only screen and (max-width:400px){
+	
 }

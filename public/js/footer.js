@@ -3,7 +3,7 @@ import Getuigenis from './classes/Getuigenis.js';
 const url = "http://localhost:8000";
 $(function(){
     $.ajax({
-        url: url + '/API/getuigenissen',
+        url: '/API/getuigenissen',
         dataType: 'JSON',
         method: 'GET',
         async: false

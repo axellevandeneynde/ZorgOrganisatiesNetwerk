@@ -39,15 +39,16 @@ ul{
 	cursor: pointer;
 }
 .linkButton a{
+	display:block;
 	text-decoration: none;
+	text-align: center;
 	color: white;
 	background-color: #f79838;
 	border: 0;
 	font-size: 12px;
-	margin-right: 30px;
 	padding: 3px 10px;
 	transition: 0.2s;
-
+	width: 100%;
 	text-transform: uppercase;
 	font-weight: bold;
 	
@@ -65,10 +66,6 @@ ul{
 .linkButton span{
 	padding-left: 10px;
 	vertical-align: 1px;
-	transition: 0.2s
-}
-.linkButton a:hover span{
-	padding-left:30px;
 	transition: 0.2s
 }
 .pageTitle{
@@ -94,7 +91,14 @@ ul{
 	.pageTitle{
 		margin-top: 20px;
 		font-size: 5rem;
-        line-height: calc(100vw/10);
+        line-height: 4rem;
+	}
+}
+@media only screen and (max-width: 800px){
+	.pageTitle{
+		margin-top: 20px;
+		font-size: 4rem;
+        line-height: 3rem;
 	}
 }
 @media only screen and (max-width: 650px){
@@ -108,14 +112,13 @@ ul{
 		display: none;
 	}
 	.linkButton a {
-		width: 50%;
 		text-align: center;
 		padding: 10px 0px ;
 		margin-right: 0px;
 	}
 	.pageTitle{
 		margin-top: 50px;
-        font-size:4rem;
+        font-size: calc(100vw/10);
         line-height: calc(100vw/10);
 	}
 }

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>  
-        <% if (centrumExists) { %>
-            <%= centrum.naam %>
+    <title> 
+       
+        <% if (getuigenisExists) { %>
+            Getuigenis van   <%= getuigenis.auteur %>
         <% } else{ %>
-            Centrum bestaat niet
+           Getuignis bestaat niet
         <% } %> - Expertise als hefboom
     </title>
     <%- include('partials/favicon'); %>
@@ -17,18 +18,19 @@
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     
-    <link rel="stylesheet" href="/css/detail-organisatie.css">
 </head>
 <body>
     <header>
         <%- include('partials/navigation'); %>
     </header>
    <main>
-    <% if (centrumExists) { %>
-        <%- include('partials/centrum_info'); %>
-    <% } else{ %>
-        <%- include('partials/niet_gevonden'); %>
-    <% } %>
+       <div class="mainContentWrapper">
+        <% if (getuigenisExists) { %>
+            <%- include('partials/getuigenis_tekst'); %>
+        <% } else{ %>
+            <%- include('partials/niet_gevonden'); %>
+        <% } %>
+    </div>
    </main>
    <%- include('partials/footer'); %>
 

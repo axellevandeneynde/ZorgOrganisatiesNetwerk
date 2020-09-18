@@ -129,6 +129,7 @@ table td:nth-child(1){
     height: 50px;
     background-color: black;
     mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
+    -webkit-mask: url(/images/assets/home_icons/taal.svg) no-repeat center / contain;
 }
 
 /* Media queries /*/
@@ -146,7 +147,9 @@ table td:nth-child(1){
         margin-bottom: 100px;
         min-height: 650px;
     }
-    
+    .centrumDetails{
+        margin-top: 20px;
+    }
 }
 @media only screen and (max-width: 1080px){
     .mainContentWrapper{
@@ -167,6 +170,7 @@ table td:nth-child(1){
         flex-direction: column;  
         margin: auto;
         margin-bottom: 50px;
+        margin-top: 20px;
     }
     .cImageContainer{
         height: 500px;

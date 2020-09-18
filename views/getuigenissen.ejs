@@ -4,12 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Getuigenissen</title>
+    <title>Getuigenissen - Expertise als hefboom</title>
+   
+    <%- include('partials/favicon'); %>
+
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/getuigenissen.css">
     <!-- CSS libraries van Slick zelf-->
-    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="js/libraries/slick-1.8.1/slick/slick-theme.css"/>
+    
+  
 </head>
 
 <!-- disable scroll functie -->
@@ -18,60 +22,26 @@
         <%- include('partials/navigation'); %>
     </header>
 
-	<main>
-       
-
-       
-        <section id="mainGetuigenis">
-            <div class="mainGetuigenisTekstContainer mainGetContainer">
-                <section class="mainGetuigenisTekstContent">
-                    <article class="mainGetuigenisTekstTitel">
-                        <h2 class="mainNaamVanPersoon"></h2>
-                        <h3 class="mainCentrumVanGetuigenis">over <span></span></h3>
-                    </article>
-                   
-                    <p class="mainTekstVanGetuigenis"></p>
-                </section>
-                <section class="mainLinksNaarCentrum">
-                    <div class="linkButton">
-                        <a href="/" id="mainLinkWebsiteCentrum" target="_blank" alt="Link naar de website van de bovenstaande organisatie">Website</a>
-                        <a href="centrum.html" id="mainDetailPageCentrum" alt="Deze link brengt u naar het detail pagina van de bovenstaande organsiatie">Meer informatie <span>→</span> </a>
-                    </div>
-                </section>
-            </div>
-            <div class="getuigenisFotoContainer mainGetContainer">   
+	<main>    
+        <section class="pageHeader">
+            <div class="imageContainer"></div>
+            <div class="titleContainer">
+                <div class="titleContent">
+                    <h1 class="pageTitle">Getuigenissen</h1>
+                </div>
                 
             </div>
         </section>
-       
-        <section id="allGetuigenissenCarouselContainer">
-            <article class="getuigenissenContainer">
-
-            </article>
-        </section>
         <div class="mainContentWrapper">
-        <section id="alleGetuigenissen">
+        
            
-            <section class="centraMenu">
+            <section id="getuigenissenContainer">
 
             </section>
-            <section class="centrumGetuigenissenContent">
-                <div class="contentContainer">
-                    <h1>Getuigenissen <span class="naamCentrumTitel"></span></h1>
-                    <h2 class="naamPersoonGetuigenis"></h2>
-                    <p class="tekstGetuigenis"></p>
-                   
-                    <div id="getuigenissenCarousel">
-                        <article class="getuigenissenContainer"></article>
-                    </div>
-                    <div class="linkButton">
-                        <a href="/" id="linkWebsiteCentrum" target="_blank" alt="Link naar de website van de bovenstaande organisatie">Website</a>
-                        <a href="/centrum/" id="detailPageCentrum" alt="Deze link brengt u naar het detail pagina van de bovenstaande organsiatie">Meer informatie <span>→</span> </a>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </div>
+        </div>
+     
+       
+       
 	</main>
     <%- include('partials/footer'); %>
     <!-- Script(s) (ingeladen NA HTML en CSS!)-->
@@ -81,10 +51,15 @@
 	<!-- Cookies script voor bijhouden keuze bij filter op centra pagina of centrum-->	
 	<script src="/js/cookies.js" type="text/javascript"></script>
 
-    <script src="/js/mainGetuigenis.js"></script>
    
     <script src="/js/classes/Getuigenis.js" type="module"></script>
     <script src="/js/getuigenissen.js" type="module"></script>
+
+    <script type="module">
+        import {getuigenissenCall, loadGetuigenissenInHTML} from '/js/getuigenissen.js';
+        const getuigenissen = getuigenissenCall();
+        loadGetuigenissenInHTML(getuigenissen, document.getElementById('getuigenissenContainer'))
+    </script>
 </body>
 
 </html>

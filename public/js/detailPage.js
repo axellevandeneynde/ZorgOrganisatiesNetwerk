@@ -1,6 +1,5 @@
 
-const url = "http://localhost:8000"
-const pathToIcons = url + "/images/assets/home_icons/";
+const pathToIcons = "/images/assets/home_icons/";
 
 
 function placeIcons(doelgroepen){
@@ -17,7 +16,6 @@ function placeIcons(doelgroepen){
 
 function beautifyArray(array){
   let newArray = array.split(',')
-  console.log(newArray.length)
   if(newArray.length < 2){
     return array;
   } else if(newArray.length == 2) {

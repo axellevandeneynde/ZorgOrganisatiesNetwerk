@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const ejs = require('ejs');
-const port =  process.env.port || 8000;
+const port =  process.env.PORT || 8000;
 const url = "localhost" + "/";
 
 
@@ -19,43 +19,57 @@ app.get('/',(req, res)=>{
 // Centra page render
 app.get('/organisaties=:doelgroep&:leeftijd&:werkzaamIn', (req, res)=>{
     // Eventueel werken met parameters hier? voor filter 
-    console.log(req.params)
-    res.render('centra');
+    
+    let filter = {
+        doelgroep: req.params.doelgroep,
+        leeftijdsgroep: req.params.leeftijd,
+        werkzaamIn: req.params.werkzaamIn
+    }
+    res.render('centra', {filter:filter});
 });
 
 // detail pagina voor centrum 
 app.get('/centrum/:centrum', (req, res)=>{
     let centrumExists = false;
-    let query = req.params.centrum
-    console.log(query);
+    let query = req.params.centrum;
     const centraList = require(__dirname + '/json/centra.json').centra;
-
-    for(let i = 0; i <= centraList.length; i++){
-        if(query == centraList[i].naam){
-            let centrum = centraList[i]
-            centrumExists = true;
-
-            let centrumObject = {
-                id: centrum.centra_ID,
-                naam: centrum.naam,
-                desc: centrum.beschrijving,
-                doelgroep:  centrum.doelgroep,
-                leeftijdsgroep: centrum.leeftijdsgroep,
-                werkzaamIn:  centrum.regio,
-                contactInfo: {
-                    website:  centrum.website, 
-                    tel:  centrum.telefoonnummer,
-                    email:  centrum.email,
-                    adres: centrum.adres
-                }
+    centrumExists = false;
+    class CentrumObject {
+        constructor(id, naam, desc, doelgroep, leeftijdsgroep, werkzaamIn, website, tel, email, adres) {
+            this.id = id,
+            this.naam = naam,
+            this.desc = desc,
+            this.doelgroep =  doelgroep,
+            this.leeftijdsgroep = leeftijdsgroep,
+            this.werkzaamIn =  werkzaamIn,
+            this.contactInfo = {
+                "website": website, 
+                'tel': tel,
+                "email": email,
+                "adres": adres
             }
-
-            res.render('centrum', {centrumExists: centrumExists, centrum: centrumObject});
-            break;
-        }else{
         }
     }
-    res.render('centrum', {centrumExists: centrumExists});
+    let result;
+    for(let i = 0; i < centraList.length; i++){
+
+        if(query == centraList[i].naam){
+            
+            let centrum = centraList[i]
+            result = new CentrumObject(centrum.centra_ID, centrum.naam, centrum.beschrijving, centrum.doelgroep, centrum.leeftijdsgroep, centrum.regio, centrum.website, centrum.telefoonnummer, centrum.email, centrum.adres)
+            centrumExists = true;
+            break;
+        }else{
+            centrumExists = false;
+        }
+    } 
+    if(centrumExists == true){
+        res.render('centrum', {centrumExists: centrumExists, centrum: result});
+    }else{
+        res.render('centrum', {centrumExists: centrumExists});
+    }
+   
+   
 });
 // over-ons page render
 app.get('/over-ons', (req, res)=>{
@@ -64,6 +78,39 @@ app.get('/over-ons', (req, res)=>{
 // Getuigenissen pagina render 
 app.get('/getuigenissen', (req, res)=>{
     res.render('getuigenissen');
+});
+app.get('/getuigenis/:getuigenis', (req, res) => {
+    let getuigenisExists = false;
+    let query = req.params.getuigenis;
+    const getuigenisList = require(__dirname + '/json/getuigenissen.json');
+    class Getuigenis{
+        constructor(id, auteur, body, centrum){
+            this.id = id,
+            this.auteur = auteur,
+            this.body = body,
+            this.centrum = centrum
+        }
+    }
+
+    let result;
+
+    for(let i = 0; i < getuigenisList.length; i++){
+
+        if(query ==  getuigenisList[i].getuigenisID){
+            
+            let get =  getuigenisList[i]
+            result = new Getuigenis(get.getuigenisID, get.auteur, get.body, get.centrum)
+            getuigenisExists = true;
+            break;
+        }else{
+            getuigenisExists = false;
+        }
+    } 
+    if( getuigenisExists == true){
+        res.render('getuigenis', { getuigenisExists:  getuigenisExists, getuigenis: result});
+    }else{
+        res.render('getuigenis', { getuigenisExists:  getuigenisExists});
+    }
 });
 // Post feedback
 app.post('/feedbackEAH', (req, res)=>{

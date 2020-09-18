@@ -103,9 +103,13 @@ header{
 }*/
 #mobileMenuIcon{
 	display: none;
+	border: 0 ;
+}#mobileMenuIcon:focus{
+	border: 0 ;
 }
 #mobileNav{
 	display: none;
+	
 }
 /******************************
 * Mobile menu icon naar kruis *
@@ -209,6 +213,9 @@ header{
 		border: none;
 		color: white;
 		margin: 10px 0;
+		font-size: calc(100vw/15);
+		width: 100%;
+		display: block;
 	}
 	#mobileNav ul{
 		display: flex;
@@ -222,7 +229,7 @@ header{
 	}
 	#mobileNav li{
 		width: 100%;
-		margin: 20px 0;
+		margin: 5px 0;
 		text-align: right;
 	}
 	#paginas li a:after {
