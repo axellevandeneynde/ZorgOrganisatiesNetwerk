@@ -3,7 +3,7 @@
 ## Opstarten website
 
 ### Wat heb je nodig: 
- -  [Node.JS](https://nodejs.org/en/)
+ - [Node.JS](https://nodejs.org/en/)
  - [NPM](https://www.npmjs.com/)
  - IDE naar keuze
  - Terminal naar keuze
@@ -48,3 +48,10 @@
     ```
 
     De website is nu klaar om gebruikt te worden!
+
+## Extra uitdaging: 
+
+Zoals jullie misschien gaan merken, is het filter systeem dat ik op de 'Alle organisaties' pagina heb gemaakt niet zo optimaal. 
+Ik zou deze graag willen verbeteren. 
+
+Aangezien jullie de databank en onderhoud van de website gaan doen, hebben jullie meer kennis over wat jullie gaan gebruiken om de data te beheren en naar de website te sturen. Hiermee kunnen jullie een veel betere filter aanmaken die nauw samenwerkt met jullie back-end. 
