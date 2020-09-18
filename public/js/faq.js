@@ -5,7 +5,7 @@ const faqVragen = [
     },
     {
         vraag: "Welke ondersteuning kan?",
-        antwoord: "Dit kan zowel bij u thuis zijn, in uw omgeving als in de voorziening."
+        antwoord: "Dit kan zowel bij jou thuis zijn, in jouw omgeving als in de voorziening."
     },
     {
         vraag: "Kan je ook hulp inzetten in samenwerking met andere diensten?",
@@ -17,7 +17,7 @@ const faqVragen = [
     },
     {
         vraag: "Wat kost de ondersteuning bij jullie?",
-        antwoord: "Dit hangt af van uw leeftijd, uw specifieke vraag  en het soort budget waarover u beschikt (PVB, budget RTH , verzekering, …). Meer info bij de organisatie van uw keuze en de op de website van het VAPH."
+        antwoord: "Dit hangt af van jouw leeftijd, jouw specifieke vraag  en het soort budget waarover u beschikt (PVB, budget RTH , verzekering, …). Meer info bij de organisatie van jouw keuze en de op de website van het VAPH."
     },
     {
         vraag: "Kan ik bij deze organisaties terecht met vragen in verband met hulpmiddelen?",
