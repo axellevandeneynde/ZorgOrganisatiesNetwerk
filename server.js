@@ -68,7 +68,8 @@ app.get('/getuigenissen', (req, res)=>{
 // Post feedback
 app.post('/feedbackEAH', (req, res)=>{
     
-});
+}); 
+
 // centra API
 app.get('/API/centra', (req, res)=>{
     res.sendFile(__dirname + '/json/centra.json');
