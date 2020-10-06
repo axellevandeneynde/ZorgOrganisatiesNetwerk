@@ -4,11 +4,27 @@ const path = require('path');
 const ejs = require('ejs');
 const port =  process.env.PORT || 8000;
 const url = "localhost" + "/";
+const functions = require('firebase-functions');
+const firebase = require('firebase-admin');
+
+var firebaseConfig = {
+    apiKey: "AIzaSyC9AH5_8Sb_pMm9TUZXOHDlt1sZoqZgIUI",
+    authDomain: "expertise-als-hefboom.firebaseapp.com",
+    databaseURL: "https://expertise-als-hefboom.firebaseio.com",
+    projectId: "expertise-als-hefboom",
+    storageBucket: "expertise-als-hefboom.appspot.com",
+    messagingSenderId: "840460733894",
+    appId: "1:840460733894:web:1deaa90798bdaabc97f6c7",
+    measurementId: "G-P668J1P9EJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
 
 
 // Middleware
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.set('view engine', 'ejs');
 
