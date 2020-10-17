@@ -1,0 +1,86 @@
+<script src="/js/detailPage.js"></script>
+
+<div class="mainContentWrapper">
+  
+
+    <section class="centrumInfo">
+       
+        <article class="centrumDetails">
+             <section class="centrumHeader">
+            <div>
+            <h2> <%= centrum.naam %></h2>
+            <span class="titleUnderline"></span>
+            </div>
+        
+           
+        </section>
+      
+            <div>
+                <p class="cBeschrijving"> <%= centrum.desc %></p>
+            <table>
+                <tr>
+                    <td>Doelgroep:</td>
+                   
+                    <td class="tableInfo">
+                        <div id="iconsContainer">
+                            <ul id="iconsList">
+
+                            </ul> expertise
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Leeftijdsgroep:</td>
+                    <td class="tableInfo" id="leeftijdenList">
+                        
+                          <script>
+                              document.getElementById('leeftijdenList').innerHTML = beautifyArray("<%= centrum.leeftijdsgroep %>")
+                          </script>  
+                         
+                    </td>
+                </tr>
+                <tr>
+                    <td>Werkzaam in:</td>
+                    <td class="tableInfo" id="werkzaamInList">
+                        <script>
+                            document.getElementById('werkzaamInList').innerHTML = beautifyArray(" <%= centrum.werkzaamIn %>")
+                        </script>  
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adres:</td>
+                    <td class="tableInfo"> <%= centrum.contactInfo.adres %></td>
+                </tr>
+                <tr>
+                    <td>Telefoonnummer:</td>
+                    <td class="tableInfo"> <%= centrum.contactInfo.tel %></td>
+                </tr>
+                <tr>
+                    <td>email:</td>
+                    <td class="tableInfo"> <%= centrum.contactInfo.email %></td>
+                </tr>
+            </table>
+            </div>
+            <div class="linkButton">
+                <a href="<%= centrum.contactInfo.website %>" target="_blank"> Bezoek <%= centrum.naam %></a>
+            </div>
+            
+        </article>
+        <article class="centrumImage">
+            <picture>
+                <source srcset="/images/centra/<%= centrum.id %>/logo.png" type="image/svg+xml" />
+                <img src="/images/centra/<%= centrum.id %>/logo.png" type="image/png"/>
+            </picture>
+            <div class="cImageContainer">
+                <img src="/images/centra/<%= centrum.id %>/thumbnail.jpg">
+            </div>
+        </article>
+
+    </section>
+</div>
+
+<script>
+    var doelgroepen = '<%= centrum.doelgroep %>';
+    placeIcons('<%= centrum.doelgroep %>')
+</script>

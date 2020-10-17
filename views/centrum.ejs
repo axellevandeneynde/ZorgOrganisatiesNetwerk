@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>  
+        <% if (centrumExists) { %>
+            <%= centrum.naam %>
+        <% } else{ %>
+            Centrum bestaat niet
+        <% } %> - Expertise als hefboom
+    </title>
+    <%- include('partials/favicon'); %>
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    
+    <link rel="stylesheet" href="/css/detail-organisatie.css">
+</head>
+<body>
+    <header>
+        <%- include('partials/navigation'); %>
+    </header>
+   <main>
+    <% if (centrumExists) { %>
+        <%- include('partials/centrum_info'); %>
+    <% } else{ %>
+        <%- include('partials/niet_gevonden'); %>
+    <% } %>
+   </main>
+   <%- include('partials/footer'); %>
+
+</body>
+
+</html>

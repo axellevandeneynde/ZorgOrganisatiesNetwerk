@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 
+       
+        <% if (getuigenisExists) { %>
+            Getuigenis van   <%= getuigenis.auteur %>
+        <% } else{ %>
+           Getuignis bestaat niet
+        <% } %> - Expertise als hefboom
+    </title>
+    <%- include('partials/favicon'); %>
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    
+</head>
+<body>
+    <header>
+        <%- include('partials/navigation'); %>
+    </header>
+   <main>
+       <div class="mainContentWrapper">
+        <% if (getuigenisExists) { %>
+            <%- include('partials/getuigenis_tekst'); %>
+        <% } else{ %>
+            <%- include('partials/niet_gevonden'); %>
+        <% } %>
+    </div>
+   </main>
+   <%- include('partials/footer'); %>
+
+</body>
+
+</html>
